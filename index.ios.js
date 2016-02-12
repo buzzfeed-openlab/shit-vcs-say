@@ -8,6 +8,7 @@ import React, {
   Component,
   StyleSheet,
   Text,
+  Image,
   View,
 } from 'react-native';
 
@@ -45,12 +46,10 @@ class QuizGame extends Component {
 class QuestionScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.instructions}>
-          Who tweeted?
-        </Text>
-        <Question question={question}/>
-      </View>  
+      <View style={styles.gameScreen}>
+        <Question question={question} />
+        <Answers options={question.options}/>
+      </View>
     )
   }
 }
@@ -58,9 +57,33 @@ class QuestionScreen extends Component {
 class Question extends Component {
   render() {
     return (
-      <View style={styles.question}>
-        <Text style={styles.tweetText}>
-          {this.props.question.text}
+      <View style={styles.questionBox}>
+        <View>
+          <Image
+            style={styles.profilePic}
+            source={require('./assets/egg-profile.jpeg')}
+          />
+        </View>
+
+        <View style={styles.questionContent}>
+          <Text style={styles.headText}>
+            ???
+          </Text>
+          <Text style={styles.bodyText}>
+            {this.props.question.text}
+          </Text>
+        </View>
+      </View>
+    )
+  }
+}
+
+class Answers extends Component {
+  render() {
+    return (
+      <View style={styles.answerBox}>
+        <Text>
+          Bleep bloop blop
         </Text>
       </View>
     )
@@ -68,21 +91,35 @@ class Question extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  gameScreen: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  instructions: {
+  questionBox: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  questionContent: {
+    flex: 1,
+    padding: 8,
+    flexDirection: 'column',
+  },
+  answerBox: {
+    flex: 2,
+    backgroundColor:'#ebeef0',
+  },
+  headText: {
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: 'left',
     margin: 10,
   },
-  subInstructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  bodyText: {
+    fontSize: 16,
+    textAlign: 'left',
+  },
+  profilePic: {
+    width: 64,
+    height: 64,
   },
 });
 
