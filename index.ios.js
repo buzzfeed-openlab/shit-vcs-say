@@ -15,22 +15,27 @@ import React, {
 const question = {
   uuid: '06f9bff5-c51e-4087-ab88-2497bb7516c3',
   text: '.@FLOTUS @funnyordie @billyeichner: I actually own three tuxedos!',
-  author: {
-    name: 'Big Bird',
-    handle: 'BigBird'
-  },
   options: [
     {
+      name: 'Big Bird',
+      handle: 'BigBird',
+      image: './assets/bigbird.png',
+      isAuthor: true,
+    },
+    {
       name: 'Jason Calacanis',
-      handle: 'Jason'
+      handle: 'Jason',
+      image: './assets/jason.jpg',
     },
     {
       name: 'John Lilly',
-      handle: 'johnolilly'
+      handle: 'johnolilly',
+      image: './assets/johnolilly.jpeg',
     },
     {
       name: 'Benedict Evans',
-      handle: 'BenedictEvans'
+      handle: 'BenedictEvans',
+      image: './assets/benedictevans.jpeg',
     }
   ]
 }
@@ -82,9 +87,83 @@ class Answers extends Component {
   render() {
     return (
       <View style={styles.answerBox}>
-        <Text>
-          Bleep bloop blop
-        </Text>
+
+        <View style={styles.answerRow}>
+
+          <View style={styles.answerOption}>
+            <View>
+              <Image
+                style={styles.profilePic}
+                source={require('./assets/bigbird.png')}
+              />
+            </View>
+            <View style={styles.optionContent}>
+              <Text style={styles.optionName}>
+                {this.props.options[0].name}
+              </Text>
+              <Text style={styles.optionHandle}>
+                @{this.props.options[0].handle}
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.answerOption}>
+            <View>
+              <Image
+                style={styles.profilePic}
+                source={require('./assets/jason.jpg')}
+              />
+            </View>
+            <View style={styles.optionContent}>
+              <Text style={styles.optionName}>
+                {this.props.options[1].name}
+              </Text>
+              <Text style={styles.optionHandle}>
+                @{this.props.options[1].handle}
+              </Text>
+            </View>
+          </View>
+
+        </View>
+
+        <View style={styles.answerRow}>
+
+          <View style={styles.answerOption}>
+            <View>
+              <Image
+                style={styles.profilePic}
+                source={require('./assets/johnolilly.jpeg')}
+              />
+            </View>
+            <View style={styles.optionContent}>
+              <Text style={styles.optionName}>
+                {this.props.options[2].name}
+              </Text>
+              <Text style={styles.optionHandle}>
+                @{this.props.options[2].handle}
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.answerOption}>
+            <View>
+              <Image
+                style={styles.profilePic}
+                source={require('./assets/benedictevans.jpeg')}
+              />
+            </View>
+            <View style={styles.optionContent}>
+              <Text style={styles.optionName}>
+                {this.props.options[3].name}
+              </Text>
+              <Text style={styles.optionHandle}>
+                @{this.props.options[3].handle}
+              </Text>
+            </View>
+          </View>
+
+        </View>
+
       </View>
     )
   }
@@ -107,6 +186,22 @@ const styles = StyleSheet.create({
   answerBox: {
     flex: 2,
     backgroundColor:'#ebeef0',
+    flexDirection: 'column',
+  },
+  answerRow: {
+    flex:1,
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
+  answerOption: {
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  optionContent: {
+    flex:1,
+    padding: 8,
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   headText: {
     fontSize: 20,
@@ -116,6 +211,14 @@ const styles = StyleSheet.create({
   bodyText: {
     fontSize: 16,
     textAlign: 'left',
+  },
+  optionName: {
+    fontSize: 16,
+    textAlign: 'center',
+  },
+  optionHandle: {
+    fontSize: 12,
+    textAlign: 'center',
   },
   profilePic: {
     width: 64,
