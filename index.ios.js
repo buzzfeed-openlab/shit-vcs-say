@@ -15,10 +15,14 @@ import React, {
   Platform,
 } from 'react-native';
 
+import GridView from 'react-native-grid-view';
+
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
  TouchableElement = TouchableNativeFeedback;
 }
+
+
 
 const question = {
   uuid: '06f9bff5-c51e-4087-ab88-2497bb7516c3',
@@ -27,23 +31,23 @@ const question = {
     {
       name: 'Big Bird',
       handle: 'BigBird',
-      image: './assets/bigbird.png',
+      image: require('./assets/bigbird.png'),
       isAuthor: true,
     },
     {
       name: 'Jason Calacanis',
       handle: 'Jason',
-      image: './assets/jason.jpg',
+      image: require('./assets/jason.jpg'),
     },
     {
       name: 'John Lilly',
       handle: 'johnolilly',
-      image: './assets/johnolilly.jpeg',
+      image: require('./assets/johnolilly.jpeg'),
     },
     {
       name: 'Benedict Evans',
       handle: 'BenedictEvans',
-      image: './assets/benedictevans.jpeg',
+      image: require('./assets/benedictevans.jpeg'),
     }
   ]
 }
@@ -96,40 +100,25 @@ class Answers extends Component {
     return (
       <View style={styles.answerBox}>
 
-        <View style={styles.answerRow}>
-
-          <Option
-            name={this.props.options[0].name}
-            handle={this.props.options[0].handle}
-            image={require('./assets/bigbird.png')}
-          />
-
-          <Option
-            name={this.props.options[1].name}
-            handle={this.props.options[1].handle}
-            image={require('./assets/jason.jpg')}
-          />
-
-        </View>
-
-        <View style={styles.answerRow}>
-
-          <Option
-            name={this.props.options[2].name}
-            handle={this.props.options[2].handle}
-            image={require('./assets/johnolilly.jpeg')}
-          />
-
-          <Option
-            name={this.props.options[3].name}
-            handle={this.props.options[3].handle}
-            image={require('./assets/benedictevans.jpeg')}
-          />
-
-        </View>
+        <GridView
+          items={this.props.options}
+          itemsPerRow={2}
+          renderItem={this.renderOption}
+        />
 
       </View>
     )
+  }
+
+  renderOption(option) {
+    return (
+      <Option
+        key={option.handle}
+        name={option.name}
+        handle={option.handle}
+        image={option.image}
+      />
+    );
   }
 }
 
@@ -138,12 +127,10 @@ class Option extends Component {
     return (
       <TouchableElement>
         <View style={styles.answerOption}>
-          <View>
             <Image
               style={styles.profilePic}
               source={this.props.image}
             />
-          </View>
           <View style={styles.optionContent}>
             <Text style={styles.optionName}>
               {this.props.name}
@@ -181,14 +168,17 @@ const styles = StyleSheet.create({
   answerRow: {
     flex:1,
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   answerOption: {
-    flexDirection: 'column',
+    width: 160,
+    height: 160,
+    justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'column',
   },
   optionContent: {
-    flex:1,
     padding: 8,
     flexDirection: 'column',
     alignItems: 'center',
