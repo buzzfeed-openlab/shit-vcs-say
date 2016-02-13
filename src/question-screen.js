@@ -20,8 +20,6 @@ if (Platform.OS === 'android') {
  TouchableElement = TouchableNativeFeedback;
 }
 
-
-
 const question = {
   uuid: '06f9bff5-c51e-4087-ab88-2497bb7516c3',
   text: '.@FLOTUS @funnyordie @billyeichner: I actually own three tuxedos!',
