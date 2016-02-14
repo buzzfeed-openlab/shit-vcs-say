@@ -15,6 +15,8 @@ import React, {
 
 import GridView from 'react-native-grid-view';
 
+import AnswerScreen from './answer-screen';
+
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
     TouchableElement = TouchableNativeFeedback;
@@ -53,7 +55,7 @@ class QuestionScreen extends Component {
         return (
             <View style={styles.gameScreen}>
                 <Question question={question} />
-                <Answers options={question.options}/>
+                <Answers question={question} navigator={this.props.navigator}/>
             </View>
         )
     }
@@ -89,9 +91,9 @@ class Answers extends Component {
             <View style={styles.answerBox}>
 
                 <GridView
-                    items={this.props.options}
+                    items={this.props.question.options}
                     itemsPerRow={2}
-                    renderItem={this.renderOption}
+                    renderItem={this.renderOption.bind(this)}
                 />
 
             </View>
@@ -101,10 +103,10 @@ class Answers extends Component {
     renderOption(option) {
         return (
             <Option
+                option={option}
+                question={this.props.question}
+                navigator={this.props.navigator}
                 key={option.handle}
-                name={option.name}
-                handle={option.handle}
-                image={option.image}
             />
         );
     }
@@ -113,23 +115,33 @@ class Answers extends Component {
 class Option extends Component {
     render() {
         return (
-            <TouchableElement>
+            <TouchableElement onPress={this.onSelectOption.bind(this)}>
                 <View style={styles.answerOption}>
                         <Image
                             style={styles.profilePic}
-                            source={this.props.image}
+                            source={this.props.option.image}
                         />
                     <View style={styles.optionContent}>
                         <Text style={styles.optionName}>
-                            {this.props.name}
+                            {this.props.option.name}
                         </Text>
                         <Text style={styles.optionHandle}>
-                            @{this.props.handle}
+                            @{this.props.option.handle}
                         </Text>
                     </View>
                 </View>
             </TouchableElement>
         );
+    }
+
+    onSelectOption() {
+        this.props.navigator.push({
+            name: 'AnswerScreen',
+            component: AnswerScreen,
+            component: (props) => {
+                return new AnswerScreen(props, this.props.question, this.props.option);
+            }
+        });
     }
 }
 
