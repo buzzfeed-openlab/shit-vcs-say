@@ -50,6 +50,32 @@ const questions = {
                 image: require('../assets/benedictevans.jpeg'),
             }
         ]
+    },
+    '06f9bff5-c51e-4087-ab88-djdjdjdjdj': {
+        text: 'monkies',
+        options: [
+            {
+                name: 'Benedict Evans',
+                handle: 'BenedictEvans',
+                image: require('../assets/benedictevans.jpeg'),
+            },
+            {
+                name: 'Jason Calacanis',
+                handle: 'Jason',
+                image: require('../assets/jason.jpg'),
+            },
+            {
+                name: 'Big Bird',
+                handle: 'BigBird',
+                image: require('../assets/bigbird.png'),
+                isAuthor: true,
+            },
+            {
+                name: 'John Lilly',
+                handle: 'johnolilly',
+                image: require('../assets/johnolilly.jpeg'),
+            },
+        ]
     }
 };
 
@@ -169,7 +195,6 @@ class Option extends Component {
     onSelectOption() {
         this.props.navigator.push({
             name: 'AnswerScreen',
-            component: AnswerScreen,
             component: (props) => {
                 return new AnswerScreen(props, this.props.question, this.props.option);
             }
@@ -238,4 +263,4 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = QuestionScreen;
+export default QuestionScreen;
