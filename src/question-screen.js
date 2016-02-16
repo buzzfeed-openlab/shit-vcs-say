@@ -14,6 +14,7 @@ import React, {
 } from 'react-native';
 
 import GridView from 'react-native-grid-view';
+import SimpleStore from 'react-native-simple-store';
 
 import AnswerScreen from './answer-screen';
 
@@ -22,40 +23,71 @@ if (Platform.OS === 'android') {
     TouchableElement = TouchableNativeFeedback;
 }
 
-const question = {
-    uuid: '06f9bff5-c51e-4087-ab88-2497bb7516c3',
-    text: '.@FLOTUS @funnyordie @billyeichner: I actually own three tuxedos!',
-    options: [
-        {
-            name: 'Big Bird',
-            handle: 'BigBird',
-            image: require('../assets/bigbird.png'),
-            isAuthor: true,
-        },
-        {
-            name: 'Jason Calacanis',
-            handle: 'Jason',
-            image: require('../assets/jason.jpg'),
-        },
-        {
-            name: 'John Lilly',
-            handle: 'johnolilly',
-            image: require('../assets/johnolilly.jpeg'),
-        },
-        {
-            name: 'Benedict Evans',
-            handle: 'BenedictEvans',
-            image: require('../assets/benedictevans.jpeg'),
-        }
-    ]
-}
+const questions = {
+    '06f9bff5-c51e-4087-ab88-2497bb7516c3': {
+        uuid: '06f9bff5-c51e-4087-ab88-2497bb7516c3',
+        text: '.@FLOTUS @funnyordie @billyeichner: I actually own three tuxedos!',
+        options: [
+            {
+                name: 'Big Bird',
+                handle: 'BigBird',
+                image: require('../assets/bigbird.png'),
+                isAuthor: true,
+            },
+            {
+                name: 'Jason Calacanis',
+                handle: 'Jason',
+                image: require('../assets/jason.jpg'),
+            },
+            {
+                name: 'John Lilly',
+                handle: 'johnolilly',
+                image: require('../assets/johnolilly.jpeg'),
+            },
+            {
+                name: 'Benedict Evans',
+                handle: 'BenedictEvans',
+                image: require('../assets/benedictevans.jpeg'),
+            }
+        ]
+    }
+};
+
+SimpleStore.save('questions', questions);
+
+
 
 class QuestionScreen extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { question: null };
+    }
+
+    componentWillMount() {
+        SimpleStore.get('questions').then((questions) => {
+            for (var id in questions) {
+                var question = questions[id];
+
+                if (!question.answered) {
+                    this.setState({ question: question });
+                    break;
+                }
+            }
+        });
+    }
+
     render() {
+        if (!this.state.question) {
+            return (
+                <View>
+                </View>
+            );
+        }
+
         return (
             <View style={styles.gameScreen}>
-                <Question question={question} />
-                <Answers question={question} navigator={this.props.navigator}/>
+                <Question question={this.state.question} />
+                <Answers question={this.state.question} navigator={this.props.navigator}/>
             </View>
         )
     }
