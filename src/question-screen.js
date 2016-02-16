@@ -113,9 +113,21 @@ class QuestionScreen extends Component {
         return (
             <View style={styles.gameScreen}>
                 <Question question={this.state.question} />
-                <Answers question={this.state.question} navigator={this.props.navigator}/>
+                <Answers
+                    question={this.state.question}
+                    navigator={this.props.navigator}
+                    selectCallback={this.onSelectedAnswer.bind(this)}/>
             </View>
         )
+    }
+
+    onSelectedAnswer(selectedOption) {
+        this.props.navigator.push({
+            name: 'AnswerScreen',
+            component: (props) => {
+                return new AnswerScreen(props, this.props.question, selectedOption);
+            }
+        });
     }
 }
 
@@ -164,6 +176,7 @@ class Answers extends Component {
                 option={option}
                 question={this.props.question}
                 navigator={this.props.navigator}
+                selectCallback={this.props.selectCallback}
                 key={option.handle}
             />
         );
@@ -173,7 +186,7 @@ class Answers extends Component {
 class Option extends Component {
     render() {
         return (
-            <TouchableElement onPress={this.onSelectOption.bind(this)}>
+            <TouchableElement onPress={() => this.props.selectCallback(this.props.option)}>
                 <View style={styles.answerOption}>
                         <Image
                             style={styles.profilePic}
@@ -190,15 +203,6 @@ class Option extends Component {
                 </View>
             </TouchableElement>
         );
-    }
-
-    onSelectOption() {
-        this.props.navigator.push({
-            name: 'AnswerScreen',
-            component: (props) => {
-                return new AnswerScreen(props, this.props.question, this.props.option);
-            }
-        });
     }
 }
 
