@@ -52,6 +52,7 @@ const questions = {
         ]
     },
     '06f9bff5-c51e-4087-ab88-djdjdjdjdj': {
+        uuid: '06f9bff5-c51e-4087-ab88-djdjdjdjdj',
         text: 'monkies',
         options: [
             {
@@ -122,11 +123,16 @@ class QuestionScreen extends Component {
     }
 
     onSelectedAnswer(selectedOption) {
-        this.props.navigator.push({
-            name: 'AnswerScreen',
-            component: (props) => {
-                return new AnswerScreen(props, this.props.question, selectedOption);
-            }
+        var questionUpdate = {};
+        questionUpdate[this.state.question.uuid] = Object.assign({}, this.state.question, { answered: true });
+
+        SimpleStore.update('questions', questionUpdate).then(() => {
+            this.props.navigator.push({
+                name: 'AnswerScreen',
+                component: (props) => {
+                    return new AnswerScreen(props, this.props.question, selectedOption);
+                }
+            });
         });
     }
 }
