@@ -28,25 +28,65 @@ class AnswerScreen extends Component {
         this.state = {
             question: question,
             chosenOption: chosenOption,
+            answer: null
         };
     }
 
+    componentWillMount() {
+        // find the correct answer
+        for (var i = 0; i < this.state.question.options.length; ++i) {
+            var option = this.state.question.options[i];
+
+            if (option.isAuthor) {
+                this.setState(Object.assign(this.state, { answer: option }));
+                break;
+            }
+        }
+    }
+
     render() {
+        if (!this.state.answer) {
+            return <View></View>;
+        }
         return (
             <View style={styles.answerScreen}>
-                <Image
-                    style={styles.answerImage}
-                    source={this.state.chosenOption.isAuthor ? checkImage : crossImage}
-                />
-                <Text>
-                    {this.state.chosenOption.chosenText}
-                </Text>
+                <View style={styles.centerContainer}>
+                    <Image
+                        style={styles.answerImage}
+                        source={this.state.chosenOption.isAuthor ? checkImage : crossImage}
+                    />
+                </View>
 
-                <TouchableElement onPress={this.onNextQuestion.bind(this)}>
-                    <Text>
-                        BLEEP BLOOP BLOP
-                    </Text>
-                </TouchableElement>
+                <View style={styles.tweetBox}>
+                    <View>
+                        <Image
+                            style={styles.profilePic}
+                            source={this.state.answer.image}
+                        />
+                    </View>
+
+                    <View style={styles.tweetContent}>
+                        <Text>
+                            {this.state.answer.name}
+                        </Text>
+
+                        <Text style={styles.tweetHandle}>
+                            @{this.state.answer.handle}
+                        </Text>
+
+                        <Text style={styles.tweetText}>
+                            {this.state.question.text}
+                        </Text>
+                    </View>
+                </View>
+
+                <View style={styles.centerContainer}>
+                    <TouchableElement onPress={this.onNextQuestion.bind(this)}>
+                        <Text>
+                            Next
+                        </Text>
+                    </TouchableElement>
+                </View>
             </View>
         )
     }
@@ -62,12 +102,42 @@ class AnswerScreen extends Component {
 const styles = StyleSheet.create({
     answerScreen: {
         flex: 1,
+    },
+    centerContainer: {
+        flex: 1,
         alignItems: 'center',
     },
     answerImage: {
-        width: 512,
-        height: 512,
-    }
+        width: 256,
+        height: 256,
+    },
+    tweetBox: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 20,
+    },
+    tweetContent: {
+        flex: 1,
+        padding: 8,
+        flexDirection: 'column',
+    },
+    tweetName: {
+        textAlign: 'left',
+        fontSize: 20,
+        margin: 10,
+    },
+    tweetHandle: {
+        fontSize: 12,
+    },
+    tweetText: {
+        fontSize: 16,
+        textAlign: 'left',
+    },
+    profilePic: {
+        width: 64,
+        height: 64,
+    },
 });
 
 export default AnswerScreen;

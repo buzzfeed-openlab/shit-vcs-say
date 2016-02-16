@@ -32,12 +32,14 @@ const questions = {
                 name: 'Big Bird',
                 handle: 'BigBird',
                 image: require('../assets/bigbird.png'),
+                chosenText: 'lol, yea...',
                 isAuthor: true,
             },
             {
                 name: 'Jason Calacanis',
                 handle: 'Jason',
                 image: require('../assets/jason.jpg'),
+                chosenText: '',
             },
             {
                 name: 'John Lilly',
@@ -130,7 +132,7 @@ class QuestionScreen extends Component {
             this.props.navigator.push({
                 name: 'AnswerScreen',
                 component: (props) => {
-                    return new AnswerScreen(props, this.props.question, selectedOption);
+                    return new AnswerScreen(props, this.state.question, selectedOption);
                 }
             });
         });
