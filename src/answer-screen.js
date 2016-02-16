@@ -66,7 +66,7 @@ class AnswerScreen extends Component {
                     </View>
 
                     <View style={styles.tweetContent}>
-                        <Text>
+                        <Text style={styles.tweetName}>
                             {this.state.answer.name}
                         </Text>
 
@@ -125,7 +125,6 @@ const styles = StyleSheet.create({
     tweetName: {
         textAlign: 'left',
         fontSize: 20,
-        margin: 10,
     },
     tweetHandle: {
         fontSize: 12,
@@ -133,6 +132,7 @@ const styles = StyleSheet.create({
     tweetText: {
         fontSize: 16,
         textAlign: 'left',
+        marginTop: 10,
     },
     profilePic: {
         width: 64,
