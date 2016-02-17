@@ -87,31 +87,34 @@ const questions = {
                 name: 'Jason Calacanis',
                 handle: 'Jason',
                 image: require('./assets/jason.jpg'),
+                link: 'http://twitter.com/jason',
                 chosenText: '',
             },
             {
                 name: 'John Lilly',
                 handle: 'johnolilly',
                 image: require('./assets/johnolilly.jpeg'),
+                link: 'http://twitter.com/johnolilly',
             },
             {
                 name: 'Big Bird',
                 handle: 'BigBird',
                 image: require('./assets/bigbird.png'),
-                chosenText: 'lol, yea...',
+                link: 'https://twitter.com/bigbird',
                 isAuthor: true,
             },
             {
                 name: 'Benedict Evans',
                 handle: 'BenedictEvans',
                 image: require('./assets/benedictevans.jpeg'),
+                link: 'https://twitter.com/benedictevans',
             }
         ]
     },
 };
 
 SimpleStore.save('questions', questions);
-
+SimpleStore.save('attemptsRemaining', 2);
 
 class QuizGame extends Component {
     render() {

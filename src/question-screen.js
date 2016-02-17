@@ -19,6 +19,7 @@ import SimpleStore from 'react-native-simple-store';
 import AnswerScreen from './answer-screen';
 import CommonStyles from './common-styles.js';
 import TweetBox from './tweet-box.js';
+import Toolbar from './toolbar.js';
 
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
@@ -37,10 +38,14 @@ class QuestionScreen extends Component {
                 var question = questions[id];
 
                 if (!question.answered) {
-                    this.setState({ question: question });
+                    this.setState(Object.assign(this.state, { question: question }));
                     break;
                 }
             }
+        });
+
+        SimpleStore.get('attemptsRemaining').then((attempts) => {
+            this.setState(Object.assign(this.state, { attemptsRemaining: attempts }));
         });
     }
 
@@ -54,6 +59,7 @@ class QuestionScreen extends Component {
 
         return (
             <View style={[CommonStyles.screenBackground, styles.gameScreen]}>
+                <Toolbar attemptsRemaining={this.state.attemptsRemaining}/>
                 <Question question={this.state.question} />
                 <Answers
                     question={this.state.question}

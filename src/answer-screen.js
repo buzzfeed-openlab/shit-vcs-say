@@ -11,9 +11,12 @@ import React, {
     Platform
 } from 'react-native';
 
+import SimpleStore from 'react-native-simple-store';
+
 import QuestionScreen from './question-screen.js';
 import CommonStyles from './common-styles.js';
 import TweetBox from './tweet-box.js';
+import Toolbar from './toolbar.js';
 
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
@@ -35,6 +38,16 @@ class AnswerScreen extends Component {
     }
 
     componentWillMount() {
+        // decrement score
+        if (!this.state.chosenOption.isAuthor) {
+            SimpleStore.get('attemptsRemaining').then((attempts) => {
+                var attemptsRemaining = attempts - 1;
+
+                this.setState(Object.assign(this.state, { attemptsRemaining: attemptsRemaining }));
+                SimpleStore.save('attemptsRemaining', attemptsRemaining);
+            });
+        }
+
         // find the correct answer
         for (var i = 0; i < this.state.question.options.length; ++i) {
             var option = this.state.question.options[i];
@@ -47,14 +60,16 @@ class AnswerScreen extends Component {
     }
 
     render() {
-        if (!this.state.answer) {
+        if (!this.state.answer || this.state.attemptsRemaining == null) {
             return (
                 <View style={CommonStyles.screenBackground}>
                 </View>
             );
         }
+
         return (
             <View style={[CommonStyles.screenBackground, styles.answerScreen]}>
+                <Toolbar attemptsRemaining={this.state.attemptsRemaining}/>
                 <View style={styles.centerContainer}>
                     <Image
                         style={styles.answerImage}
@@ -86,10 +101,11 @@ class AnswerScreen extends Component {
 
                 </View>
             </View>
-        )
+        );
     }
 
     onNextQuestion() {
+
         this.props.navigator.push({
             name: 'QuestionScreen',
             component: QuestionScreen,
