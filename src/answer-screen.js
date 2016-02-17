@@ -62,12 +62,14 @@ class AnswerScreen extends Component {
                     />
                 </View>
 
-                <TweetBox
-                    image={this.state.answer.image}
-                    name={this.state.answer.name}
-                    handle={this.state.answer.handle}
-                    text={this.state.question.text}
-                />
+                <View style={styles.answerTweetBox}>
+                    <TweetBox
+                        image={this.state.answer.image}
+                        name={this.state.answer.name}
+                        handle={this.state.answer.handle}
+                        text={this.state.question.text}
+                    />
+                </View>
 
                 <View style={styles.centerContainer}>
                     <TouchableElement onPress={this.onNextQuestion.bind(this)}>
@@ -93,6 +95,11 @@ class AnswerScreen extends Component {
 const styles = StyleSheet.create({
     answerScreen: {
         flex: 1,
+    },
+    answerTweetBox: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 20,
     },
     centerContainer: {
         flex: 1,

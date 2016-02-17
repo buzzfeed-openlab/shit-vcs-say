@@ -28,7 +28,7 @@ class TweetBox extends Component {
 
                     <View style={styles.tweetHeaderText}>
                         <Text style={styles.tweetName}>
-                            {this.props.name}
+                            something {this.props.name}
                         </Text>
 
                         {handleText}
@@ -38,7 +38,7 @@ class TweetBox extends Component {
 
                 <View style={styles.tweetContent}>
                     <Text style={styles.tweetText}>
-                        {this.props.text}
+                        something {this.props.text}
                     </Text>
                 </View>
             </View>
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         padding: 20,
+        backgroundColor: '#FFFFFD',
     },
     tweetHeader: {
         height: 64,
@@ -68,13 +69,17 @@ const styles = StyleSheet.create({
     tweetName: {
         textAlign: 'left',
         fontSize: 20,
+        fontFamily: 'Helvetica Neue',
     },
     tweetHandle: {
         fontSize: 12,
+        color: '#8899a6',
+        fontFamily: 'Helvetica Neue',
     },
     tweetText: {
         fontSize: 16,
         textAlign: 'left',
+        fontFamily: 'Helvetica Neue',
     },
     profilePic: {
         width: 64,

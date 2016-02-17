@@ -193,10 +193,10 @@ class Option extends Component {
                             source={this.props.option.image}
                         />
                     <View style={styles.optionContent}>
-                        <Text style={styles.optionName}>
+                        <Text style={[CommonStyles.baseFont, styles.optionName]}>
                             {this.props.option.name}
                         </Text>
-                        <Text style={styles.optionHandle}>
+                        <Text style={[CommonStyles.baseFont, styles.optionHandle]}>
                             @{this.props.option.handle}
                         </Text>
                     </View>
@@ -245,6 +245,7 @@ const styles = StyleSheet.create({
     optionHandle: {
         fontSize: 12,
         textAlign: 'center',
+        color: '#8899a6',
     },
     profilePic: {
         width: 64,
