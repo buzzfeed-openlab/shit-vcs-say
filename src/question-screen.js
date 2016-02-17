@@ -18,6 +18,7 @@ import SimpleStore from 'react-native-simple-store';
 
 import AnswerScreen from './answer-screen';
 import CommonStyles from './common-styles.js';
+import TweetBox from './tweet-box.js';
 
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
@@ -144,23 +145,13 @@ class Question extends Component {
     render() {
         return (
             <View style={styles.questionBox}>
-                <View>
-                    <Image
-                        style={styles.profilePic}
-                        source={require('../assets/egg-profile.jpeg')}
-                    />
-                </View>
-
-                <View style={styles.questionContent}>
-                    <Text style={styles.headText}>
-                        ???
-                    </Text>
-                    <Text style={styles.bodyText}>
-                        {this.props.question.text}
-                    </Text>
-                </View>
+                <TweetBox
+                    image={require('../assets/egg-profile.jpeg')}
+                    name={'???'}
+                    text={this.props.question.text}
+                />
             </View>
-        )
+        );
     }
 }
 
@@ -225,14 +216,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 20,
     },
-    questionContent: {
-        flex: 1,
-        padding: 8,
-        flexDirection: 'column',
-    },
     answerBox: {
         flex: 2,
-        // backgroundColor:'#ebeef0',
         flexDirection: 'column',
     },
     answerRow: {
@@ -252,15 +237,6 @@ const styles = StyleSheet.create({
         padding: 8,
         flexDirection: 'column',
         alignItems: 'center',
-    },
-    headText: {
-        fontSize: 20,
-        textAlign: 'left',
-        margin: 10,
-    },
-    bodyText: {
-        fontSize: 16,
-        textAlign: 'left',
     },
     optionName: {
         fontSize: 16,

@@ -9,6 +9,15 @@ import React, {
 
 class TweetBox extends Component {
     render() {
+        var handleText = null;
+        if (this.props.handle) {
+            handleText = (
+                <Text style={styles.tweetHandle}>
+                    @{this.props.handle}
+                </Text>
+            )
+        }
+
         return (
             <View style={styles.tweetBox}>
                 <View style={styles.tweetHeader}>
@@ -22,9 +31,8 @@ class TweetBox extends Component {
                             {this.props.name}
                         </Text>
 
-                        <Text style={styles.tweetHandle}>
-                            @{this.props.handle}
-                        </Text>
+                        {handleText}
+
                     </View>
                 </View>
 
