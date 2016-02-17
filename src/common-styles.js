@@ -16,6 +16,7 @@ const CommonStyles = StyleSheet.create({
     },
     buttonText: {
         fontSize: 20,
+        color: '#FFFFFD'
     }
 });
 

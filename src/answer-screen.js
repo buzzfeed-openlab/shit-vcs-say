@@ -62,22 +62,24 @@ class AnswerScreen extends Component {
                 </View>
 
                 <View style={styles.tweetBox}>
-                    <View>
+                    <View style={styles.tweetHeader}>
                         <Image
                             style={styles.profilePic}
                             source={this.state.answer.image}
                         />
+
+                        <View style={styles.tweetHeaderText}>
+                            <Text style={styles.tweetName}>
+                                {this.state.answer.name}
+                            </Text>
+
+                            <Text style={styles.tweetHandle}>
+                                @{this.state.answer.handle}
+                            </Text>
+                        </View>
                     </View>
 
                     <View style={styles.tweetContent}>
-                        <Text style={styles.tweetName}>
-                            {this.state.answer.name}
-                        </Text>
-
-                        <Text style={styles.tweetHandle}>
-                            @{this.state.answer.handle}
-                        </Text>
-
                         <Text style={styles.tweetText}>
                             {this.state.question.text}
                         </Text>
@@ -119,12 +121,19 @@ const styles = StyleSheet.create({
     },
     tweetBox: {
         flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
+        flexDirection: 'column',
         padding: 20,
     },
+    tweetHeader: {
+        height: 64,
+        flexDirection: 'row',
+    },
+    tweetHeaderText: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        paddingLeft: 8,
+    },
     tweetContent: {
-        flex: 1,
         padding: 8,
         flexDirection: 'column',
     },
@@ -138,7 +147,6 @@ const styles = StyleSheet.create({
     tweetText: {
         fontSize: 16,
         textAlign: 'left',
-        marginTop: 10,
     },
     profilePic: {
         width: 64,
