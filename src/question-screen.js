@@ -161,6 +161,8 @@ class Answers extends Component {
             <View style={styles.answerBox}>
 
                 <GridView
+                    scrollEnabled={false}
+
                     items={this.props.question.options}
                     itemsPerRow={2}
                     renderItem={this.renderOption.bind(this)}
@@ -232,6 +234,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
+        backgroundColor: '#FFFFFD',
     },
     optionContent: {
         padding: 8,
