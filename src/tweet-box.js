@@ -1,4 +1,6 @@
 
+'use strict';
+
 import React, {
     Component,
     StyleSheet,

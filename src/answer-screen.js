@@ -1,3 +1,4 @@
+
 'use strict';
 
 import React, {
@@ -38,7 +39,6 @@ class AnswerScreen extends Component {
     }
 
     componentWillMount() {
-        // decrement score
         SimpleStore.get('attemptsRemaining').then((attempts) => {
             var attemptsRemaining = attempts;
 
