@@ -17,6 +17,7 @@ import GridView from 'react-native-grid-view';
 import SimpleStore from 'react-native-simple-store';
 
 import AnswerScreen from './answer-screen';
+import CommonStyles from './common-styles.js';
 
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
@@ -108,13 +109,13 @@ class QuestionScreen extends Component {
     render() {
         if (!this.state.question) {
             return (
-                <View>
+                <View style={CommonStyles.screenBackground}>
                 </View>
             );
         }
 
         return (
-            <View style={styles.gameScreen}>
+            <View style={[CommonStyles.screenBackground, styles.gameScreen]}>
                 <Question question={this.state.question} />
                 <Answers
                     question={this.state.question}

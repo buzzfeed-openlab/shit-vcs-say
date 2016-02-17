@@ -12,6 +12,7 @@ import React, {
 } from 'react-native';
 
 import QuestionScreen from './question-screen.js';
+import CommonStyles from './common-styles.js';
 
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
@@ -46,10 +47,13 @@ class AnswerScreen extends Component {
 
     render() {
         if (!this.state.answer) {
-            return <View></View>;
+            return (
+                <View style={CommonStyles.screenBackground}>
+                </View>
+            );
         }
         return (
-            <View style={styles.answerScreen}>
+            <View style={[CommonStyles.screenBackground, styles.answerScreen]}>
                 <View style={styles.centerContainer}>
                     <Image
                         style={styles.answerImage}
