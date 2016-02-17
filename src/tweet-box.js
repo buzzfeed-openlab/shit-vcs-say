@@ -28,7 +28,7 @@ class TweetBox extends Component {
 
                     <View style={styles.tweetHeaderText}>
                         <Text style={styles.tweetName}>
-                            something {this.props.name}
+                            {this.props.name}
                         </Text>
 
                         {handleText}
@@ -38,7 +38,7 @@ class TweetBox extends Component {
 
                 <View style={styles.tweetContent}>
                     <Text style={styles.tweetText}>
-                        something {this.props.text}
+                        {this.props.text}
                     </Text>
                 </View>
             </View>
