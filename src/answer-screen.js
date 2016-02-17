@@ -39,14 +39,16 @@ class AnswerScreen extends Component {
 
     componentWillMount() {
         // decrement score
-        if (!this.state.chosenOption.isAuthor) {
-            SimpleStore.get('attemptsRemaining').then((attempts) => {
-                var attemptsRemaining = attempts - 1;
+        SimpleStore.get('attemptsRemaining').then((attempts) => {
+            var attemptsRemaining = attempts;
 
-                this.setState(Object.assign(this.state, { attemptsRemaining: attemptsRemaining }));
+            if (!this.state.chosenOption.isAuthor) {
+                attemptsRemaining -= 1;
                 SimpleStore.save('attemptsRemaining', attemptsRemaining);
-            });
-        }
+            }
+
+            this.setState(Object.assign(this.state, { attemptsRemaining: attemptsRemaining }));
+        });
 
         // find the correct answer
         for (var i = 0; i < this.state.question.options.length; ++i) {
@@ -69,7 +71,9 @@ class AnswerScreen extends Component {
 
         return (
             <View style={[CommonStyles.screenBackground, styles.answerScreen]}>
+
                 <Toolbar attemptsRemaining={this.state.attemptsRemaining}/>
+
                 <View style={styles.centerContainer}>
                     <Image
                         style={styles.answerImage}
@@ -125,6 +129,7 @@ const styles = StyleSheet.create({
     centerContainer: {
         flex: 1,
         alignItems: 'center',
+        justifyContent: 'center',
     },
     actionOptionsBox: {
         flex: 1,
