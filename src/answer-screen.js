@@ -68,6 +68,7 @@ class AnswerScreen extends Component {
                         name={this.state.answer.name}
                         handle={this.state.answer.handle}
                         text={this.state.question.text}
+                        profileUrl={this.state.answer.link}
                     />
                 </View>
 
@@ -77,7 +78,7 @@ class AnswerScreen extends Component {
                         <TouchableElement onPress={this.onNextQuestion.bind(this)}>
                             <View style={CommonStyles.advanceButton}>
                                 <Text style={CommonStyles.buttonText}>
-                                    Next
+                                    Next >
                                 </Text>
                             </View>
                         </TouchableElement>

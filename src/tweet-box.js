@@ -5,7 +5,16 @@ import React, {
     Text,
     Image,
     View,
+    TouchableHighlight,
+    TouchableNativeFeedback,
+    Platform,
+    Linking,
 } from 'react-native';
+
+var TouchableElement = TouchableHighlight;
+if (Platform.OS === 'android') {
+    TouchableElement = TouchableNativeFeedback;
+}
 
 class TweetBox extends Component {
     render() {
@@ -18,13 +27,29 @@ class TweetBox extends Component {
             )
         }
 
-        return (
-            <View style={styles.tweetBox}>
-                <View style={styles.tweetHeader}>
+        var imageElement = null;
+        if (this.props.profileUrl) {
+            imageElement = (
+                <TouchableElement onPress={() => Linking.openURL(this.props.profileUrl)}>
                     <Image
                         style={styles.profilePic}
                         source={this.props.image}
                     />
+                </TouchableElement>
+            )
+        } else {
+            imageElement = (
+                <Image
+                    style={styles.profilePic}
+                    source={this.props.image}
+                />
+            )
+        }
+
+        return (
+            <View style={styles.tweetBox}>
+                <View style={styles.tweetHeader}>
+                    {imageElement}
 
                     <View style={styles.tweetHeaderText}>
                         <Text style={styles.tweetName}>
