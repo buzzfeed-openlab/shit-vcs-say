@@ -86,9 +86,11 @@ class AnswerScreen extends Component {
 
                 <View style={styles.centerContainer}>
                     <TouchableElement onPress={this.onNextQuestion.bind(this)}>
-                        <Text>
-                            Next
-                        </Text>
+                        <View style={CommonStyles.advanceButton}>
+                            <Text style={CommonStyles.buttonText}>
+                                Next
+                            </Text>
+                        </View>
                     </TouchableElement>
                 </View>
             </View>
