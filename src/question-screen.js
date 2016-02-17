@@ -26,10 +26,10 @@ if (Platform.OS === 'android') {
 }
 
 const questions = {
-    '06f9bff5-c51e-4087-ab88-2497bb7516c3': {
-        uuid: '06f9bff5-c51e-4087-ab88-2497bb7516c3',
-        text: '.@FLOTUS @funnyordie @billyeichner: I actually own three tuxedos!',
-        link: 'https://twitter.com/BigBird/status/623205331305279488',
+    '06f9bff5-c51e-4087-ab88-1234567': {
+        uuid: '06f9bff5-c51e-4087-ab88-1234567',
+        text: 'Anti-colonialism has been economically catastrophic for the Indian people for decades. Why stop now?',
+        link: 'http://www.bloomberg.com/news/articles/2016-02-10/marc-andreessen-pro-colonialism-tweet-riles-up-india-tech-world',
         options: [
             {
                 name: 'Jason Calacanis',
@@ -38,16 +38,16 @@ const questions = {
                 chosenText: '',
             },
             {
-                name: 'John Lilly',
-                handle: 'johnolilly',
-                image: require('../assets/johnolilly.jpeg'),
+                name: 'Marc Andreessen',
+                handle: 'pmarca',
+                image: require('../assets/pmarca.jpg'),
+                isAuthor: true,
             },
             {
                 name: 'Big Bird',
                 handle: 'BigBird',
                 image: require('../assets/bigbird.png'),
                 chosenText: 'lol, yea...',
-                isAuthor: true,
             },
             {
                 name: 'Benedict Evans',
@@ -83,7 +83,37 @@ const questions = {
                 isAuthor: true,
             },
         ]
-    }
+    },
+    '06f9bff5-c51e-4087-ab88-2497bb7516c3': {
+        uuid: '06f9bff5-c51e-4087-ab88-2497bb7516c3',
+        text: '.@FLOTUS @funnyordie @billyeichner: I actually own three tuxedos!',
+        link: 'https://twitter.com/BigBird/status/623205331305279488',
+        options: [
+            {
+                name: 'Jason Calacanis',
+                handle: 'Jason',
+                image: require('../assets/jason.jpg'),
+                chosenText: '',
+            },
+            {
+                name: 'John Lilly',
+                handle: 'johnolilly',
+                image: require('../assets/johnolilly.jpeg'),
+            },
+            {
+                name: 'Big Bird',
+                handle: 'BigBird',
+                image: require('../assets/bigbird.png'),
+                chosenText: 'lol, yea...',
+                isAuthor: true,
+            },
+            {
+                name: 'Benedict Evans',
+                handle: 'BenedictEvans',
+                image: require('../assets/benedictevans.jpeg'),
+            }
+        ]
+    },
 };
 
 SimpleStore.save('questions', questions);
