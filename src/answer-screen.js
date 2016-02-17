@@ -13,6 +13,7 @@ import React, {
 
 import QuestionScreen from './question-screen.js';
 import CommonStyles from './common-styles.js';
+import TweetBox from './tweet-box.js';
 
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
@@ -61,30 +62,12 @@ class AnswerScreen extends Component {
                     />
                 </View>
 
-                <View style={styles.tweetBox}>
-                    <View style={styles.tweetHeader}>
-                        <Image
-                            style={styles.profilePic}
-                            source={this.state.answer.image}
-                        />
-
-                        <View style={styles.tweetHeaderText}>
-                            <Text style={styles.tweetName}>
-                                {this.state.answer.name}
-                            </Text>
-
-                            <Text style={styles.tweetHandle}>
-                                @{this.state.answer.handle}
-                            </Text>
-                        </View>
-                    </View>
-
-                    <View style={styles.tweetContent}>
-                        <Text style={styles.tweetText}>
-                            {this.state.question.text}
-                        </Text>
-                    </View>
-                </View>
+                <TweetBox
+                    image={this.state.answer.image}
+                    name={this.state.answer.name}
+                    handle={this.state.answer.handle}
+                    text={this.state.question.text}
+                />
 
                 <View style={styles.centerContainer}>
                     <TouchableElement onPress={this.onNextQuestion.bind(this)}>
@@ -118,39 +101,6 @@ const styles = StyleSheet.create({
     answerImage: {
         width: 256,
         height: 256,
-    },
-    tweetBox: {
-        flex: 1,
-        flexDirection: 'column',
-        padding: 20,
-    },
-    tweetHeader: {
-        height: 64,
-        flexDirection: 'row',
-    },
-    tweetHeaderText: {
-        flexDirection: 'column',
-        justifyContent: 'center',
-        paddingLeft: 8,
-    },
-    tweetContent: {
-        padding: 8,
-        flexDirection: 'column',
-    },
-    tweetName: {
-        textAlign: 'left',
-        fontSize: 20,
-    },
-    tweetHandle: {
-        fontSize: 12,
-    },
-    tweetText: {
-        fontSize: 16,
-        textAlign: 'left',
-    },
-    profilePic: {
-        width: 64,
-        height: 64,
     },
 });
 
