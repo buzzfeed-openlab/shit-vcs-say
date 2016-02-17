@@ -6,13 +6,13 @@ import React, {
     Navigator,
 } from 'react-native';
 
-import QuestionScreen from './src/question-screen.js';
+import MainMenuScreen from './src/main-menu-screen.js';
 
 class QuizGame extends Component {
     render() {
         return (
             <Navigator
-                initialRoute={{name: 'QuestionScreen', component: QuestionScreen}}
+                initialRoute={{name: 'MainMenuScreen', component: MainMenuScreen}}
                 configureScene={() => {
                         return Navigator.SceneConfigs.FloatFromRight;
                 }}

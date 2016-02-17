@@ -1,14 +1,14 @@
 'use strict';
 
 import React, {
-  Component,
-  StyleSheet,
-  Text,
-  Image,
-  View,
-  TouchableHighlight,
-  TouchableNativeFeedback,
-  Platform
+    Component,
+    StyleSheet,
+    Text,
+    Image,
+    View,
+    TouchableHighlight,
+    TouchableNativeFeedback,
+    Platform
 } from 'react-native';
 
 import QuestionScreen from './question-screen.js';
@@ -72,13 +72,17 @@ class AnswerScreen extends Component {
                 </View>
 
                 <View style={styles.centerContainer}>
-                    <TouchableElement onPress={this.onNextQuestion.bind(this)}>
-                        <View style={CommonStyles.advanceButton}>
-                            <Text style={CommonStyles.buttonText}>
-                                Next
-                            </Text>
-                        </View>
-                    </TouchableElement>
+
+                    <View style={styles.actionOptionsBox}>
+                        <TouchableElement onPress={this.onNextQuestion.bind(this)}>
+                            <View style={CommonStyles.advanceButton}>
+                                <Text style={CommonStyles.buttonText}>
+                                    Next
+                                </Text>
+                            </View>
+                        </TouchableElement>
+                    </View>
+
                 </View>
             </View>
         )
@@ -104,6 +108,11 @@ const styles = StyleSheet.create({
     centerContainer: {
         flex: 1,
         alignItems: 'center',
+    },
+    actionOptionsBox: {
+        flex: 1,
+        padding: 20,
+        justifyContent: 'flex-end',
     },
     answerImage: {
         width: 256,
