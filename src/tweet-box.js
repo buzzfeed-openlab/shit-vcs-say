@@ -1,10 +1,10 @@
 
 import React, {
-  Component,
-  StyleSheet,
-  Text,
-  Image,
-  View,
+    Component,
+    StyleSheet,
+    Text,
+    Image,
+    View,
 } from 'react-native';
 
 class TweetBox extends Component {

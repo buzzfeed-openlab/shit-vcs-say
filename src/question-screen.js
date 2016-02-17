@@ -29,14 +29,8 @@ const questions = {
     '06f9bff5-c51e-4087-ab88-2497bb7516c3': {
         uuid: '06f9bff5-c51e-4087-ab88-2497bb7516c3',
         text: '.@FLOTUS @funnyordie @billyeichner: I actually own three tuxedos!',
+        link: 'https://twitter.com/BigBird/status/623205331305279488',
         options: [
-            {
-                name: 'Big Bird',
-                handle: 'BigBird',
-                image: require('../assets/bigbird.png'),
-                chosenText: 'lol, yea...',
-                isAuthor: true,
-            },
             {
                 name: 'Jason Calacanis',
                 handle: 'Jason',
@@ -49,6 +43,13 @@ const questions = {
                 image: require('../assets/johnolilly.jpeg'),
             },
             {
+                name: 'Big Bird',
+                handle: 'BigBird',
+                image: require('../assets/bigbird.png'),
+                chosenText: 'lol, yea...',
+                isAuthor: true,
+            },
+            {
                 name: 'Benedict Evans',
                 handle: 'BenedictEvans',
                 image: require('../assets/benedictevans.jpeg'),
@@ -57,8 +58,14 @@ const questions = {
     },
     '06f9bff5-c51e-4087-ab88-djdjdjdjdj': {
         uuid: '06f9bff5-c51e-4087-ab88-djdjdjdjdj',
-        text: 'monkies',
+        text: 'The world has never been more peaceful, more wealthy, more equal, with more jobs, more education, or more opportunity. The future is bright.',
+        link: 'https://twitter.com/pmarca/status/652692676752465921',
         options: [
+            {
+                name: 'Elmo',
+                handle: 'Elmo',
+                image: require('../assets/elmo.png'),
+            },
             {
                 name: 'Benedict Evans',
                 handle: 'BenedictEvans',
@@ -70,15 +77,10 @@ const questions = {
                 image: require('../assets/jason.jpg'),
             },
             {
-                name: 'Big Bird',
-                handle: 'BigBird',
-                image: require('../assets/bigbird.png'),
+                name: 'Marc Andreessen',
+                handle: 'pmarca',
+                image: require('../assets/pmarca.jpg'),
                 isAuthor: true,
-            },
-            {
-                name: 'John Lilly',
-                handle: 'johnolilly',
-                image: require('../assets/johnolilly.jpeg'),
             },
         ]
     }
