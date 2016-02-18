@@ -163,7 +163,9 @@ const styles = StyleSheet.create({
     },
     answerBox: {
         flex: 2,
+        margin: 20,
         flexDirection: 'column',
+        backgroundColor: '#FFFFFD',
     },
     answerOption: {
         width: 160,
