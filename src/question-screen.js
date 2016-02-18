@@ -138,10 +138,10 @@ class Option extends Component {
                         source={this.props.option.image}
                     />
                     <View style={styles.optionContent}>
-                        <Text style={[CommonStyles.baseFont, styles.optionName]}>
+                        <Text style={[CommonStyles.baseText, styles.optionName]}>
                             {this.props.option.name}
                         </Text>
-                        <Text style={[CommonStyles.baseFont, styles.optionHandle]}>
+                        <Text style={[CommonStyles.baseText, styles.optionHandle]}>
                             @{this.props.option.handle}
                         </Text>
                     </View>

@@ -20,8 +20,9 @@ const CommonStyles = StyleSheet.create({
         fontSize: 20,
         color: '#FFFFFD'
     },
-    baseFont: {
+    baseText: {
         fontFamily: 'Helvetica Neue',
+        fontSize: 16,
     },
 });
 
