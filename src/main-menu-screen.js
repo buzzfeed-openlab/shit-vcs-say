@@ -26,7 +26,7 @@ class MainMenuScreen extends Component {
             <View style={[CommonStyles.screenBackground, styles.mainMenuScreen]}>
                 <View style={styles.titleBox}>
 
-                    <Text style={[CommonStyles.baseFont, styles.titleText]}>
+                    <Text style={[CommonStyles.baseText, styles.titleText]}>
                         Shit VCs Say
                     </Text>
 

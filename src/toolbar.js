@@ -12,6 +12,8 @@ import React, {
     Platform,
 } from 'react-native';
 
+import CommonStyles from './common-styles.js';
+
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
     TouchableElement = TouchableNativeFeedback;
@@ -21,11 +23,11 @@ class Toolbar extends Component {
     render() {
         return (
             <View style={styles.toolbar}>
-                <Text style={styles.toolbarTitle}>
+                <Text style={[CommonStyles.baseText, styles.toolbarTitle]}>
                     {this.props.title}
                 </Text>
 
-                <Text style={styles.toolbarText}>
+                <Text style={[CommonStyles.baseText, styles.toolbarText]}>
                     Guesses left: {this.props.attemptsRemaining}
                 </Text>
             </View>

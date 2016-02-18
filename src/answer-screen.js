@@ -34,7 +34,8 @@ class AnswerScreen extends Component {
         this.state = {
             question: question,
             chosenOption: chosenOption,
-            answer: null
+            answer: null,
+            answeredCorrect: chosenOption.isAuthor == true,
         };
     }
 
@@ -62,6 +63,7 @@ class AnswerScreen extends Component {
     }
 
     render() {
+        // early out if not initialized
         if (!this.state.answer || this.state.attemptsRemaining == null) {
             return (
                 <View style={CommonStyles.screenBackground}>
@@ -69,16 +71,29 @@ class AnswerScreen extends Component {
             );
         }
 
+        var answeredCorrect = this.state.answeredCorrect;
+
+        var screenStyles = [CommonStyles.screenBackground, styles.answerScreen];
+        screenStyles.push(answeredCorrect ? CommonStyles.screenSuccess : CommonStyles.screenFailure);
+
         return (
-            <View style={[CommonStyles.screenBackground, styles.answerScreen]}>
+            <View style={screenStyles}>
 
                 <Toolbar attemptsRemaining={this.state.attemptsRemaining}/>
 
-                <View style={styles.centerContainer}>
-                    <Image
-                        style={styles.answerImage}
-                        source={this.state.chosenOption.isAuthor ? checkImage : crossImage}
-                    />
+                <View style={[styles.centerContainer, styles.contextBox]}>
+
+                        <Image
+                            style={styles.answerImage}
+                            source={answeredCorrect ? checkImage : crossImage}
+                        />
+
+                        <View style={styles.contextTextBox}>
+                            <Text style={[CommonStyles.baseText]}>
+                                {this.state.chosenOption.chosenText}
+                            </Text>
+                        </View>
+
                 </View>
 
                 <View style={styles.answerTweetBox}>
@@ -123,6 +138,18 @@ const styles = StyleSheet.create({
     answerScreen: {
         flex: 1,
     },
+    contextBox: {
+        backgroundColor: '#FFFFFD',
+        flexDirection: 'row',
+        padding: 20,
+        marginTop: 20,
+        marginLeft: 20,
+        marginRight: 20,
+    },
+    contextTextBox: {
+        flexDirection: 'column',
+        flex: 1,
+    },
     answerTweetBox: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -140,11 +167,11 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
     },
     answerImage: {
-        width: 256,
-        height: 256,
+        width: 128,
+        height: 128,
     },
     nextButton: {
-        width: 331,
+        width: 335,
     },
 });
 

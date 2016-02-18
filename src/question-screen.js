@@ -57,29 +57,52 @@ class QuestionScreen extends Component {
             );
         }
 
+        var screenStyles = [CommonStyles.screenBackground, styles.gameScreen];
+
+        var answersSection = (
+            <Answers
+                question={this.state.question}
+                navigator={this.props.navigator}
+                selectCallback={this.onSelectedAnswer.bind(this)}
+            />
+        );
+        if (this.state.chosenOption) {
+            var answeredCorrect = this.state.chosenOption.isAuthor;
+
+            screenStyles.push(answeredCorrect ? CommonStyles.screenSuccess : CommonStyles.screenFailure);
+
+            answersSection = (
+                <Results
+                    chosenOption={this.state.chosenOption}
+                    selectCallback={this.onContinue.bind(this)}
+                />
+            );
+        }
+
         return (
-            <View style={[CommonStyles.screenBackground, styles.gameScreen]}>
+            <View style={screenStyles}>
                 <Toolbar title={'Who Said?'} attemptsRemaining={this.state.attemptsRemaining}/>
                 <Question question={this.state.question} />
-                <Answers
-                    question={this.state.question}
-                    navigator={this.props.navigator}
-                    selectCallback={this.onSelectedAnswer.bind(this)}/>
+                {answersSection}
             </View>
         )
     }
 
-    onSelectedAnswer(selectedOption) {
+    onSelectedAnswer(chosenOption) {
         var questionUpdate = {};
         questionUpdate[this.state.question.uuid] = Object.assign({}, this.state.question, { answered: true });
 
         SimpleStore.update('questions', questionUpdate).then(() => {
-            this.props.navigator.push({
-                name: 'AnswerScreen',
-                component: (props) => {
-                    return new AnswerScreen(props, this.state.question, selectedOption);
-                }
-            });
+            this.setState(Object.assign(this.state, { chosenOption: chosenOption }));
+        });
+    }
+
+    onContinue() {
+        this.props.navigator.push({
+            name: 'AnswerScreen',
+            component: (props) => {
+                return new AnswerScreen(props, this.state.question, this.state.chosenOption);
+            }
         });
     }
 }
@@ -138,15 +161,35 @@ class Option extends Component {
                         source={this.props.option.image}
                     />
                     <View style={styles.optionContent}>
-                        <Text style={[CommonStyles.baseFont, styles.optionName]}>
+                        <Text style={[CommonStyles.baseText, styles.optionName]}>
                             {this.props.option.name}
                         </Text>
-                        <Text style={[CommonStyles.baseFont, styles.optionHandle]}>
+                        <Text style={[CommonStyles.baseText, styles.optionHandle]}>
                             @{this.props.option.handle}
                         </Text>
                     </View>
                 </View>
             </TouchableElement>
+        );
+    }
+}
+
+class Results extends Component {
+    render() {
+        return (
+            <View style={styles.resultsBox}>
+                <Text style={[CommonStyles.baseText, styles.resultsText]}>
+                    {this.props.chosenOption.chosenText}
+                </Text>
+
+                <TouchableElement onPress={this.props.selectCallback}>
+                    <View style={[CommonStyles.advanceButton, styles.continueButton]}>
+                        <Text style={CommonStyles.buttonText}>
+                            Continue >
+                        </Text>
+                    </View>
+                </TouchableElement>
+            </View>
         );
     }
 }
@@ -163,7 +206,9 @@ const styles = StyleSheet.create({
     },
     answerBox: {
         flex: 2,
+        margin: 20,
         flexDirection: 'column',
+        backgroundColor: '#FFFFFD',
     },
     answerOption: {
         width: 160,
@@ -190,6 +235,21 @@ const styles = StyleSheet.create({
     profilePic: {
         width: 64,
         height: 64,
+    },
+    resultsBox: {
+        flex: 2,
+        margin: 20,
+        flexDirection: 'column',
+        backgroundColor: '#FFFFFD',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    continueButton: {
+        width: 335,
+    },
+    resultsText: {
+        flex: 1,
+        padding: 20,
     },
 });
 
