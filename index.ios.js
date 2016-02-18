@@ -23,7 +23,7 @@ const questions = {
                 handle: 'Jason',
                 image: require('./assets/jason.jpg'),
                 link: 'http://twitter.com/jason',
-                chosenText: '',
+                chosenText: 'Na, it wasn\'t Jason Calacanis, but who can keep track of all these white guys anyway...',
             },
             {
                 name: 'Marc Andreessen',
@@ -31,19 +31,21 @@ const questions = {
                 image: require('./assets/pmarca.jpg'),
                 link: 'http://twitter.com/pmarca',
                 isAuthor: true,
+                chosenText: 'lol, yea...',
             },
             {
                 name: 'Big Bird',
                 handle: 'BigBird',
                 image: require('./assets/bigbird.png'),
                 link: 'http://twitter.com/bigbird',
-                chosenText: 'lol, yea...',
+                chosenText: 'Big Bird would never be racist!',
             },
             {
                 name: 'Benedict Evans',
                 handle: 'BenedictEvans',
                 image: require('./assets/benedictevans.jpeg'),
                 link: 'http://twitter.com/BenedictEvans',
+                chosenText: 'Na, it wasn\'t Benedict Evans, but who can keep track of all these white guys anyway...',
             }
         ]
     },
@@ -57,18 +59,21 @@ const questions = {
                 handle: 'Elmo',
                 image: require('./assets/elmo.png'),
                 link: 'http://twitter.com/elmo',
+                chosenText: 'Elmo would never minimize the struggles of people around the world in order to validate an economic system which keeps Elmo in power!',
             },
             {
                 name: 'Benedict Evans',
                 handle: 'BenedictEvans',
                 image: require('./assets/benedictevans.jpeg'),
                 link: 'http://twitter.com/BenedictEvans',
+                chosenText: 'Na, it wasn\'t Benedict Evans, but who can keep track of all these white guys anyway...',
             },
             {
                 name: 'Jason Calacanis',
                 handle: 'Jason',
                 image: require('./assets/jason.jpg'),
                 link: 'http://twitter.com/jason',
+                chosenText: 'Na, it wasn\'t Jason Calacanis, but who can keep track of all these white guys anyway...',
             },
             {
                 name: 'Marc Andreessen',
@@ -76,6 +81,7 @@ const questions = {
                 image: require('./assets/pmarca.jpg'),
                 link: 'http://twitter.com/pmarca',
                 isAuthor: true,
+                chosenText: 'lol, yea...',
             },
         ]
     },
