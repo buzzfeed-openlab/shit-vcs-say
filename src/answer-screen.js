@@ -81,20 +81,7 @@ class AnswerScreen extends Component {
 
                 <Toolbar attemptsRemaining={this.state.attemptsRemaining}/>
 
-                <View style={[styles.centerContainer, styles.contextBox]}>
 
-                        <Image
-                            style={styles.answerImage}
-                            source={answeredCorrect ? checkImage : crossImage}
-                        />
-
-                        <View style={styles.contextTextBox}>
-                            <Text style={[CommonStyles.baseText]}>
-                                {this.state.chosenOption.chosenText}
-                            </Text>
-                        </View>
-
-                </View>
 
                 <View style={styles.answerTweetBox}>
                     <TweetBox
