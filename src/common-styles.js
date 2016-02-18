@@ -12,7 +12,6 @@ const CommonStyles = StyleSheet.create({
     },
     advanceButton: {
         backgroundColor: '#1E90FF',
-        width: 128,
         height: 32,
         alignItems: 'center',
         justifyContent: 'center',

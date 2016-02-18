@@ -94,13 +94,15 @@ class AnswerScreen extends Component {
                 <View style={styles.centerContainer}>
 
                     <View style={styles.actionOptionsBox}>
+
                         <TouchableElement onPress={this.onNextQuestion.bind(this)}>
-                            <View style={CommonStyles.advanceButton}>
+                            <View style={[CommonStyles.advanceButton, styles.nextButton]}>
                                 <Text style={CommonStyles.buttonText}>
                                     Next >
                                 </Text>
                             </View>
                         </TouchableElement>
+
                     </View>
 
                 </View>
@@ -135,10 +137,14 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
         justifyContent: 'flex-end',
+        alignItems: 'flex-end',
     },
     answerImage: {
         width: 256,
         height: 256,
+    },
+    nextButton: {
+        width: 331,
     },
 });
 

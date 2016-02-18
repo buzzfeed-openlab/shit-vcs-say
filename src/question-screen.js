@@ -165,12 +165,6 @@ const styles = StyleSheet.create({
         flex: 2,
         flexDirection: 'column',
     },
-    answerRow: {
-        flex:1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
     answerOption: {
         width: 160,
         height: 160,
