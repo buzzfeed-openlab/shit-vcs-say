@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     startGameButton: {
-        width: 331,
+        width: 256,
     },
 });
 

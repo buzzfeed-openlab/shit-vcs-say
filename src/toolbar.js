@@ -21,6 +21,10 @@ class Toolbar extends Component {
     render() {
         return (
             <View style={styles.toolbar}>
+                <Text style={styles.toolbarTitle}>
+                    {this.props.title}
+                </Text>
+
                 <Text style={styles.toolbarText}>
                     Guesses left: {this.props.attemptsRemaining}
                 </Text>
@@ -36,6 +40,16 @@ const styles = StyleSheet.create({
         paddingBottom:10,
         flexDirection:'row',
         justifyContent: 'flex-end',
+    },
+    toolbarTitleBox: {
+
+    },
+    toolbarTitle: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        textAlign: 'left',
+        flex: 1,
+        paddingLeft: 20,
     },
     toolbarText: {
         paddingRight: 20,

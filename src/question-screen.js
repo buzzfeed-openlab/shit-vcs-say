@@ -59,7 +59,7 @@ class QuestionScreen extends Component {
 
         return (
             <View style={[CommonStyles.screenBackground, styles.gameScreen]}>
-                <Toolbar attemptsRemaining={this.state.attemptsRemaining}/>
+                <Toolbar title={'Who Said?'} attemptsRemaining={this.state.attemptsRemaining}/>
                 <Question question={this.state.question} />
                 <Answers
                     question={this.state.question}
