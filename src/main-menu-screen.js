@@ -13,7 +13,7 @@ import React, {
 } from 'react-native';
 
 import CommonStyles from './common-styles.js';
-import QuestionScreen from './question-screen.js';
+import QuizSelectScreen from './quiz-select-screen.js';
 
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
@@ -33,13 +33,15 @@ class MainMenuScreen extends Component {
                 </View>
                 <View style={styles.menuBox}>
 
-                    <TouchableElement onPress={this.onStartGame.bind(this)}>
-                        <View style={[CommonStyles.advanceButton, styles.startGameButton]}>
-                            <Text style={CommonStyles.buttonText}>
-                                How bad could it be
-                            </Text>
-                        </View>
-                    </TouchableElement>
+                    <View style={styles.playButtonBox}>
+                        <TouchableElement onPress={this.onStartGame.bind(this)}>
+                            <View style={[CommonStyles.advanceButton, styles.menuButton]}>
+                                <Text style={CommonStyles.buttonText}>
+                                    How bad could it be >
+                                </Text>
+                            </View>
+                        </TouchableElement>
+                    </View>
 
                 </View>
 
@@ -49,8 +51,8 @@ class MainMenuScreen extends Component {
 
     onStartGame() {
         this.props.navigator.push({
-            name: 'QuestionScreen',
-            component: QuestionScreen,
+            name: 'QuizSelectScreen',
+            component: QuizSelectScreen,
         });
     }
 }
@@ -71,7 +73,10 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
     },
-    startGameButton: {
+    playButtonBox: {
+        marginBottom: 40
+    },
+    menuButton: {
         width: 256,
     },
 });
