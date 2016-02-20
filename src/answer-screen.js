@@ -40,21 +40,29 @@ class AnswerScreen extends Component {
 
     componentWillMount() {
         SimpleStore.get('currentStreak').then((currentStreak) => {
-            var oldStreak = currentStreak;
+            SimpleStore.get('bestStreak').then((bestStreak) => {
+                var oldStreak = currentStreak;
 
-            if (!this.state.chosenOption.isAuthor) {
-                currentStreak = 0;
-            } else {
-                currentStreak += 1;
-            }
+                if (!this.state.chosenOption.isAuthor) {
+                    currentStreak = 0;
+                } else {
+                    currentStreak += 1;
+                }
 
-            SimpleStore.save('oldStreak', oldStreak);
-            SimpleStore.save('currentStreak', currentStreak);
+                if (bestStreak < currentStreak) {
+                    bestStreak = currentStreak;
+                    SimpleStore.save('bestStreak', bestStreak);
+                }
 
-            this.setState(Object.assign(this.state, {
-                oldStreak: oldStreak,
-                currentStreak: currentStreak,
-            }));
+                SimpleStore.save('oldStreak', oldStreak);
+                SimpleStore.save('currentStreak', currentStreak);
+
+                this.setState(Object.assign(this.state, {
+                    oldStreak: oldStreak,
+                    currentStreak: currentStreak,
+                    bestStreak: bestStreak,
+                }));
+            });
         });
 
         // find the correct answer
@@ -85,6 +93,7 @@ class AnswerScreen extends Component {
                     answeredCorrectly={this.state.chosenOption.isAuthor == true}
                     streakLength={this.state.currentStreak}
                     oldStreak={this.state.oldStreak}
+                    bestStreak={this.state.bestStreak}
                     chosenText={this.state.chosenOption.chosenText}
                 />
 
@@ -135,13 +144,23 @@ class StreakViewer extends Component {
             answerImage = checkImage;
 
             contentBox = (
-                <View style={[styles.resultBoxContent]}>
-                    <Text style={[CommonStyles.baseText, styles.streakWinText]}>
-                        Streak
-                    </Text>
-                    <Text style={[CommonStyles.baseText, styles.streakWinText]}>
-                        {this.props.streakLength}
-                    </Text>
+                <View style={[styles.resultBoxContent, styles.resultBoxContentWin]}>
+                    <View style={styles.scoreBoxWin}>
+                        <Text style={[CommonStyles.baseText, styles.streakWinText]}>
+                            Streak
+                        </Text>
+                        <Text style={[CommonStyles.baseText, styles.streakWinText]}>
+                            {this.props.streakLength}
+                        </Text>
+                    </View>
+                    <View style={styles.scoreBoxWin}>
+                        <Text style={[CommonStyles.baseText, styles.streakWinText]}>
+                            Best
+                        </Text>
+                        <Text style={[CommonStyles.baseText, styles.streakWinText]}>
+                            {this.props.bestStreak}
+                        </Text>
+                    </View>
                 </View>
             );
 
@@ -186,9 +205,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFD',
         margin: 20,
     },
-    streakViewerBox: {
-
-    },
     streakWinText: {
         fontSize: 20,
         fontWeight: 'bold',
@@ -206,6 +222,17 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         padding: 20,
+    },
+    resultBoxContentWin: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+    },
+    scoreBoxWin: {
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     answerTweetBox: {
         flexDirection: 'row',
