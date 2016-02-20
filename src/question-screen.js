@@ -29,7 +29,7 @@ if (Platform.OS === 'android') {
 class QuestionScreen extends Component {
     constructor(props) {
         super(props);
-        this.state = { question: null };
+        this.state = { question: null, currentStreak: null };
     }
 
     componentWillMount() {
@@ -44,8 +44,8 @@ class QuestionScreen extends Component {
             }
         });
 
-        SimpleStore.get('attemptsRemaining').then((attempts) => {
-            this.setState(Object.assign(this.state, { attemptsRemaining: attempts }));
+        SimpleStore.get('currentStreak').then((currentStreak) => {
+            this.setState(Object.assign(this.state, { currentStreak: currentStreak }));
         });
     }
 
@@ -59,7 +59,7 @@ class QuestionScreen extends Component {
 
         return (
             <View style={[CommonStyles.screenBackground, styles.gameScreen]}>
-                <Toolbar title={'Who Said?'} attemptsRemaining={this.state.attemptsRemaining}/>
+                <Toolbar currentStreak={this.state.currentStreak} />
                 <Question question={this.state.question} />
                 <Answers
                     question={this.state.question}

@@ -24,6 +24,10 @@ class Toolbar extends Component {
                 <Text style={styles.toolbarTitle}>
                     {this.props.title}
                 </Text>
+
+                <Text style={styles.toolbarText}>
+                    {this.props.currentStreak}
+                </Text>
             </View>
         );
     }
@@ -51,6 +55,7 @@ const styles = StyleSheet.create({
         paddingRight: 20,
         fontWeight:'bold',
         textAlign:'right',
+        color: '#b3de69',
     },
 });
 
