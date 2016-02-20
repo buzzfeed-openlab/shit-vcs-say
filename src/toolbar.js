@@ -24,10 +24,6 @@ class Toolbar extends Component {
                 <Text style={styles.toolbarTitle}>
                     {this.props.title}
                 </Text>
-
-                <Text style={styles.toolbarText}>
-                    Guesses left: {this.props.attemptsRemaining}
-                </Text>
             </View>
         );
     }

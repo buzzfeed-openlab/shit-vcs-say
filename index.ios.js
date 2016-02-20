@@ -121,7 +121,7 @@ const questions = {
 };
 
 SimpleStore.save('questions', questions);
-SimpleStore.save('attemptsRemaining', 2);
+SimpleStore.save('currentStreak', 0);
 
 class QuizGame extends Component {
     render() {

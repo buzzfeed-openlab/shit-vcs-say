@@ -39,15 +39,22 @@ class AnswerScreen extends Component {
     }
 
     componentWillMount() {
-        SimpleStore.get('attemptsRemaining').then((attempts) => {
-            var attemptsRemaining = attempts;
+        SimpleStore.get('currentStreak').then((currentStreak) => {
+            var oldStreak = currentStreak;
 
             if (!this.state.chosenOption.isAuthor) {
-                attemptsRemaining -= 1;
-                SimpleStore.save('attemptsRemaining', attemptsRemaining);
+                currentStreak = 0;
+            } else {
+                currentStreak += 1;
             }
 
-            this.setState(Object.assign(this.state, { attemptsRemaining: attemptsRemaining }));
+            SimpleStore.save('oldStreak', oldStreak);
+            SimpleStore.save('currentStreak', currentStreak);
+
+            this.setState(Object.assign(this.state, {
+                oldStreak: oldStreak,
+                currentStreak: currentStreak,
+            }));
         });
 
         // find the correct answer
@@ -62,7 +69,7 @@ class AnswerScreen extends Component {
     }
 
     render() {
-        if (!this.state.answer || this.state.attemptsRemaining == null) {
+        if (!this.state.answer || this.state.currentStreak == null) {
             return (
                 <View style={CommonStyles.screenBackground}>
                 </View>
@@ -72,14 +79,14 @@ class AnswerScreen extends Component {
         return (
             <View style={[CommonStyles.screenBackground, styles.answerScreen]}>
 
-                <Toolbar attemptsRemaining={this.state.attemptsRemaining}/>
+                <Toolbar />
 
-                <View style={styles.centerContainer}>
-                    <Image
-                        style={styles.answerImage}
-                        source={this.state.chosenOption.isAuthor ? checkImage : crossImage}
-                    />
-                </View>
+                <StreakViewer
+                    answeredCorrectly={this.state.chosenOption.isAuthor == true}
+                    streakLength={this.state.currentStreak}
+                    oldStreak={this.state.oldStreak}
+                    chosenText={this.state.chosenOption.chosenText}
+                />
 
                 <View style={styles.answerTweetBox}>
                     <TweetBox
@@ -119,9 +126,86 @@ class AnswerScreen extends Component {
     }
 }
 
+class StreakViewer extends Component {
+    render() {
+        var contentBox = null;
+        var answerImage = null;
+
+        if (this.props.answeredCorrectly) {
+            answerImage = checkImage;
+
+            contentBox = (
+                <View style={[styles.resultBoxContent]}>
+                    <Text style={[CommonStyles.baseText, styles.streakWinText]}>
+                        Streak
+                    </Text>
+                    <Text style={[CommonStyles.baseText, styles.streakWinText]}>
+                        {this.props.streakLength}
+                    </Text>
+                </View>
+            );
+
+        } else {
+            answerImage = crossImage;
+
+            var streakBrokenText = 'No streak for you!';
+            if (this.props.oldStreak) {
+                streakBrokenText = 'You broke your streak!';
+            }
+
+            contentBox = (
+                <View style={[styles.resultBoxContent]}>
+                    <Text style={[CommonStyles.baseText, styles.streakLoseText]}>
+                        {streakBrokenText}
+                    </Text>
+                    <Text style={[CommonStyles.baseText]}>
+                        {this.props.chosenText}
+                    </Text>
+                </View>
+            );
+        }
+
+        return (
+            <View style={[styles.centerContainer, styles.streakViewer]}>
+                <Image
+                    style={styles.answerImage}
+                    source={answerImage}
+                />
+                {contentBox}
+            </View>
+        );
+    }
+}
+
 const styles = StyleSheet.create({
     answerScreen: {
         flex: 1,
+    },
+    streakViewer: {
+        flexDirection: 'row',
+        backgroundColor: '#FFFFFD',
+        margin: 20,
+    },
+    streakViewerBox: {
+
+    },
+    streakWinText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#b3de69',
+        paddingBottom: 10,
+        textAlign: 'center',
+    },
+    streakLoseText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#fb8072',
+        paddingBottom: 10,
+    },
+    resultBoxContent: {
+        flex: 1,
+        flexDirection: 'column',
+        padding: 20,
     },
     answerTweetBox: {
         flexDirection: 'row',
@@ -140,8 +224,8 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
     },
     answerImage: {
-        width: 256,
-        height: 256,
+        width: 128,
+        height: 128,
     },
     nextButton: {
         width: 331,
