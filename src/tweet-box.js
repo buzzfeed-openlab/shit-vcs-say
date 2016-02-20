@@ -48,8 +48,8 @@ class TweetBox extends Component {
             )
         }
 
-        return (
-            <View style={styles.tweetBox}>
+        var content = (
+            <View>
                 <View style={styles.tweetHeader}>
                     {imageElement}
 
@@ -69,7 +69,23 @@ class TweetBox extends Component {
                     </Text>
                 </View>
             </View>
-        )
+        );
+
+        if (this.props.tweetUrl) {
+            content = (
+                <TouchableElement style={styles.tweetBox} onPress={() => Linking.openURL(this.props.tweetUrl)}>
+                    {content}
+                </TouchableElement>
+            );
+        } else {
+            content = (
+                <View style={styles.tweetBox}>
+                    {content}
+                </View>
+            );
+        }
+
+        return content;
     }
 }
 

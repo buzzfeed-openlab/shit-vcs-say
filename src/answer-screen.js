@@ -104,6 +104,7 @@ class AnswerScreen extends Component {
                         handle={this.state.answer.handle}
                         text={this.state.question.text}
                         profileUrl={this.state.answer.link}
+                        tweetUrl={this.state.question.link}
                     />
                 </View>
 
