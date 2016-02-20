@@ -34,14 +34,8 @@ class QuestionScreen extends Component {
 
     componentWillMount() {
         SimpleStore.get('questions').then((questions) => {
-            for (var id in questions) {
-                var question = questions[id];
-
-                if (!question.answered) {
-                    this.setState(Object.assign(this.state, { question: question }));
-                    break;
-                }
-            }
+            var question = this.pickRandomQuestion(questions);
+            this.setState(Object.assign(this.state, { question: question }));
         });
 
         SimpleStore.get('currentStreak').then((currentStreak) => {
@@ -81,6 +75,19 @@ class QuestionScreen extends Component {
                 }
             });
         });
+    }
+
+    pickRandomQuestion(questions) {
+        var newQuestions = [],
+            oldQuestions = [];
+
+        for (var id in questions) {
+            var questionGroup = questions[id].answered ? oldQuestions : newQuestions;
+            questionGroup.push(questions[id]);
+        }
+
+        var questionGroup = newQuestions.length ? newQuestions : oldQuestions;
+        return questionGroup[Math.floor(Math.random() * questionGroup.length)];
     }
 }
 
