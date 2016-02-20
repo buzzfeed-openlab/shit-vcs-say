@@ -59,7 +59,7 @@ const questions = {
                 handle: 'Elmo',
                 image: require('./assets/elmo.png'),
                 link: 'http://twitter.com/elmo',
-                chosenText: 'Elmo would never minimize the struggles of people around the world in order to validate an economic system which keeps Elmo in power!',
+                chosenText: 'Elmo would never minimize others struggles in order to validate an economic system which keeps Elmo in power!',
             },
             {
                 name: 'Benedict Evans',
