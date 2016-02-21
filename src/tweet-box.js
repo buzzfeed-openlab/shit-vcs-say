@@ -20,6 +20,7 @@ if (Platform.OS === 'android') {
 
 class TweetBox extends Component {
     render() {
+        // optional handle text
         var handleText = null;
         if (this.props.handle) {
             handleText = (
@@ -29,25 +30,22 @@ class TweetBox extends Component {
             )
         }
 
-        var imageElement = null;
+        // image optionally linkable
+        var imageElement = (
+            <Image
+                style={styles.profilePic}
+                source={this.props.image}
+            />
+        );
         if (this.props.profileUrl) {
             imageElement = (
                 <TouchableElement onPress={() => Linking.openURL(this.props.profileUrl)}>
-                    <Image
-                        style={styles.profilePic}
-                        source={this.props.image}
-                    />
+                    {imageElement}
                 </TouchableElement>
-            )
-        } else {
-            imageElement = (
-                <Image
-                    style={styles.profilePic}
-                    source={this.props.image}
-                />
-            )
+            );
         }
 
+        // tweet box content
         var content = (
             <View>
                 <View style={styles.tweetHeader}>
@@ -71,6 +69,7 @@ class TweetBox extends Component {
             </View>
         );
 
+        // tweet box optionally linkable
         if (this.props.tweetUrl) {
             content = (
                 <TouchableElement style={styles.tweetBox} onPress={() => Linking.openURL(this.props.tweetUrl)}>
