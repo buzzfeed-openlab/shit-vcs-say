@@ -9,6 +9,6 @@
     "react-native": "^0.20.x",
     "react-native-grid-view": "0.3.x",
     "react-native-simple-store": "0.1.x",
-    "react-native-social-share": "^0.6.0"
+    "react-native-social-share": "https://github.com/WestleyArgentum/react-native-social-share.git"
   }
 }
