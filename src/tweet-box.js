@@ -158,6 +158,7 @@ const styles = StyleSheet.create({
     profilePic: {
         width: 64,
         height: 64,
+        borderRadius: 6,
     },
     shareButtonBox: {
         flex: 1,
@@ -169,6 +170,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     shareButtonText: {
+        fontSize: 12,
         textAlign: 'center',
         color: '#8899a6',
     }

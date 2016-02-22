@@ -8,7 +8,7 @@ import React, {
 
 const CommonStyles = StyleSheet.create({
     screenBackground: {
-        backgroundColor:'#ECF1EF',
+        backgroundColor:'#333333',
     },
     advanceButton: {
         backgroundColor: '#1E90FF',
@@ -24,6 +24,11 @@ const CommonStyles = StyleSheet.create({
         fontFamily: 'Helvetica Neue',
         fontSize: 16,
     },
+    profilePic: {
+        width: 64,
+        height: 64,
+        borderRadius: 6,
+    }
 });
 
 export default CommonStyles;

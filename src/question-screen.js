@@ -141,7 +141,7 @@ class Option extends Component {
             <TouchableElement onPress={() => this.props.selectCallback(this.props.option)}>
                 <View style={styles.answerOption}>
                     <Image
-                        style={styles.profilePic}
+                        style={CommonStyles.profilePic}
                         source={this.props.option.image}
                     />
                     <View style={styles.optionContent}>
@@ -195,10 +195,6 @@ const styles = StyleSheet.create({
         fontSize: 12,
         textAlign: 'center',
         color: '#8899a6',
-    },
-    profilePic: {
-        width: 64,
-        height: 64,
     },
 });
 
