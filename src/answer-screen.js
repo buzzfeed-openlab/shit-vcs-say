@@ -206,18 +206,19 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: '#FFFFFD',
         margin: 20,
+        borderRadius: 6,
     },
     streakWinText: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#b3de69',
+        color: '#27ae60',
         paddingBottom: 10,
         textAlign: 'center',
     },
     streakLoseText: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#fb8072',
+        color: '#e74c3c',
         paddingBottom: 10,
     },
     resultBoxContent: {

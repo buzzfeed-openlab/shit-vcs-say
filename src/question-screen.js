@@ -173,6 +173,7 @@ const styles = StyleSheet.create({
         margin: 20,
         flexDirection: 'column',
         backgroundColor: '#FFFFFD',
+        borderRadius: 6,
     },
     answerOption: {
         width: 160,

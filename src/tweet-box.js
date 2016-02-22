@@ -126,6 +126,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         padding: 20,
         backgroundColor: '#FFFFFD',
+        borderRadius: 6,
     },
     tweetHeader: {
         height: 64,
@@ -163,7 +164,7 @@ const styles = StyleSheet.create({
     shareButtonBox: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
     },
     shareButton: {
         flex: 1,

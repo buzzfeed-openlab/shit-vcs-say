@@ -20,15 +20,18 @@ if (Platform.OS === 'android') {
     TouchableElement = TouchableNativeFeedback;
 }
 
+const titleImage = require('../assets/title-image.png');
+
 class MainMenuScreen extends Component {
     render() {
         return (
             <View style={[CommonStyles.screenBackground, styles.mainMenuScreen]}>
                 <View style={styles.titleBox}>
 
-                    <Text style={[CommonStyles.baseText, styles.titleText]}>
-                        Shit VCs Say
-                    </Text>
+                    <Image
+                    style={styles.titleImage}
+                    source={titleImage}
+                    />
 
                 </View>
                 <View style={styles.menuBox}>
@@ -61,8 +64,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     titleBox: {
-        flex: 1,
+        flex: 3,
         justifyContent: 'center',
+    },
+    titleImage: {
+        flex:1,
     },
     titleText: {
         fontSize: 40,

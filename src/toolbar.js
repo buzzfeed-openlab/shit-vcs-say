@@ -35,7 +35,7 @@ class Toolbar extends Component {
 
 const styles = StyleSheet.create({
     toolbar: {
-        backgroundColor:'#FFFFFD',
+        backgroundColor:'#333333',
         paddingTop:30,
         paddingBottom:10,
         flexDirection:'row',
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         paddingRight: 20,
         fontWeight:'bold',
         textAlign:'right',
-        color: '#b3de69',
+        color: '#27ae60',
     },
 });
 
