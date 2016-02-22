@@ -18,8 +18,8 @@ const questions = {
         text: 'Anti-colonialism has been economically catastrophic for the Indian people for decades. Why stop now?',
         link: 'http://www.bloomberg.com/news/articles/2016-02-10/marc-andreessen-pro-colonialism-tweet-riles-up-india-tech-world',
         twitterShare: {
-            'text':'Global democratized marketplace for art',
-            'link':'https://artboost.com/',
+            'text':'#ShitVCsSay ',
+            'link':'http://www.bloomberg.com/news/articles/2016-02-10/marc-andreessen-pro-colonialism-tweet-riles-up-india-tech-world',
         },
         options: [
             {
@@ -58,8 +58,8 @@ const questions = {
         text: 'The world has never been more peaceful, more wealthy, more equal, with more jobs, more education, or more opportunity. The future is bright.',
         link: 'https://twitter.com/pmarca/status/652692676752465921',
         twitterShare: {
-            'text':'Global democratized marketplace for art',
-            'link':'https://artboost.com/',
+            'text':'#ShitVCsSay ',
+            'link':'https://twitter.com/pmarca/status/652692676752465921',
         },
         options: [
             {
@@ -98,8 +98,8 @@ const questions = {
         text: 'I actually own three tuxedos!',
         link: 'https://twitter.com/BigBird/status/623205331305279488',
         twitterShare: {
-            'text':'Global democratized marketplace for art',
-            'link':'https://artboost.com/',
+            'text':'#ShitVCsSay ',
+            'link':'https://twitter.com/BigBird/status/623205331305279488',
         },
         options: [
             {
