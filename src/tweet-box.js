@@ -13,6 +13,10 @@ import React, {
     Linking,
 } from 'react-native';
 
+import CommonStyles from './common-styles.js';
+
+var KDSocialShare = require('NativeModules').KDSocialShare;
+
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
     TouchableElement = TouchableNativeFeedback;
@@ -45,6 +49,26 @@ class TweetBox extends Component {
             );
         }
 
+        // share buttons are optional
+        var shareButtons = null;
+        if (this.props.twitterShare) {
+            shareButtons = (
+                <View style={styles.shareButtonBox}>
+                    <TouchableElement style={styles.shareButton} onPress={() => this.onTweet()}>
+                        <Text style={[CommonStyles.baseText, styles.shareButtonText]}>
+                            Tweet
+                        </Text>
+                    </TouchableElement>
+
+                    <TouchableElement style={styles.shareButton}>
+                        <Text style={[CommonStyles.baseText, styles.shareButtonText]}>
+                            Link
+                        </Text>
+                    </TouchableElement>
+                </View>
+            );
+        }
+
         // tweet box content
         var content = (
             <View>
@@ -66,6 +90,8 @@ class TweetBox extends Component {
                         {this.props.text}
                     </Text>
                 </View>
+
+                {shareButtons}
             </View>
         );
 
@@ -85,6 +111,12 @@ class TweetBox extends Component {
         }
 
         return content;
+    }
+
+    onTweet() {
+        KDSocialShare.tweet(this.props.twitterShare, (results) => {
+            console.log('bleep bloop: ',results);
+        });
     }
 }
 
@@ -127,6 +159,19 @@ const styles = StyleSheet.create({
         width: 64,
         height: 64,
     },
+    shareButtonBox: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+    },
+    shareButton: {
+        flex: 1,
+        flexDirection: 'column',
+    },
+    shareButtonText: {
+        textAlign: 'center',
+        color: '#8899a6',
+    }
 });
 
 export default TweetBox;
