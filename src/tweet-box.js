@@ -22,6 +22,9 @@ if (Platform.OS === 'android') {
     TouchableElement = TouchableNativeFeedback;
 }
 
+const twitterShareImage = require('../assets/twitter-share.png');
+const linkShareImage = require('../assets/link-share.png');
+
 class TweetBox extends Component {
     render() {
         // optional handle text
@@ -54,16 +57,18 @@ class TweetBox extends Component {
         if (this.props.twitterShare) {
             shareButtons = (
                 <View style={styles.shareButtonBox}>
-                    <TouchableElement style={styles.shareButton} onPress={() => this.onTweet()}>
-                        <Text style={[CommonStyles.baseText, styles.shareButtonText]}>
-                            Tweet
-                        </Text>
+                    <TouchableElement style={styles.shareButtonTwitter} onPress={() => this.onTweet()}>
+                        <Image
+                            style={styles.shareImageTwitter}
+                            source={twitterShareImage}
+                        />
                     </TouchableElement>
 
-                    <TouchableElement style={styles.shareButton}>
-                        <Text style={[CommonStyles.baseText, styles.shareButtonText]}>
-                            Link
-                        </Text>
+                    <TouchableElement style={styles.shareButtonLink}>
+                        <Image
+                            style={styles.shareImageLink}
+                            source={linkShareImage}
+                        />
                     </TouchableElement>
                 </View>
             );
@@ -164,17 +169,30 @@ const styles = StyleSheet.create({
     shareButtonBox: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'flex-start',
+        marginTop: 10,
     },
-    shareButton: {
+    shareButtonTwitter: {
         flex: 1,
         flexDirection: 'column',
+        height: 32,
+        backgroundColor: '#55acee',
+
     },
-    shareButtonText: {
-        fontSize: 12,
-        textAlign: 'center',
-        color: '#8899a6',
-    }
+    shareImageTwitter: {
+        width: 32,
+        height: 32,
+    },
+    shareButtonLink: {
+        flexDirection: 'column',
+        flex: 1,
+        height: 32,
+        backgroundColor: '#666666'
+    },
+    shareImageLink: {
+        width: 85,
+        height: 32,
+    },
 });
 
 export default TweetBox;
