@@ -29,8 +29,8 @@ class MainMenuScreen extends Component {
                 <View style={styles.titleBox}>
 
                     <Image
-                    style={styles.titleImage}
-                    source={titleImage}
+                        style={styles.titleImage}
+                        source={titleImage}
                     />
 
                 </View>
@@ -45,7 +45,6 @@ class MainMenuScreen extends Component {
                     </TouchableElement>
 
                 </View>
-
             </View>
         );
     }
@@ -61,21 +60,24 @@ class MainMenuScreen extends Component {
 const styles = StyleSheet.create({
     mainMenuScreen: {
         flex: 1,
-        alignItems: 'center',
     },
     titleBox: {
-        flex: 3,
+        flex: 1,
+        alignSelf: 'center',
         justifyContent: 'center',
     },
     titleImage: {
-        flex:1,
+        width: 300,
+        height: 500,
     },
     titleText: {
         fontSize: 40,
     },
     menuBox: {
-        flex: 1,
+        alignSelf: 'flex-end',
+        margin: 20,
         justifyContent: 'center',
+        alignItems: 'center',
     },
     startGameButton: {
         width: 256,
