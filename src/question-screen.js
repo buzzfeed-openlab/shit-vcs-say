@@ -55,6 +55,8 @@ class QuestionScreen extends Component {
                 <Toolbar title={'Who tweeted?'} currentStreak={this.state.currentStreak} />
                 <Question question={this.state.question} />
 
+                <View style={{width: 256, borderTopWidth: 1, borderColor: '#FFFFFD', marginTop: 20, marginBottom: 5, alignSelf: 'center', height: 0}}/>
+
                 <Answers
                     question={this.state.question}
                     navigator={this.props.navigator}
@@ -167,7 +169,6 @@ const styles = StyleSheet.create({
         flex: 2,
         margin: 20,
         flexDirection: 'column',
-        borderRadius: 6,
         justifyContent: 'flex-start',
     },
     answerOption: {
@@ -178,7 +179,7 @@ const styles = StyleSheet.create({
         flex: 1,
         borderRadius: 6,
         alignItems: 'center',
-        marginTop: 20,
+        marginBottom: 20,
     },
     optionContent: {
         flex: 1,
