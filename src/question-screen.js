@@ -13,7 +13,6 @@ import React, {
     Platform,
 } from 'react-native';
 
-import GridView from 'react-native-grid-view';
 import SimpleStore from 'react-native-simple-store';
 
 import AnswerScreen from './answer-screen';
@@ -109,15 +108,9 @@ class Answers extends Component {
     render() {
         return (
             <View style={styles.answerBox}>
-
-                <GridView
-                    scrollEnabled={false}
-
-                    items={this.props.question.options}
-                    itemsPerRow={2}
-                    renderItem={this.renderOption.bind(this)}
-                />
-
+                {this.props.question.options.map((option) => {
+                    return this.renderOption(option);
+                })}
             </View>
         )
     }
@@ -129,6 +122,7 @@ class Answers extends Component {
                 question={this.props.question}
                 navigator={this.props.navigator}
                 selectCallback={this.props.selectCallback}
+
                 key={option.handle}
             />
         );
@@ -172,29 +166,30 @@ const styles = StyleSheet.create({
         flex: 2,
         margin: 20,
         flexDirection: 'column',
-        backgroundColor: '#FFFFFD',
         borderRadius: 6,
+        justifyContent: 'space-around',
     },
     answerOption: {
-        width: 160,
-        height: 160,
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
+        padding: 20,
+        flexDirection: 'row',
         backgroundColor: '#FFFFFD',
+        padding: 8,
+        flex: 1,
+        borderRadius: 6,
+        alignItems: 'center',
     },
     optionContent: {
-        padding: 8,
+        flex: 1,
+        margin: 8,
         flexDirection: 'column',
-        alignItems: 'center',
     },
     optionName: {
         fontSize: 16,
-        textAlign: 'center',
+        textAlign: 'left',
     },
     optionHandle: {
         fontSize: 12,
-        textAlign: 'center',
+        textAlign: 'left',
         color: '#8899a6',
     },
 });
