@@ -57,7 +57,7 @@ class QuestionScreen extends Component {
 
         return (
             <View style={[CommonStyles.screenBackground, styles.gameScreen]}>
-                <Toolbar title={'Who tweeted?'} currentStreak={this.state.currentStreak} bestStreak={this.state.bestStreak} />
+                <Toolbar navigator={this.props.navigator} title={'Who tweeted?'} currentStreak={this.state.currentStreak} bestStreak={this.state.bestStreak} />
                 <Question question={this.state.question} />
                 
                 <Answers

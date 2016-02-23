@@ -87,7 +87,7 @@ class AnswerScreen extends Component {
         return (
             <View style={[CommonStyles.screenBackground, styles.answerScreen]}>
 
-                <Toolbar currentStreak={this.state.currentStreak} bestStreak={this.state.bestStreak} />
+                <Toolbar navigator={this.props.navigator} currentStreak={this.state.currentStreak} bestStreak={this.state.bestStreak} />
 
                 <View style={styles.answerTweetBox}>
                     <TweetBox
