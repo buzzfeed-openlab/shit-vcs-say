@@ -28,7 +28,13 @@ const CommonStyles = StyleSheet.create({
         width: 64,
         height: 64,
         borderRadius: 6,
-    }
+    },
+    textWin: {
+        color: '#27ae60'
+    },
+    textLose: {
+        color: '#e74c3c'
+    },
 });
 
 export default CommonStyles;

@@ -12,6 +12,8 @@ import React, {
     Platform,
 } from 'react-native';
 
+import CommonStyles from './common-styles.js';
+
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
     TouchableElement = TouchableNativeFeedback;
@@ -19,14 +21,30 @@ if (Platform.OS === 'android') {
 
 class Toolbar extends Component {
     render() {
+        var streakStyles = [CommonStyles.baseText, styles.toolbarText, CommonStyles.textLose];
+        if (this.props.currentStreak) {
+            streakStyles = [CommonStyles.baseText, styles.toolbarText, CommonStyles.textWin];
+        }
+
+        var bestStreakStyles = [CommonStyles.baseText, styles.toolbarText, CommonStyles.textLose];
+        if (this.props.bestStreak) {
+            bestStreakStyles = [CommonStyles.baseText, styles.toolbarText, CommonStyles.textWin];
+        }
+
         return (
             <View style={styles.toolbar}>
-                <Text style={styles.toolbarTitle}>
+                <Text style={[CommonStyles.baseText, styles.toolbarTitle]}>
                     {this.props.title}
                 </Text>
 
-                <Text style={styles.toolbarText}>
+                <Text style={streakStyles}>
                     {this.props.currentStreak}
+                </Text>
+                <Text style={[CommonStyles.baseText, styles.toolbarText]}>
+                    /
+                </Text>
+                <Text style={bestStreakStyles}>
+                    {this.props.bestStreak}
                 </Text>
             </View>
         );
@@ -57,7 +75,7 @@ const styles = StyleSheet.create({
         paddingRight: 20,
         fontWeight:'bold',
         textAlign:'right',
-        color: '#27ae60',
+        color: '#FFFFFD',
     },
 });
 
