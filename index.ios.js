@@ -5,6 +5,7 @@ import React, {
     AppRegistry,
     Component,
     Navigator,
+    StatusBarIOS,
 } from 'react-native';
 
 import SimpleStore from 'react-native-simple-store';
@@ -23,19 +24,13 @@ const questions = {
         },
         options: [
             {
-                name: 'Jason Calacanis',
-                handle: 'Jason',
-                image: require('./assets/jason.jpg'),
-                link: 'http://twitter.com/jason',
-                chosenText: 'Na, it wasn\'t Jason Calacanis, but who can keep track of all these white guys anyway...',
-            },
-            {
                 name: 'Marc Andreessen',
                 handle: 'pmarca',
                 image: require('./assets/pmarca.jpg'),
                 link: 'http://twitter.com/pmarca',
                 isAuthor: true,
                 chosenText: 'lol, yea...',
+                bio: '“I don’t mean you’re all going to be happy. You’ll be unhappy – but in new, exciting and important ways.” – Edwin Land',
             },
             {
                 name: 'Big Bird',
@@ -43,6 +38,7 @@ const questions = {
                 image: require('./assets/bigbird.png'),
                 link: 'http://twitter.com/bigbird',
                 chosenText: 'Big Bird would never be racist!',
+                bio: 'Sesame Street\'s official 8\'2 bird... I\'m too tall to be short!',
             },
             {
                 name: 'Benedict Evans',
@@ -50,6 +46,7 @@ const questions = {
                 image: require('./assets/benedictevans.jpeg'),
                 link: 'http://twitter.com/BenedictEvans',
                 chosenText: 'Na, it wasn\'t Benedict Evans, but who can keep track of all these white guys anyway...',
+                bio: 'Tech, mobile & media. Trying to work out what\'s going on, and what happens next. @a16z'
             }
         ]
     },
@@ -70,18 +67,12 @@ const questions = {
                 chosenText: 'Elmo would never minimize others struggles in order to validate an economic system which keeps Elmo in power!',
             },
             {
-                name: 'Benedict Evans',
-                handle: 'BenedictEvans',
-                image: require('./assets/benedictevans.jpeg'),
-                link: 'http://twitter.com/BenedictEvans',
-                chosenText: 'Na, it wasn\'t Benedict Evans, but who can keep track of all these white guys anyway...',
-            },
-            {
                 name: 'Jason Calacanis',
                 handle: 'Jason',
                 image: require('./assets/jason.jpg'),
                 link: 'http://twitter.com/jason',
                 chosenText: 'Na, it wasn\'t Jason Calacanis, but who can keep track of all these white guys anyway...',
+                bio: 'Angel investor (@uber @thumbtack @wealthfront + http://angel.co/jason  ) // Writer // Dad // Founder: @Engadget, @Inside, @LAUNCH & @twistartups',
             },
             {
                 name: 'Marc Andreessen',
@@ -90,6 +81,7 @@ const questions = {
                 link: 'http://twitter.com/pmarca',
                 isAuthor: true,
                 chosenText: 'lol, yea...',
+                bio: '“I don’t mean you’re all going to be happy. You’ll be unhappy – but in new, exciting and important ways.” – Edwin Land',
             },
         ]
     },
@@ -103,13 +95,6 @@ const questions = {
         },
         options: [
             {
-                name: 'Jason Calacanis',
-                handle: 'Jason',
-                image: require('./assets/jason.jpg'),
-                link: 'http://twitter.com/jason',
-                chosenText: '',
-            },
-            {
                 name: 'John Lilly',
                 handle: 'johnolilly',
                 image: require('./assets/johnolilly.jpeg'),
@@ -121,6 +106,7 @@ const questions = {
                 image: require('./assets/bigbird.png'),
                 link: 'https://twitter.com/bigbird',
                 isAuthor: true,
+                bio: 'Sesame Street\'s official 8\'2 bird... I\'m too tall to be short!',
             },
             {
                 name: 'Benedict Evans',
@@ -134,6 +120,8 @@ const questions = {
 
 SimpleStore.save('questions', questions);
 SimpleStore.save('currentStreak', 0);
+
+StatusBarIOS.setStyle('light-content');
 
 class QuizGame extends Component {
     render() {
