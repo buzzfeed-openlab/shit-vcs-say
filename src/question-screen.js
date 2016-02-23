@@ -38,7 +38,12 @@ class QuestionScreen extends Component {
         });
 
         SimpleStore.get('currentStreak').then((currentStreak) => {
-            this.setState(Object.assign(this.state, { currentStreak: currentStreak }));
+            SimpleStore.get('bestStreak').then((bestStreak) => {
+                this.setState(Object.assign(this.state, {
+                    currentStreak: currentStreak,
+                    bestStreak: bestStreak,
+                }));
+            });
         });
     }
 
@@ -52,10 +57,9 @@ class QuestionScreen extends Component {
 
         return (
             <View style={[CommonStyles.screenBackground, styles.gameScreen]}>
-                <Toolbar title={'Who tweeted?'} currentStreak={this.state.currentStreak} />
+                <Toolbar title={'Who tweeted?'} currentStreak={this.state.currentStreak} bestStreak={this.state.bestStreak} />
                 <Question question={this.state.question} />
 
-                <View style={{width: 256, borderTopWidth: 1, borderColor: '#FFFFFD', marginTop: 40, marginBottom: 25, alignSelf: 'center', height: 0}}/>
 
                 <Answers
                     question={this.state.question}
@@ -171,7 +175,7 @@ const styles = StyleSheet.create({
         flex: 2,
         margin: 20,
         flexDirection: 'column',
-        justifyContent: 'flex-start',
+        justifyContent: 'flex-end',
     },
     answerOption: {
         padding: 20,

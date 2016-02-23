@@ -87,15 +87,7 @@ class AnswerScreen extends Component {
         return (
             <View style={[CommonStyles.screenBackground, styles.answerScreen]}>
 
-                <Toolbar />
-
-                <StreakViewer
-                    answeredCorrectly={this.state.chosenOption.isAuthor == true}
-                    streakLength={this.state.currentStreak}
-                    oldStreak={this.state.oldStreak}
-                    bestStreak={this.state.bestStreak}
-                    chosenText={this.state.chosenOption.chosenText}
-                />
+                <Toolbar currentStreak={this.state.currentStreak} bestStreak={this.state.bestStreak} />
 
                 <View style={styles.answerTweetBox}>
                     <TweetBox
@@ -109,9 +101,16 @@ class AnswerScreen extends Component {
                     />
                 </View>
 
-                <View style={styles.centerContainer}>
+                <StreakViewer
+                    answeredCorrectly={this.state.chosenOption.isAuthor == true}
+                    streakLength={this.state.currentStreak}
+                    oldStreak={this.state.oldStreak}
+                    bestStreak={this.state.bestStreak}
+                    chosenText={this.state.chosenOption.chosenText}
+                />
 
-                    <View style={styles.actionOptionsBox}>
+
+                    <View style={[styles.centerContainer, styles.actionOptionsBox]}>
 
                         <TouchableElement onPress={this.onNextQuestion.bind(this)}>
                             <View style={[CommonStyles.advanceButton, styles.nextButton]}>
@@ -123,7 +122,6 @@ class AnswerScreen extends Component {
 
                     </View>
 
-                </View>
             </View>
         );
     }
@@ -243,7 +241,6 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     centerContainer: {
-        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
     },
