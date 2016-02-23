@@ -15,6 +15,8 @@ import React, {
 
 import CommonStyles from './common-styles.js';
 
+import Clipboard from 'react-native-clipboard';
+
 var KDSocialShare = require('NativeModules').KDSocialShare;
 
 var TouchableElement = TouchableHighlight;
@@ -64,7 +66,7 @@ class TweetBox extends Component {
                         />
                     </TouchableElement>
 
-                    <TouchableElement style={styles.shareButtonLink}>
+                    <TouchableElement style={styles.shareButtonLink} onPress={() => this.onLink()}>
                         <Image
                             style={styles.shareImageLink}
                             source={linkShareImage}
@@ -122,6 +124,11 @@ class TweetBox extends Component {
         KDSocialShare.tweet(this.props.twitterShare, (results) => {
             console.log('bleep bloop: ',results);
         });
+    }
+
+    onLink() {
+        console.log(this.props.tweetUrl);
+        Clipboard.set(this.props.tweetUrl);
     }
 }
 
