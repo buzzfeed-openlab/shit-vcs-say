@@ -52,8 +52,9 @@ class QuestionScreen extends Component {
 
         return (
             <View style={[CommonStyles.screenBackground, styles.gameScreen]}>
-                <Toolbar currentStreak={this.state.currentStreak} />
+                <Toolbar title={'Who tweeted?'} currentStreak={this.state.currentStreak} />
                 <Question question={this.state.question} />
+
                 <Answers
                     question={this.state.question}
                     navigator={this.props.navigator}
@@ -167,7 +168,7 @@ const styles = StyleSheet.create({
         margin: 20,
         flexDirection: 'column',
         borderRadius: 6,
-        justifyContent: 'space-around',
+        justifyContent: 'flex-start',
     },
     answerOption: {
         padding: 20,
@@ -177,6 +178,7 @@ const styles = StyleSheet.create({
         flex: 1,
         borderRadius: 6,
         alignItems: 'center',
+        marginTop: 20,
     },
     optionContent: {
         flex: 1,

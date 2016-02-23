@@ -45,11 +45,12 @@ const styles = StyleSheet.create({
 
     },
     toolbarTitle: {
-        fontSize: 16,
+        fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'left',
         flex: 1,
         paddingLeft: 20,
+        color: '#FFFFFD',
     },
     toolbarText: {
         fontSize: 20,
