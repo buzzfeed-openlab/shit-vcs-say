@@ -55,7 +55,7 @@ class QuestionScreen extends Component {
                 <Toolbar title={'Who tweeted?'} currentStreak={this.state.currentStreak} />
                 <Question question={this.state.question} />
 
-                <View style={{width: 256, borderTopWidth: 1, borderColor: '#FFFFFD', marginTop: 20, marginBottom: 5, alignSelf: 'center', height: 0}}/>
+                <View style={{width: 256, borderTopWidth: 1, borderColor: '#FFFFFD', marginTop: 40, marginBottom: 25, alignSelf: 'center', height: 0}}/>
 
                 <Answers
                     question={this.state.question}
