@@ -135,22 +135,24 @@ class Answers extends Component {
 class Option extends Component {
     render() {
         return (
-            <TouchableElement onPress={() => this.props.selectCallback(this.props.option)}>
-                <View style={styles.answerOption}>
-                    <Image
-                        style={CommonStyles.profilePic}
-                        source={this.props.option.image}
-                    />
-                    <View style={styles.optionContent}>
-                        <Text style={[CommonStyles.baseText, styles.optionName]}>
-                            {this.props.option.name}
-                        </Text>
-                        <Text style={[CommonStyles.baseText, styles.optionHandle]}>
-                            @{this.props.option.handle}
-                        </Text>
+            <View style={styles.optionBuffer}>
+                <TouchableElement onPress={() => this.props.selectCallback(this.props.option)}>
+                    <View style={styles.answerOption}>
+                        <Image
+                            style={CommonStyles.profilePic}
+                            source={this.props.option.image}
+                        />
+                        <View style={styles.optionContent}>
+                            <Text style={[CommonStyles.baseText, styles.optionName]}>
+                                {this.props.option.name}
+                            </Text>
+                            <Text style={[CommonStyles.baseText, styles.optionHandle]}>
+                                @{this.props.option.handle}
+                            </Text>
+                        </View>
                     </View>
-                </View>
-            </TouchableElement>
+                </TouchableElement>
+            </View>
         );
     }
 }
@@ -179,6 +181,8 @@ const styles = StyleSheet.create({
         flex: 1,
         borderRadius: 6,
         alignItems: 'center',
+    },
+    optionBuffer: {
         marginBottom: 20,
     },
     optionContent: {
