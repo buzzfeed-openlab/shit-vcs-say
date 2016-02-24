@@ -34,6 +34,7 @@ class QuestionScreen extends Component {
     componentWillMount() {
         SimpleStore.get('questions').then((questions) => {
             var question = this.pickRandomQuestion(questions);
+            question.options = this.shuffleArray(question.options);
             this.setState(Object.assign(this.state, { question: question }));
         });
 
@@ -93,6 +94,17 @@ class QuestionScreen extends Component {
 
         var questionGroup = newQuestions.length ? newQuestions : oldQuestions;
         return questionGroup[Math.floor(Math.random() * questionGroup.length)];
+    }
+
+    shuffleArray(arr) {
+        var shuffled = [];
+        while (arr.length) {
+            var i = Math.floor(Math.random() * arr.length);
+            shuffled.push(arr[i]);
+            arr.splice(i, 1);
+        }
+
+        return shuffled;
     }
 }
 
