@@ -4,7 +4,7 @@ var express = require('express'),
     questions = require('../models/questions.js');
 
 router.get('/', questions.getTopQuestions, function(req, res, next) {
-    console.log('bleep bloop: ', req.questions);
+    res.json(req.questions);
 });
 
 module.exports = router;
