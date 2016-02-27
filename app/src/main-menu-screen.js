@@ -14,6 +14,7 @@ import React, {
 
 import CommonStyles from './common-styles.js';
 import QuestionScreen from './question-screen.js';
+import API from './api.js';
 
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
@@ -23,6 +24,13 @@ if (Platform.OS === 'android') {
 const titleImage = require('../assets/title-image.png');
 
 class MainMenuScreen extends Component {
+    componentWillMount() {
+        API.getTopQuestions((err, questions) => {
+            console.log(err);
+            console.log(questions);
+        });
+    }
+
     render() {
         return (
             <View style={[CommonStyles.screenBackground, styles.mainMenuScreen]}>
