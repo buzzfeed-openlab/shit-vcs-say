@@ -141,7 +141,12 @@ class StreakViewer extends Component {
         var answerImage = null;
 
         if (this.props.answeredCorrectly) {
-            answerImage = checkImage;
+            answerImage = (
+                <Image
+                    style={styles.answerImage}
+                    source={checkImage}
+                />
+            );
 
             contentBox = (
                 <View style={[styles.resultBoxContent, styles.resultBoxContentWin]}>
@@ -165,7 +170,7 @@ class StreakViewer extends Component {
             );
 
         } else {
-            answerImage = crossImage;
+            // answerImage = crossImage;
 
             var streakBrokenText = 'No streak for you!';
             if (this.props.oldStreak) {
@@ -186,10 +191,7 @@ class StreakViewer extends Component {
 
         return (
             <View style={[styles.centerContainer, styles.streakViewer]}>
-                <Image
-                    style={styles.answerImage}
-                    source={answerImage}
-                />
+                {answerImage}
                 {contentBox}
             </View>
         );
