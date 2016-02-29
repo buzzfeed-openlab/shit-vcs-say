@@ -91,6 +91,11 @@ class MainMenuScreen extends Component {
         this.setState({ loading: 2 });
 
         API.getTopQuestions((err, newQuestions) => {
+            if (err || !newQuestions.length) {
+                console.log('ERROR: could not query for questions. ', err);
+                return this.setState({ loading: this.state.loading - 1 });
+            }
+
             SimpleStore.get('questions').then((oldQuestions) => {
                 var questions = {};
 
