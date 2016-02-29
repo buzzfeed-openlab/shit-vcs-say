@@ -38,7 +38,12 @@ class MainMenuScreen extends Component {
     componentWillMount() {
         NetInfo.isConnected.fetch().done((isConnected) => {
             if (isConnected) {
-                this.loadQuestions();
+                // `loading` used as a semaphore, we'll load questions
+                // and assets in parallel
+                this.setState({ loading: 2 }, () => {
+                    this.loadQuestions();
+                    this.loadImages();
+                });
             }
         });
     }
@@ -86,10 +91,6 @@ class MainMenuScreen extends Component {
     }
 
     loadQuestions() {
-        // loading used as a semaphore, we'll load questions
-        // and assets in parallel
-        this.setState({ loading: 2 });
-
         API.getTopQuestions((err, newQuestions) => {
             if (err || !newQuestions.length) {
                 console.log('ERROR: could not query for questions. ', err);
@@ -118,7 +119,9 @@ class MainMenuScreen extends Component {
                 });
             });
         });
+    }
 
+    loadImages() {
         API.downloadImageBundle((err, path) => {
             this.setState({ loading: this.state.loading - 1 });
         });
