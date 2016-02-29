@@ -10,6 +10,7 @@ import React, {
     TouchableHighlight,
     TouchableNativeFeedback,
     Platform,
+    NetInfo,
 } from 'react-native';
 
 import CommonStyles from './common-styles.js';
@@ -24,14 +25,45 @@ if (Platform.OS === 'android') {
 const titleImage = require('../assets/title-image.png');
 
 class MainMenuScreen extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            loading: false,
+        }
+    }
+
     componentWillMount() {
-        API.getTopQuestions((err, questions) => {
-            console.log(err);
-            console.log(questions);
+        NetInfo.isConnected.fetch().done((isConnected) => {
+            if (isConnected) {
+                this.loadQuestions();
+            }
         });
     }
 
     render() {
+        var playButton = (
+            <TouchableElement onPress={this.onStartGame.bind(this)}>
+                <View style={[CommonStyles.advanceButton, styles.startGameButton]}>
+                    <Text style={CommonStyles.buttonText}>
+                        How bad could it be
+                    </Text>
+                </View>
+            </TouchableElement>
+        );
+
+        if (this.state.loading) {
+            playButton = (
+                <View style={[CommonStyles.advanceButton, styles.startGameButton]}>
+                    <Text style={CommonStyles.buttonText}>
+                        Loading...
+                    </Text>
+                </View>
+            );
+        }
+
+
+
         return (
             <View style={[CommonStyles.screenBackground, styles.mainMenuScreen]}>
                 <View style={styles.titleBox}>
@@ -44,17 +76,20 @@ class MainMenuScreen extends Component {
                 </View>
                 <View style={styles.menuBox}>
 
-                    <TouchableElement onPress={this.onStartGame.bind(this)}>
-                        <View style={[CommonStyles.advanceButton, styles.startGameButton]}>
-                            <Text style={CommonStyles.buttonText}>
-                                How bad could it be
-                            </Text>
-                        </View>
-                    </TouchableElement>
+                    {playButton}
 
                 </View>
             </View>
         );
+    }
+
+    loadQuestions() {
+        this.setState({ loading: true });
+        API.getTopQuestions((err, questions) => {
+            this.setState({ loading: false });
+            console.log(err);
+            console.log(questions);
+        });
     }
 
     onStartGame() {
