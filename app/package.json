@@ -8,8 +8,11 @@
   "dependencies": {
     "react-native": "^0.20.x",
     "react-native-clipboard": "0.0.5",
+    "react-native-file-download": "0.0.6",
+    "react-native-fs": "^1.2.0",
     "react-native-grid-view": "0.3.x",
     "react-native-simple-store": "0.1.x",
-    "react-native-social-share": "0.x.x"
+    "react-native-social-share": "0.x.x",
+    "react-native-zip-archive": "0.0.7"
   }
 }

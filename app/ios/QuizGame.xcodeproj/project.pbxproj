@@ -23,6 +23,10 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		2A2724851C7ACEA600A80071 /* KDSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2724841C7ACEA600A80071 /* KDSocialShare.m */; };
 		2A2724871C7ACF4200A80071 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2724861C7ACF4200A80071 /* Social.framework */; };
+		2A6566F51C841D5900DB4A6D /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6566F41C841CD300DB4A6D /* libRNFS.a */; };
+		2A6566FC1C841E6B00DB4A6D /* libRNFileDownload.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6566FB1C841E4F00DB4A6D /* libRNFileDownload.a */; };
+		2A6567031C8423B500DB4A6D /* libRNZipArchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6567021C84237200DB4A6D /* libRNZipArchive.a */; };
+		2A6567051C8426A400DB4A6D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6567041C8426A400DB4A6D /* libz.tbd */; };
 		2A915D001C7D0A1D00A5B566 /* libRNClipboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A915CFF1C7D094500A5B566 /* libRNClipboard.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
@@ -105,6 +109,27 @@
 			remoteGlobalIDString = 00E356EE1AD99517003FC87E;
 			remoteInfo = ReactNativeSocialShareTests;
 		};
+		2A6566F31C841CD300DB4A6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A6566E21C841CD200DB4A6D /* RNFS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F12AFB9B1ADAF8F800E0535D;
+			remoteInfo = RNFS;
+		};
+		2A6566FA1C841E4F00DB4A6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A6566F61C841E4F00DB4A6D /* RNFileDownload.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D045FC4C1B94140B00C00AF7;
+			remoteInfo = RNFileDownload;
+		};
+		2A6567011C84237200DB4A6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A6566FD1C84237100DB4A6D /* RNZipArchive.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D058BD741B8DA4AB004D9F18;
+			remoteInfo = RNZipArchive;
+		};
 		2A915CFE1C7D094500A5B566 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A915CEE1C7D094400A5B566 /* RNClipboard.xcodeproj */;
@@ -151,6 +176,10 @@
 		2A2724831C7ACEA600A80071 /* KDSocialShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDSocialShare.h; path = "../node_modules/react-native-social-share/iOS/KDSocialShare.h"; sourceTree = "<group>"; };
 		2A2724841C7ACEA600A80071 /* KDSocialShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDSocialShare.m; path = "../node_modules/react-native-social-share/iOS/KDSocialShare.m"; sourceTree = "<group>"; };
 		2A2724861C7ACF4200A80071 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		2A6566E21C841CD200DB4A6D /* RNFS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFS.xcodeproj; path = "../node_modules/react-native-fs/RNFS.xcodeproj"; sourceTree = "<group>"; };
+		2A6566F61C841E4F00DB4A6D /* RNFileDownload.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFileDownload.xcodeproj; path = "../node_modules/react-native-file-download/RNFileDownload.xcodeproj"; sourceTree = "<group>"; };
+		2A6566FD1C84237100DB4A6D /* RNZipArchive.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNZipArchive.xcodeproj; path = "../node_modules/react-native-zip-archive/RNZipArchive.xcodeproj"; sourceTree = "<group>"; };
+		2A6567041C8426A400DB4A6D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2A915CEE1C7D094400A5B566 /* RNClipboard.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNClipboard.xcodeproj; path = "../node_modules/react-native-clipboard/RNClipboard.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -169,6 +198,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6567051C8426A400DB4A6D /* libz.tbd in Frameworks */,
+				2A6567031C8423B500DB4A6D /* libRNZipArchive.a in Frameworks */,
+				2A6566FC1C841E6B00DB4A6D /* libRNFileDownload.a in Frameworks */,
+				2A6566F51C841D5900DB4A6D /* libRNFS.a in Frameworks */,
 				2A915D001C7D0A1D00A5B566 /* libRNClipboard.a in Frameworks */,
 				2A2724871C7ACF4200A80071 /* Social.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -291,6 +324,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2A6566E31C841CD200DB4A6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A6566F41C841CD300DB4A6D /* libRNFS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A6566F71C841E4F00DB4A6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A6566FB1C841E4F00DB4A6D /* libRNFileDownload.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A6566FE1C84237100DB4A6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A6567021C84237200DB4A6D /* libRNZipArchive.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2A915CEF1C7D094400A5B566 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +367,9 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2A6566FD1C84237100DB4A6D /* RNZipArchive.xcodeproj */,
+				2A6566F61C841E4F00DB4A6D /* RNFileDownload.xcodeproj */,
+				2A6566E21C841CD200DB4A6D /* RNFS.xcodeproj */,
 				2A915CEE1C7D094400A5B566 /* RNClipboard.xcodeproj */,
 				2A2724831C7ACEA600A80071 /* KDSocialShare.h */,
 				2A2724841C7ACEA600A80071 /* KDSocialShare.m */,
@@ -339,6 +399,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				2A6567041C8426A400DB4A6D /* libz.tbd */,
 				2A2724861C7ACF4200A80071 /* Social.framework */,
 				13B07FAE1A68108700A75B9A /* QuizGame */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -472,6 +533,18 @@
 					ProductGroup = 2A915CEF1C7D094400A5B566 /* Products */;
 					ProjectRef = 2A915CEE1C7D094400A5B566 /* RNClipboard.xcodeproj */;
 				},
+				{
+					ProductGroup = 2A6566F71C841E4F00DB4A6D /* Products */;
+					ProjectRef = 2A6566F61C841E4F00DB4A6D /* RNFileDownload.xcodeproj */;
+				},
+				{
+					ProductGroup = 2A6566E31C841CD200DB4A6D /* Products */;
+					ProjectRef = 2A6566E21C841CD200DB4A6D /* RNFS.xcodeproj */;
+				},
+				{
+					ProductGroup = 2A6566FE1C84237100DB4A6D /* Products */;
+					ProjectRef = 2A6566FD1C84237100DB4A6D /* RNZipArchive.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -550,6 +623,27 @@
 			fileType = wrapper.cfbundle;
 			path = ReactNativeSocialShareTests.xctest;
 			remoteRef = 2A2724811C7ACDDD00A80071 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A6566F41C841CD300DB4A6D /* libRNFS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFS.a;
+			remoteRef = 2A6566F31C841CD300DB4A6D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A6566FB1C841E4F00DB4A6D /* libRNFileDownload.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFileDownload.a;
+			remoteRef = 2A6566FA1C841E4F00DB4A6D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A6567021C84237200DB4A6D /* libRNZipArchive.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNZipArchive.a;
+			remoteRef = 2A6567011C84237200DB4A6D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2A915CFF1C7D094500A5B566 /* libRNClipboard.a */ = {

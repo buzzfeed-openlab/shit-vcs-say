@@ -31,7 +31,7 @@ class MainMenuScreen extends Component {
         super();
 
         this.state = {
-            loading: false,
+            loading: 0,
         }
     }
 
@@ -86,13 +86,17 @@ class MainMenuScreen extends Component {
     }
 
     loadQuestions() {
-        this.setState({ loading: true });
+        // loading used as a semaphore, we'll load questions
+        // and assets in parallel
+        this.setState({ loading: 2 });
+
         API.getTopQuestions((err, newQuestions) => {
             SimpleStore.get('questions').then((oldQuestions) => {
                 var questions = {};
 
                 for (var i = 0; i < newQuestions.length; ++i) {
                     var q = newQuestions[i];
+
                     questions[q.id] = q;
                     if (oldQuestions[q.id] && oldQuestions[q.id].answered) {
                         questions[q.id].answered = true;
@@ -100,10 +104,18 @@ class MainMenuScreen extends Component {
                 }
 
                 SimpleStore.save('questions', questions)
-                .then(() => {
-                    this.setState({ loading: false });
+                .then((err, imageDir) => {
+                    if (err) {
+                        console.log('ERROR: could download / unpack image bundle. ', err);
+                    }
+
+                    this.setState({ loading: this.state.loading - 1 });
                 });
             });
+        });
+
+        API.downloadImageBundle((err, path) => {
+            this.setState({ loading: this.state.loading - 1 });
         });
     }
 
