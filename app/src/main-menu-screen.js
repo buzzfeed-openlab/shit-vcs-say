@@ -38,6 +38,7 @@ class MainMenuScreen extends Component {
     }
 
     componentWillMount() {
+
         NetInfo.isConnected.fetch().done((isConnected) => {
             if (isConnected) {
                 // `loading` used as a semaphore, we'll load questions
@@ -112,9 +113,9 @@ class MainMenuScreen extends Component {
                 }
 
                 SimpleStore.save('questions', questions)
-                .then((err, imageDir) => {
+                .then((err) => {
                     if (err) {
-                        console.log('ERROR: could download / unpack image bundle. ', err);
+                        console.log('ERROR: could not download / unpack image bundle. ', err);
                     }
 
                     this.setState({ loading: this.state.loading - 1 });
