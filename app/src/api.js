@@ -6,11 +6,9 @@ import React, {
 } from 'react-native';
 
 import RNFS from 'react-native-fs';
-import FileDownload from 'react-native-file-download';
 import ZipArchive from 'react-native-zip-archive';
 
-const API_PATH = 'http://localhost:3000';
-const IMAGE_DIR = RNFS.DocumentDirectoryPath + '/images/';
+import Constants from './constants.js';
 
 class API {
     static getTopQuestions(cb) {
@@ -19,7 +17,7 @@ class API {
                 return cb('not connected');
             }
 
-            fetch(API_PATH + '/api/questions')
+            fetch(Constants.API_PATH + '/api/questions')
             .then((response) => { return response.json(); })
             .then((json) => { cb(null, json); })
             .catch((err) => {
@@ -29,19 +27,25 @@ class API {
     }
 
     static downloadImageBundle(cb) {
-        FileDownload.download(API_PATH + '/images/imagebundle.zip', IMAGE_DIR)
-        .then((path) => {
-            ZipArchive.unzip(path, IMAGE_DIR)
+        RNFS.downloadFile(Constants.API_PATH + '/images/imagebundle.zip', RNFS.DocumentDirectoryPath + '/images.zip')
+        .then(() => {
+            RNFS.mkdir(Constants.IMAGE_DIR, true)
             .then(() => {
-                cb(null, IMAGE_DIR);
+                ZipArchive.unzip(RNFS.DocumentDirectoryPath + '/images.zip', Constants.IMAGE_DIR)
+                .then(() => {
+                    cb(null, Constants.IMAGE_DIR);
+                })
+                .catch((err) => {
+                    cb(err);
+                });
             })
             .catch((err) => {
                 cb(err);
             });
         })
         .catch((err) => {
-          cb(err);
-        });
+            cb(err);
+        })
     }
 }
 

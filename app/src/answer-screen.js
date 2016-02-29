@@ -18,6 +18,7 @@ import QuestionScreen from './question-screen.js';
 import CommonStyles from './common-styles.js';
 import TweetBox from './tweet-box.js';
 import Toolbar from './toolbar.js';
+import Constants from './constants.js';
 
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
@@ -91,7 +92,7 @@ class AnswerScreen extends Component {
 
                 <View style={styles.answerTweetBox}>
                     <TweetBox
-                        image={this.state.answer.image}
+                        image={{ uri: Constants.IMAGE_DIR + this.state.answer.image }}
                         name={this.state.answer.name}
                         handle={this.state.answer.handle}
                         text={this.state.question.text}

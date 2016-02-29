@@ -17,7 +17,7 @@ function fixtureQueries(i) {
             "'Anti-colonialism has been economically catastrophic for the Indian people for decades. Why stop now?'," +
             "'http://www.bloomberg.com/news/articles/2016-02-10/marc-andreessen-pro-colonialism-tweet-riles-up-india-tech-world'," +
             "'{\"text\":\"#ShitVCsSay \",\"link\":\"http://www.bloomberg.com/news/articles/2016-02-10/marc-andreessen-pro-colonialism-tweet-riles-up-india-tech-world\"}'," +
-            "'[{\"name\":\"Marc Andreessen\",\"handle\":\"pmarca\",\"image\":\"http://localhost:3000/images/pmarca-1.jpg\",\"link\":\"http://twitter.com/pmarca\",\"isAuthor\":true,\"chosenText\":\"lol, yea...\"},{\"name\":\"Big Bird\",\"handle\":\"BigBird\",\"image\":\"http://localhost:3000/images/bigbird-1.png\",\"link\":\"http://twitter.com/bigbird\",\"chosenText\":\"Big Bird would never be racist!\"},{\"name\":\"Benedict Evans\",\"handle\":\"BenedictEvans\",\"image\":\"http://localhost:3000/images/benedictevans-1.jpeg\",\"link\":\"http://twitter.com/BenedictEvans\",\"chosenText\":\"Na, it wasnt Benedict Evans, but who can keep track of all these white guys anyway...\"}]'" +
+            "'[{\"name\":\"Marc Andreessen\",\"handle\":\"pmarca\",\"image\":\"pmarca-1.jpg\",\"link\":\"http://twitter.com/pmarca\",\"isAuthor\":true,\"chosenText\":\"lol, yea...\"},{\"name\":\"Big Bird\",\"handle\":\"BigBird\",\"image\":\"bigbird-1.png\",\"link\":\"http://twitter.com/bigbird\",\"chosenText\":\"Big Bird would never be racist!\"},{\"name\":\"Benedict Evans\",\"handle\":\"BenedictEvans\",\"image\":\"benedictevans-1.jpeg\",\"link\":\"http://twitter.com/BenedictEvans\",\"chosenText\":\"Na, it wasnt Benedict Evans, but who can keep track of all these white guys anyway...\"}]'" +
             ");"
     ];
 

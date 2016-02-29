@@ -19,6 +19,8 @@ import AnswerScreen from './answer-screen';
 import CommonStyles from './common-styles.js';
 import TweetBox from './tweet-box.js';
 import Toolbar from './toolbar.js';
+import API from './api.js';
+import Constants from './constants.js';
 
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
@@ -113,7 +115,7 @@ class Question extends Component {
         return (
             <View style={styles.questionBox}>
                 <TweetBox
-                    image={require('../assets/egg-profile.jpeg')}
+                    image={{ uri: Constants.IMAGE_DIR + 'egg-1.jpeg' }}
                     name={'???'}
                     text={this.props.question.text}
                 />
@@ -155,7 +157,7 @@ class Option extends Component {
                     <View style={styles.answerOption}>
                         <Image
                             style={CommonStyles.profilePic}
-                            source={this.props.option.image}
+                            source={{ uri: Constants.IMAGE_DIR + this.props.option.image }}
                         />
                         <View style={styles.optionContent}>
                             <Text style={[CommonStyles.baseText, styles.optionName]}>

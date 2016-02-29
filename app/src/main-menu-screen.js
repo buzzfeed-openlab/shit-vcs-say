@@ -14,10 +14,12 @@ import React, {
 } from 'react-native';
 
 import SimpleStore from 'react-native-simple-store';
+import RNFS from 'react-native-fs';
 
 import CommonStyles from './common-styles.js';
 import QuestionScreen from './question-screen.js';
 import API from './api.js';
+import Constants from './constants.js';
 
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
@@ -124,6 +126,11 @@ class MainMenuScreen extends Component {
     loadImages() {
         API.downloadImageBundle((err, path) => {
             this.setState({ loading: this.state.loading - 1 });
+
+            // RNFS.readDir(Constants.IMAGE_DIR)
+            //   .then((result) => {
+            //     console.log('GOT RESULT', result);
+            // });
         });
     }
 
