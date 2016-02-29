@@ -13,6 +13,8 @@ import React, {
     NetInfo,
 } from 'react-native';
 
+import SimpleStore from 'react-native-simple-store';
+
 import CommonStyles from './common-styles.js';
 import QuestionScreen from './question-screen.js';
 import API from './api.js';
@@ -85,10 +87,23 @@ class MainMenuScreen extends Component {
 
     loadQuestions() {
         this.setState({ loading: true });
-        API.getTopQuestions((err, questions) => {
-            this.setState({ loading: false });
-            console.log(err);
-            console.log(questions);
+        API.getTopQuestions((err, newQuestions) => {
+            SimpleStore.get('questions').then((oldQuestions) => {
+                var questions = {};
+
+                for (var i = 0; i < newQuestions.length; ++i) {
+                    var q = newQuestions[i];
+                    questions[q.id] = q;
+                    if (oldQuestions[q.id] && oldQuestions[q.id].answered) {
+                        questions[q.id].answered = true;
+                    }
+                }
+
+                SimpleStore.save('questions', questions)
+                .then(() => {
+                    this.setState({ loading: false });
+                });
+            });
         });
     }
 
