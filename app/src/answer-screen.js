@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
         height: 128,
     },
     nextButton: {
-        width: 331,
+        width: 256,
     },
 });
 
