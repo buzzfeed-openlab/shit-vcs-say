@@ -29,8 +29,8 @@ if (Platform.OS === 'android') {
 const titleImage = require('../assets/title-image.png');
 
 class MainMenuScreen extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             loading: 0,
