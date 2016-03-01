@@ -182,16 +182,17 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'flex-start',
         padding: 20,
     },
     answerBox: {
         flex: 2,
         margin: 20,
+        marginTop: 30,
         flexDirection: 'column',
         justifyContent: 'flex-end',
     },
     answerOption: {
-        padding: 20,
         flexDirection: 'row',
         backgroundColor: '#FFFFFD',
         padding: 8,
@@ -200,7 +201,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     optionBuffer: {
-        marginBottom: 20,
+        marginTop: 20,
     },
     optionContent: {
         flex: 1,
