@@ -98,7 +98,7 @@ class AnswerScreen extends Component {
                         text={this.state.question.text}
                         profileUrl={this.state.answer.link}
                         tweetUrl={this.state.question.link}
-                        twitterShare={this.state.question.twitterShare}
+                        twitterShare={this.state.question.twittershare}
                     />
                 </View>
 
