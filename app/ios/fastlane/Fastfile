@@ -1,0 +1,77 @@
+# Customise this file, documentation can be found here:
+# https://github.com/KrauseFx/fastlane/tree/master/docs
+# All available actions: https://github.com/KrauseFx/fastlane/blob/master/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# By default, fastlane will send which actions are used
+# No personal data is shared, more information on https://github.com/fastlane/enhancer
+# Uncomment the following line to opt out
+# opt_out_usage
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "1.46.1"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+
+    xcode_select("/Applications/Xcode.app")
+
+    ENV['MATCH_GIT_URL'] = "git@github.com:buzzfeed/ios-provisioning-hell.git"
+    ENV['MATCH_READONLY'] = "1"
+    ENV['MATCH_USERNAME'] = "ios-dev-account@buzzfeed.com"
+
+    sh("cd .. && npm install")
+
+  end
+
+  lane :debug do |options|
+    match(
+      type: "development",
+      app_identifier: "com.buzzfeed.openlab.QuizGame-debug",
+      team_name: "BuzzFeed, Inc."
+    )
+    gym(
+      scheme: "QuizGame",
+      configuration: "Debug"
+    )
+  end
+
+  lane :alpha do |options|
+    clear_derived_data
+    ENV["MATCH_FORCE_ENTERPRISE"] = "1"
+    match(
+      type: "enterprise",
+      app_identifier: "com.buzzfeed.openlab.QuizGame-alpha",
+      team_name: "BuzzFeed, Inc."
+    )
+    ENV["PROFILE_UUID"] = lane_context[SharedValues::SIGH_UDID]
+    gym(
+      scheme: "QuizGame",
+      configuration: "Alpha",
+      clean: true
+    )
+  end
+
+  lane :release do |options|
+    match(
+      type: "appstore",
+      app_identifier: "com.buzzfeed.openlab.QuizGame",
+      team_name: "BuzzFeed"
+    )
+    ENV["PROFILE_UUID"] = lane_context[SharedValues::SIGH_UDID]
+    gym(
+      scheme: "QuizGame",
+      configuration: "Release",
+      clean: true
+    )
+  end
+end
