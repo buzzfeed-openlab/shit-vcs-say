@@ -51,6 +51,10 @@ class MainMenuScreen extends Component {
     }
 
     render() {
+        // a bit of a hack to make sure currentStreak is reset -------
+        SimpleStore.save('currentStreak', 0);
+        // -------
+
         var playButton = (
             <TouchableElement onPress={this.onStartGame.bind(this)}>
                 <View style={[CommonStyles.advanceButton, styles.startGameButton]}>
