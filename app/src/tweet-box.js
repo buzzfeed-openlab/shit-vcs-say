@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     tweetBox: {
         flex: 1,
         flexDirection: 'column',
-        padding: 20,
+        padding: 18,
         backgroundColor: '#FFFFFD',
         borderRadius: 6,
     },
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     },
     tweetName: {
         textAlign: 'left',
-        fontSize: 20,
+        fontSize: 18, 
         fontFamily: 'Helvetica Neue',
     },
     tweetHandle: {
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Helvetica Neue',
     },
     tweetText: {
-        fontSize: 16,
+        fontSize: 14,
         textAlign: 'left',
         fontFamily: 'Helvetica Neue',
     },

@@ -17,12 +17,12 @@ const CommonStyles = StyleSheet.create({
         justifyContent: 'center',
     },
     buttonText: {
-        fontSize: 20,
+        fontSize: 18,
         color: '#FFFFFD'
     },
     baseText: {
         fontFamily: 'Helvetica Neue',
-        fontSize: 16,
+        fontSize: 14,
     },
     profilePic: {
         width: 64,

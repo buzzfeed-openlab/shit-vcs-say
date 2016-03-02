@@ -210,14 +210,14 @@ const styles = StyleSheet.create({
         borderRadius: 6,
     },
     streakWinText: {
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: 'bold',
         color: '#27ae60',
         paddingBottom: 10,
         textAlign: 'center',
     },
     streakLoseText: {
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: 'bold',
         color: '#e74c3c',
         paddingBottom: 10,

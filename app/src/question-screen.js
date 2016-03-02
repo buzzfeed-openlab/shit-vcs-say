@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     optionName: {
-        fontSize: 16,
+        fontSize: 14,
         textAlign: 'left',
     },
     optionHandle: {
