@@ -38,7 +38,6 @@ class MainMenuScreen extends Component {
     }
 
     componentWillMount() {
-
         NetInfo.isConnected.fetch().done((isConnected) => {
             if (isConnected) {
                 // `loading` used as a semaphore, we'll load questions

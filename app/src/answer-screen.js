@@ -42,6 +42,8 @@ class AnswerScreen extends Component {
     componentWillMount() {
         SimpleStore.get('currentStreak').then((currentStreak) => {
             SimpleStore.get('bestStreak').then((bestStreak) => {
+                bestStreak = bestStreak || 0;
+
                 var oldStreak = currentStreak;
 
                 if (!this.state.chosenOption.isAuthor) {

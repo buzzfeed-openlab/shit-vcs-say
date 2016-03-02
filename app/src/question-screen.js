@@ -42,6 +42,7 @@ class QuestionScreen extends Component {
 
         SimpleStore.get('currentStreak').then((currentStreak) => {
             SimpleStore.get('bestStreak').then((bestStreak) => {
+                bestStreak = bestStreak || 0;
                 this.setState(Object.assign(this.state, {
                     currentStreak: currentStreak,
                     bestStreak: bestStreak,
