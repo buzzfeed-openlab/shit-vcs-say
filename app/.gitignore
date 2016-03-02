@@ -19,6 +19,7 @@ xcuserdata
 DerivedData
 *.hmap
 *.ipa
+*.dSYM.zip
 *.xcuserstate
 project.xcworkspace
 
@@ -35,3 +36,7 @@ npm-debug.log
 
 # gimp
 *.xcf
+
+# fastlane
+*/fastlane/README.md
+*/fastlane/report.xml
