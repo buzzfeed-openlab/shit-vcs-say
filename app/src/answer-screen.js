@@ -155,7 +155,7 @@ class StreakViewer extends Component {
                         <Text style={[CommonStyles.baseText, styles.streakWinText]}>
                             Streak
                         </Text>
-                        <Text style={[CommonStyles.baseText, styles.streakWinText]}>
+                        <Text style={[CommonStyles.baseText, styles.streakWinNumber]}>
                             {this.props.streakLength}
                         </Text>
                     </View>
@@ -163,7 +163,7 @@ class StreakViewer extends Component {
                         <Text style={[CommonStyles.baseText, styles.streakWinText]}>
                             Best
                         </Text>
-                        <Text style={[CommonStyles.baseText, styles.streakWinText]}>
+                        <Text style={[CommonStyles.baseText, styles.streakWinNumber]}>
                             {this.props.bestStreak}
                         </Text>
                     </View>
@@ -210,10 +210,16 @@ const styles = StyleSheet.create({
         borderRadius: 6,
     },
     streakWinText: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: 'bold',
         color: '#27ae60',
-        paddingBottom: 10,
+        paddingBottom: 0,
+        textAlign: 'center',
+    },
+    streakWinNumber: {
+        fontSize: 42,
+        fontWeight: 'bold',
+        color: '#27ae60',
         textAlign: 'center',
     },
     streakLoseText: {
