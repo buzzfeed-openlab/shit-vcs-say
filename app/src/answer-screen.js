@@ -25,9 +25,6 @@ if (Platform.OS === 'android') {
     TouchableElement = TouchableNativeFeedback;
 }
 
-const crossImage = require('../assets/cross-mark.png');
-const checkImage = require('../assets/check-mark.png');
-
 class AnswerScreen extends Component {
     constructor(props, question, chosenOption) {
         super(props);
@@ -145,10 +142,11 @@ class StreakViewer extends Component {
 
         if (this.props.answeredCorrectly) {
             answerImage = (
-                <Image
-                    style={styles.answerImage}
-                    source={checkImage}
-                />
+                <View style={styles.badgeBox}>
+                    <Text style={[CommonStyles.textWin, styles.badgeWin]}>
+                        $$$
+                    </Text>
+                </View>
             );
 
             contentBox = (
@@ -261,6 +259,13 @@ const styles = StyleSheet.create({
     },
     nextButton: {
         width: 256,
+    },
+    badgeBox: {
+        paddingLeft: 20,
+    },
+    badgeWin: {
+        fontSize: 42,
+        fontWeight: 'bold',
     },
 });
 
