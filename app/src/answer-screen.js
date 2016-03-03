@@ -25,9 +25,6 @@ if (Platform.OS === 'android') {
     TouchableElement = TouchableNativeFeedback;
 }
 
-const crossImage = require('../assets/cross-mark.png');
-const checkImage = require('../assets/check-mark.png');
-
 class AnswerScreen extends Component {
     constructor(props, question, chosenOption) {
         super(props);
@@ -145,10 +142,11 @@ class StreakViewer extends Component {
 
         if (this.props.answeredCorrectly) {
             answerImage = (
-                <Image
-                    style={styles.answerImage}
-                    source={checkImage}
-                />
+                <View style={styles.badgeBox}>
+                    <Text style={[CommonStyles.textWin, styles.badgeWin]}>
+                        ✓
+                    </Text>
+                </View>
             );
 
             contentBox = (
@@ -157,7 +155,7 @@ class StreakViewer extends Component {
                         <Text style={[CommonStyles.baseText, styles.streakWinText]}>
                             Streak
                         </Text>
-                        <Text style={[CommonStyles.baseText, styles.streakWinText]}>
+                        <Text style={[CommonStyles.baseText, styles.streakWinNumber]}>
                             {this.props.streakLength}
                         </Text>
                     </View>
@@ -165,7 +163,7 @@ class StreakViewer extends Component {
                         <Text style={[CommonStyles.baseText, styles.streakWinText]}>
                             Best
                         </Text>
-                        <Text style={[CommonStyles.baseText, styles.streakWinText]}>
+                        <Text style={[CommonStyles.baseText, styles.streakWinNumber]}>
                             {this.props.bestStreak}
                         </Text>
                     </View>
@@ -212,10 +210,16 @@ const styles = StyleSheet.create({
         borderRadius: 6,
     },
     streakWinText: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: 'bold',
         color: '#27ae60',
-        paddingBottom: 10,
+        paddingBottom: 0,
+        textAlign: 'center',
+    },
+    streakWinNumber: {
+        fontSize: 42,
+        fontWeight: 'bold',
+        color: '#27ae60',
         textAlign: 'center',
     },
     streakLoseText: {
@@ -261,6 +265,13 @@ const styles = StyleSheet.create({
     },
     nextButton: {
         width: 256,
+    },
+    badgeBox: {
+        paddingTop: 10,
+    },
+    badgeWin: {
+        fontSize: 100,
+        fontWeight: 'bold',
     },
 });
 
