@@ -22,28 +22,28 @@ if (Platform.OS === 'android') {
 
 class Toolbar extends Component {
     render() {
-        var streakStyles = [CommonStyles.baseText, styles.toolbarText, CommonStyles.textLose];
+        var streakStyles = [CommonStyles.largeText, styles.toolbarText, CommonStyles.textLose];
         if (this.props.currentStreak) {
-            streakStyles = [CommonStyles.baseText, styles.toolbarText, CommonStyles.textWin];
+            streakStyles = [CommonStyles.largeText, styles.toolbarText, CommonStyles.textWin];
         }
 
-        var bestStreakStyles = [CommonStyles.baseText, styles.toolbarText, CommonStyles.textLose];
+        var bestStreakStyles = [CommonStyles.largeText, styles.toolbarText, CommonStyles.textLose];
         if (this.props.bestStreak) {
-            bestStreakStyles = [CommonStyles.baseText, styles.toolbarText, CommonStyles.textWin];
+            bestStreakStyles = [CommonStyles.largeText, styles.toolbarText, CommonStyles.textWin];
         }
 
         return (
             <View style={styles.toolbar}>
                 <TouchableElement onPress={() => this.onExitToMenu()}>
                     <View style={styles.toolbarBackBox}>
-                        <Text style={[CommonStyles.baseText, styles.toolbarBackText]}>
+                        <Text style={[CommonStyles.largeText, styles.toolbarBackText]}>
                             X
                         </Text>
                     </View>
                 </TouchableElement>
 
                 <View style={styles.toolbarTitleBox}>
-                    <Text style={[CommonStyles.baseText, styles.toolbarTitle]}>
+                    <Text style={[CommonStyles.largeText, styles.toolbarTitle]}>
                         {this.props.title}
                     </Text>
                 </View>
@@ -52,7 +52,7 @@ class Toolbar extends Component {
                     <Text style={streakStyles} key={1}>
                         {this.props.currentStreak}
                     </Text>
-                    <Text style={[CommonStyles.baseText, styles.toolbarText]} key={2}>
+                    <Text style={[CommonStyles.largeText, styles.toolbarText]} key={2}>
                         /
                     </Text>
                     <Text style={bestStreakStyles} key={3}>
@@ -100,14 +100,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     toolbarTitle: {
-        fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center',
         color: '#FFFFFD',
     },
     toolbarBackText: {
         textAlign: 'left',
-        fontSize: 20,
         fontWeight: 'bold',
         color: '#FFFFFD',
     },
@@ -115,7 +113,6 @@ const styles = StyleSheet.create({
 
     },
     toolbarText: {
-        fontSize: 20,
         fontWeight:'bold',
         color: '#FFFFFD',
         textAlign: 'right',

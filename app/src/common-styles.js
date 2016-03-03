@@ -3,8 +3,15 @@
 
 import React, {
   StyleSheet,
+  Dimensions,
 } from 'react-native';
 
+const dims = Dimensions.get('window');
+const smallPhone = Math.min(dims.height, dims.width) < 375;
+
+const fontSizeSmall = 12;
+const fontSizeMedium = smallPhone ? 14 : 16;
+const fontSizeLarge = smallPhone ? 18 : 20;
 
 const CommonStyles = StyleSheet.create({
     screenBackground: {
@@ -18,13 +25,22 @@ const CommonStyles = StyleSheet.create({
         // borderRadius: 6,
     },
     buttonText: {
-        fontSize: 18,
+        fontFamily: 'Helvetica Neue',
+        fontSize: fontSizeLarge,
         fontWeight: 'bold',
         color: '#FFFFFD',
     },
     baseText: {
         fontFamily: 'Helvetica Neue',
-        fontSize: 14,
+        fontSize: fontSizeMedium,
+    },
+    smallText: {
+        fontFamily: 'Helvetica Neue',
+        fontSize: fontSizeSmall,
+    },
+    largeText: {
+        fontFamily: 'Helvetica Neue',
+        fontSize: fontSizeLarge,
     },
     profilePic: {
         width: 64,

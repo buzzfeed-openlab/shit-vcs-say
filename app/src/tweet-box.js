@@ -33,7 +33,7 @@ class TweetBox extends Component {
         var handleText = null;
         if (this.props.handle) {
             handleText = (
-                <Text style={styles.tweetHandle}>
+                <Text style={[CommonStyles.smallText, styles.tweetHandle]}>
                     @{this.props.handle}
                 </Text>
             )
@@ -83,7 +83,7 @@ class TweetBox extends Component {
                     {imageElement}
 
                     <View style={styles.tweetHeaderText}>
-                        <Text style={styles.tweetName}>
+                        <Text style={[CommonStyles.largeText, styles.tweetName]}>
                             {this.props.name}
                         </Text>
 
@@ -93,7 +93,7 @@ class TweetBox extends Component {
                 </View>
 
                 <View style={styles.tweetContent}>
-                    <Text style={styles.tweetText}>
+                    <Text style={[CommonStyles.baseText, styles.tweetText]}>
                         {this.props.text}
                     </Text>
                 </View>
@@ -155,18 +155,12 @@ const styles = StyleSheet.create({
     },
     tweetName: {
         textAlign: 'left',
-        fontSize: 18, 
-        fontFamily: 'Helvetica Neue',
     },
     tweetHandle: {
-        fontSize: 12,
         color: '#8899a6',
-        fontFamily: 'Helvetica Neue',
     },
     tweetText: {
-        fontSize: 14,
         textAlign: 'left',
-        fontFamily: 'Helvetica Neue',
     },
     profilePic: {
         width: 64,

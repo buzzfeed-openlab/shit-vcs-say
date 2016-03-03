@@ -151,7 +151,7 @@ class StreakViewer extends Component {
             contentBox = (
                 <View style={[styles.resultBoxContent, styles.resultBoxContentWin]}>
                     <View style={styles.scoreBoxWin}>
-                        <Text style={[CommonStyles.baseText, styles.streakWinText]}>
+                        <Text style={[CommonStyles.largeText, styles.streakWinText]}>
                             Streak
                         </Text>
                         <Text style={[CommonStyles.baseText, styles.streakWinNumber]}>
@@ -159,7 +159,7 @@ class StreakViewer extends Component {
                         </Text>
                     </View>
                     <View style={styles.scoreBoxWin}>
-                        <Text style={[CommonStyles.baseText, styles.streakWinText]}>
+                        <Text style={[CommonStyles.largeText, styles.streakWinText]}>
                             Best
                         </Text>
                         <Text style={[CommonStyles.baseText, styles.streakWinNumber]}>
@@ -177,7 +177,7 @@ class StreakViewer extends Component {
 
             contentBox = (
                 <View style={[styles.resultBoxContent]}>
-                    <Text style={[CommonStyles.baseText, styles.streakLoseText]}>
+                    <Text style={[CommonStyles.largeText, styles.streakLoseText]}>
                         {streakBrokenText}
                     </Text>
                     <Text style={[CommonStyles.baseText]}>
@@ -208,7 +208,6 @@ const styles = StyleSheet.create({
         borderRadius: 6,
     },
     streakWinText: {
-        fontSize: 20,
         fontWeight: 'bold',
         color: '#27ae60',
         paddingBottom: 0,
@@ -221,7 +220,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     streakLoseText: {
-        fontSize: 18,
         fontWeight: 'bold',
         color: '#e74c3c',
         paddingBottom: 10,

@@ -164,7 +164,7 @@ class Option extends Component {
                             <Text style={[CommonStyles.baseText, styles.optionName]}>
                                 {this.props.option.name}
                             </Text>
-                            <Text style={[CommonStyles.baseText, styles.optionHandle]}>
+                            <Text style={[CommonStyles.smallText, styles.optionHandle]}>
                                 @{this.props.option.handle}
                             </Text>
                         </View>
@@ -210,11 +210,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     optionName: {
-        fontSize: 14,
         textAlign: 'left',
     },
     optionHandle: {
-        fontSize: 12,
         textAlign: 'left',
         color: '#8899a6',
     },
