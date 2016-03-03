@@ -19,6 +19,7 @@ import CommonStyles from './common-styles.js';
 import TweetBox from './tweet-box.js';
 import Toolbar from './toolbar.js';
 import Constants from './constants.js';
+import ArrowButton from './arrow-button.js';
 
 var TouchableElement = TouchableHighlight;
 if (Platform.OS === 'android') {
@@ -111,15 +112,10 @@ class AnswerScreen extends Component {
 
 
                     <View style={[styles.centerContainer, styles.actionOptionsBox]}>
-
-                        <TouchableElement onPress={this.onNextQuestion.bind(this)}>
-                            <View style={[CommonStyles.advanceButton, styles.nextButton]}>
-                                <Text style={CommonStyles.buttonText}>
-                                    Next >
-                                </Text>
-                            </View>
-                        </TouchableElement>
-
+                        <ArrowButton
+                            onPress={() => {this.onNextQuestion()}}
+                            text={'Next'}
+                        />
                     </View>
 
             </View>
