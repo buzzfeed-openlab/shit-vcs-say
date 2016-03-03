@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     menuBox: {
         flex: 1,
         margin: 20,
-        marginRight: 40,
+        marginRight: 30,
         justifyContent: 'center',
         alignItems: 'center',
     },
