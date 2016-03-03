@@ -24,12 +24,12 @@ class ArrowButton extends Component {
         var button = (
             <TouchableElement onPress={this.props.onPress}>
                 <View style={styles.button}>
-                    <View style={[CommonStyles.advanceButton, styles.buttonBox]} >
+                    <View style={[CommonStyles.advanceButton, styles.buttonBox]} key={0} >
                         <Text style={CommonStyles.buttonText}>
                             {this.props.text}
                         </Text>
                     </View>
-                    <View style={styles.buttonArrow} />
+                    <View style={styles.buttonArrow} key={1} />
                 </View>
             </TouchableElement>
         );

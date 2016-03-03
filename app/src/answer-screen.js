@@ -90,33 +90,36 @@ class AnswerScreen extends Component {
 
                 <Toolbar navigator={this.props.navigator} currentStreak={this.state.currentStreak} bestStreak={this.state.bestStreak} />
 
-                <View style={styles.answerTweetBox}>
-                    <TweetBox
-                        image={{ uri: Constants.IMAGE_DIR + this.state.answer.image }}
-                        name={this.state.answer.name}
-                        handle={this.state.answer.handle}
-                        text={this.state.question.text}
-                        profileUrl={this.state.answer.link}
-                        tweetUrl={this.state.question.link}
-                        twitterShare={this.state.question.twittershare}
-                    />
-                </View>
-
-                <StreakViewer
-                    answeredCorrectly={this.state.chosenOption.isAuthor == true}
-                    streakLength={this.state.currentStreak}
-                    oldStreak={this.state.oldStreak}
-                    bestStreak={this.state.bestStreak}
-                    chosenText={this.state.chosenOption.chosenText}
-                />
-
-
-                    <View style={[styles.centerContainer, styles.actionOptionsBox]}>
-                        <ArrowButton
-                            onPress={() => {this.onNextQuestion()}}
-                            text={'Next'}
+                <View style={styles.contentBox}>
+                    <View style={[styles.tweetBox]}>
+                        <TweetBox
+                            image={{ uri: Constants.IMAGE_DIR + this.state.answer.image }}
+                            name={this.state.answer.name}
+                            handle={this.state.answer.handle}
+                            text={this.state.question.text}
+                            profileUrl={this.state.answer.link}
+                            tweetUrl={this.state.question.link}
+                            twitterShare={this.state.question.twittershare}
                         />
                     </View>
+                    <View style={[styles.streakBox]}>
+      
+                        <StreakViewer
+                            answeredCorrectly={this.state.chosenOption.isAuthor == true}
+                            streakLength={this.state.currentStreak}
+                            oldStreak={this.state.oldStreak}
+                            bestStreak={this.state.bestStreak}
+                            chosenText={this.state.chosenOption.chosenText}
+                        />
+                    </View>
+                </View>
+
+                <View style={[styles.buttonBox]}>
+                    <ArrowButton
+                        onPress={() => {this.onNextQuestion()}}
+                        text={'Next'}
+                    />
+                </View>
 
             </View>
         );
@@ -167,8 +170,6 @@ class StreakViewer extends Component {
             );
 
         } else {
-            // answerImage = crossImage;
-
             var streakBrokenText = 'No streak for you!';
             if (this.props.oldStreak) {
                 streakBrokenText = 'You broke your streak!';
@@ -187,7 +188,7 @@ class StreakViewer extends Component {
         }
 
         return (
-            <View style={[styles.centerContainer, styles.streakViewer]}>
+            <View style={[styles.streakViewer]}>
                 {answerImage}
                 {contentBox}
             </View>
@@ -202,7 +203,8 @@ const styles = StyleSheet.create({
     streakViewer: {
         flexDirection: 'row',
         backgroundColor: '#FFFFFD',
-        margin: 20,
+        marginLeft: 20,
+        marginRight: 20,
         borderRadius: 6,
     },
     streakWinText: {
@@ -246,12 +248,12 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     centerContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'center',
     },
     actionOptionsBox: {
-        flex: 1,
-        padding: 20,
+        alignSelf: 'flex-end',
+        margin: 20,
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
     },
@@ -264,11 +266,32 @@ const styles = StyleSheet.create({
     },
     badgeBox: {
         paddingTop: 10,
+        backgroundColor: 'transparent',
     },
     badgeWin: {
         fontSize: 100,
         fontWeight: 'bold',
+        backgroundColor: 'transparent',
     },
+    contentBox: {
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'stretch',
+    },
+    tweetBox: {
+        margin: 20,
+    },
+    streakBox: {
+
+
+    },
+    buttonBox: {
+        alignItems: 'center',
+        marginBottom: 20,
+        marginRight: 30,
+        marginLeft: 20,
+    },
+
 });
 
 export default AnswerScreen;
