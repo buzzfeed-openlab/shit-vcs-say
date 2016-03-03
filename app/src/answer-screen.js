@@ -242,28 +242,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    answerTweetBox: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        padding: 20,
-    },
-    centerContainer: {
-        // alignItems: 'center',
-        // justifyContent: 'center',
-    },
-    actionOptionsBox: {
-        alignSelf: 'flex-end',
-        margin: 20,
-        justifyContent: 'flex-end',
-        alignItems: 'flex-end',
-    },
-    answerImage: {
-        width: 128,
-        height: 128,
-    },
-    nextButton: {
-        width: 256,
-    },
     badgeBox: {
         paddingTop: 10,
         backgroundColor: 'transparent',
@@ -282,8 +260,6 @@ const styles = StyleSheet.create({
         margin: 20,
     },
     streakBox: {
-
-
     },
     buttonBox: {
         alignItems: 'center',
