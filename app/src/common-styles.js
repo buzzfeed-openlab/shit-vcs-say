@@ -11,14 +11,16 @@ const CommonStyles = StyleSheet.create({
         backgroundColor:'#333333',
     },
     advanceButton: {
-        backgroundColor: '#1E90FF',
+        backgroundColor: '#27ae60',
         height: 32,
         alignItems: 'center',
         justifyContent: 'center',
+        // borderRadius: 6,
     },
     buttonText: {
         fontSize: 18,
-        color: '#FFFFFD'
+        fontWeight: 'bold',
+        color: '#FFFFFD',
     },
     baseText: {
         fontFamily: 'Helvetica Neue',
