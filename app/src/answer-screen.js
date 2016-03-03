@@ -144,7 +144,7 @@ class StreakViewer extends Component {
             answerImage = (
                 <View style={styles.badgeBox}>
                     <Text style={[CommonStyles.textWin, styles.badgeWin]}>
-                        $$$
+                        ✓
                     </Text>
                 </View>
             );
@@ -267,10 +267,10 @@ const styles = StyleSheet.create({
         width: 256,
     },
     badgeBox: {
-        paddingLeft: 20,
+        paddingTop: 10,
     },
     badgeWin: {
-        fontSize: 42,
+        fontSize: 100,
         fontWeight: 'bold',
     },
 });
