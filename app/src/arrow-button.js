@@ -37,7 +37,7 @@ class ArrowButton extends Component {
         if (this.props.disabled) {
             button = (
                 <View>
-                    <View style={[CommonStyles.advanceButton, styles.startGameButton]}>
+                    <View style={[CommonStyles.advanceButton, styles.buttonBoxDisabled]}>
                         <Text style={CommonStyles.buttonText}>
                             {this.props.text}
                         </Text>
@@ -59,6 +59,11 @@ const styles = StyleSheet.create({
         width: 256,
         borderTopLeftRadius: 6,
         borderBottomLeftRadius: 6,
+    },
+    buttonBoxDisabled: {
+        height: 32,
+        width: 256,
+        borderRadius: 6,
     },
     buttonArrow: {
         position: 'absolute',
