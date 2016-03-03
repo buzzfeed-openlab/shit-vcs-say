@@ -91,6 +91,8 @@ class MainMenuScreen extends Component {
             }
 
             SimpleStore.get('questions').then((oldQuestions) => {
+                oldQuestions = oldQuestions || {};
+
                 var questions = {};
 
                 for (var i = 0; i < newQuestions.length; ++i) {
