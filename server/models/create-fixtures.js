@@ -23,7 +23,7 @@ function fixtureQueries(i) {
             "'The world has never been more peaceful, more wealthy, more equal, with more jobs, more education, or more opportunity. The future is bright.'," +
             "'https://twitter.com/pmarca/status/652692676752465921'," +
             "'{\"text\": \"#ShitVCsSay \",\"link\": \"https://twitter.com/pmarca/status/652692676752465921\"}'," +
-            "'[{\"name\":\"Elmo\",\"handle\":\"Elmo\",\"image\":\"elmo-1.png\",\"link\":\"http://twitter.com/elmo\",\"chosenText\":\"Elmo would never minimize others struggles in order to validate an economic system which keeps Elmo in power!\"},{\"name\":\"Jason Calacanis\",\"handle\":\"Jason\",\"image\":\"jason-1.jpg\",\"link\":\"http://twitter.com/jason\",\"chosenText\":\"Na, it was not Jason Calacanis, but who can keep track of all these white guys anyway...\"},{\"name\":\"Marc Andreessen\",\"handle\":\"pmarca\",\"image\":\"pmarca-1.jpg\",\"link\":\"http://twitter.com/pmarca\",\"isAuthor\":true}]'" +
+            "'[{\"name\":\"Elmo\",\"handle\":\"Elmo\",\"image\":\"elmo-1.png\",\"link\":\"http://twitter.com/elmo\",\"chosenText\":\"Elmo would never minimize other''s struggles in order to validate an economic system which keeps Elmo in power!\"},{\"name\":\"Jason Calacanis\",\"handle\":\"Jason\",\"image\":\"jason-1.jpg\",\"link\":\"http://twitter.com/jason\",\"chosenText\":\"Na, it was not Jason Calacanis, but who can keep track of all these white guys anyway...\"},{\"name\":\"Marc Andreessen\",\"handle\":\"pmarca\",\"image\":\"pmarca-1.jpg\",\"link\":\"http://twitter.com/pmarca\",\"isAuthor\":true}]'" +
             "),(" +
             "'06f9bff5-c51e-4087-ab88-2497bb7516c3'," +
             "'I actually own three tuxedos!'," +
