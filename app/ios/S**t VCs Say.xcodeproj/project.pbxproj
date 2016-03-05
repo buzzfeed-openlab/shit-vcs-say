@@ -776,7 +776,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buzzfeed.openlab.QuizGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buzzfeed.openlab.svs;
 				PRODUCT_NAME = "S**t VCs Say";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -796,7 +796,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buzzfeed.openlab.QuizGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buzzfeed.openlab.svs;
 				PRODUCT_NAME = "S**t VCs Say";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -859,7 +859,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buzzfeed.openlab.QuizGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buzzfeed.openlab.svs;
 				PRODUCT_NAME = "S**t VCs Say";
 				PROVISIONING_PROFILE = "8056dae3-5e10-4514-a9bb-53ad14c7a136";
 				TARGETED_DEVICE_FAMILY = 1;
