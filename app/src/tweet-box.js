@@ -42,7 +42,7 @@ class TweetBox extends Component {
         // image optionally linkable
         var imageElement = (
             <Image
-                style={styles.profilePic}
+                style={CommonStyles.profilePic}
                 source={this.props.image}
             />
         );
@@ -161,11 +161,6 @@ const styles = StyleSheet.create({
     },
     tweetText: {
         textAlign: 'left',
-    },
-    profilePic: {
-        width: 64,
-        height: 64,
-        borderRadius: 6,
     },
     shareButtonBox: {
         flex: 1,
