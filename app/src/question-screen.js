@@ -36,8 +36,10 @@ class QuestionScreen extends Component {
     componentWillMount() {
         SimpleStore.get('questions').then((questions) => {
             var question = this.pickRandomQuestion(questions);
-            question.options = this.shuffleArray(question.options);
-            this.setState(Object.assign(this.state, { question: question }));
+            if (question) {
+                question.options = this.shuffleArray(question.options);
+                this.setState(Object.assign(this.state, { question: question }));
+            }
         });
 
         SimpleStore.get('currentStreak').then((currentStreak) => {
