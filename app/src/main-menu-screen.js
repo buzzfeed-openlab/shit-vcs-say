@@ -20,6 +20,7 @@ import CommonStyles from './common-styles.js';
 import QuestionScreen from './question-screen.js';
 import API from './api.js';
 import Constants from './constants.js';
+import Button from './button.js';
 import ArrowButton from './arrow-button.js';
 
 var TouchableElement = TouchableHighlight;
@@ -35,20 +36,12 @@ class MainMenuScreen extends Component {
 
         this.state = {
             loading: 0,
+            success: 2,
         }
     }
 
     componentWillMount() {
-        NetInfo.isConnected.fetch().done((isConnected) => {
-            if (isConnected) {
-                // `loading` used as a semaphore, we'll load questions
-                // and assets in parallel
-                this.setState({ loading: 2 }, () => {
-                    this.loadQuestions();
-                    this.loadImages();
-                });
-            }
-        });
+        this.pullDownGameData();
     }
 
     render() {
@@ -63,6 +56,20 @@ class MainMenuScreen extends Component {
                 disabled={this.state.loading}
             />
         );
+
+        if (this.state.success < 2) {
+            playButton = (
+                <View>
+                    <Text style={[CommonStyles.baseText, styles.errorText]}>
+                        Unable to download quiz questions... Please make sure you have interent access.
+                    </Text>
+                    <Button
+                        onPress={() => { this.pullDownGameData() }}
+                        text={'Press to retry'}
+                    />
+                </View>
+            );
+        }
 
         return (
             <View style={[CommonStyles.screenBackground, styles.mainMenuScreen]}>
@@ -81,6 +88,19 @@ class MainMenuScreen extends Component {
                 </View>
             </View>
         );
+    }
+
+    pullDownGameData() {
+        NetInfo.isConnected.fetch().done((isConnected) => {
+            if (isConnected) {
+                // `loading` used as a semaphore, we'll load questions
+                // and assets in parallel
+                this.setState({ loading: 2, success: 0 }, () => {
+                    this.loadQuestions();
+                    this.loadImages();
+                });
+            }
+        });
     }
 
     loadQuestions() {
@@ -110,7 +130,7 @@ class MainMenuScreen extends Component {
                         console.log('ERROR: could not download / unpack image bundle. ', err);
                     }
 
-                    this.setState({ loading: this.state.loading - 1 });
+                    this.setState({ loading: this.state.loading - 1, success: this.state.success + 1 });
                 });
             });
         });
@@ -118,7 +138,7 @@ class MainMenuScreen extends Component {
 
     loadImages() {
         API.downloadImageBundle((err, path) => {
-            this.setState({ loading: this.state.loading - 1 });
+            this.setState({ loading: this.state.loading - 1, success: this.state.success + 1 });
 
             // RNFS.readDir(Constants.IMAGE_DIR)
             //   .then((result) => {
@@ -155,6 +175,11 @@ const styles = StyleSheet.create({
         marginRight: 30,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    errorText: {
+        fontWeight: 'bold',
+        color: '#FFFFFD',
+        marginBottom: 10,
     },
 });
 
