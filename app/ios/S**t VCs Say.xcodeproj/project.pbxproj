@@ -783,7 +783,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buzzfeed.openlab.svs;
 				PRODUCT_NAME = "S**t VCs Say";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a56d311d-5d72-4283-b6cd-ef7d210ca116";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -806,7 +806,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buzzfeed.openlab.svs;
 				PRODUCT_NAME = "S**t VCs Say";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a56d311d-5d72-4283-b6cd-ef7d210ca116";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -871,7 +871,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buzzfeed.openlab.svs;
 				PRODUCT_NAME = "S**t VCs Say";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a56d311d-5d72-4283-b6cd-ef7d210ca116";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Alpha;
