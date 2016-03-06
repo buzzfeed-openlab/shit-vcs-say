@@ -203,8 +203,8 @@ const styles = StyleSheet.create({
     streakViewer: {
         flexDirection: 'row',
         backgroundColor: '#FFFFFD',
-        marginLeft: 20,
-        marginRight: 20,
+        marginLeft: Constants.BUFFER,
+        marginRight: Constants.BUFFER,
         borderRadius: 6,
     },
     streakWinText: {
@@ -227,7 +227,7 @@ const styles = StyleSheet.create({
     resultBoxContent: {
         flex: 1,
         flexDirection: 'column',
-        padding: 20,
+        padding: Constants.BUFFER,
     },
     resultBoxContentWin: {
         flexDirection: 'row',
@@ -255,13 +255,13 @@ const styles = StyleSheet.create({
         alignItems: 'stretch',
     },
     tweetBox: {
-        margin: 20,
+        margin: Constants.BUFFER,
     },
     streakBox: {
     },
     buttonBox: {
         alignItems: 'center',
-        marginBottom: 20,
+        marginBottom: Constants.BUFFER,
         marginRight: 30,
         marginLeft: 20,
     },

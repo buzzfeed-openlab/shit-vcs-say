@@ -195,15 +195,15 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     questionBox: {
-        flex: 1,
+        flex: 2,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        padding: 20,
+        padding: Constants.BUFFER,
     },
     answerBox: {
-        flex: 2,
-        margin: 20,
+        flex: 3,
+        margin: Constants.BUFFER,
         marginTop: 30,
         flexDirection: 'column',
         justifyContent: 'flex-end',
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     optionBuffer: {
-        marginTop: 20,
+        marginTop: Constants.BUFFER,
     },
     optionContent: {
         flex: 1,
@@ -238,10 +238,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     errorTitleBox: {
-        padding: 20,
+        padding: Constants.BUFFER,
     },
     errorContentBox: {
-        padding: 20,
+        padding: Constants.BUFFER,
     },
     errorTitle: {
         fontWeight: 'bold',

@@ -13,6 +13,7 @@ import React, {
     Linking,
 } from 'react-native';
 
+import Constants from './constants.js';
 import CommonStyles from './common-styles.js';
 
 import Clipboard from 'react-native-clipboard';
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
     tweetBox: {
         flex: 1,
         flexDirection: 'column',
-        padding: 18,
+        padding: Constants.BUFFER,
         backgroundColor: '#FFFFFD',
         borderRadius: 6,
     },

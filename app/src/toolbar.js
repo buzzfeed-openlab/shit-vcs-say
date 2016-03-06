@@ -13,6 +13,7 @@ import React, {
     Alert,
 } from 'react-native';
 
+import Constants from './constants.js';
 import CommonStyles from './common-styles.js';
 
 var TouchableElement = TouchableHighlight;
@@ -91,11 +92,11 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     toolbarBackBox: {
-        marginLeft: 20,
+        marginLeft: Constants.BUFFER,
         width: 64,
     },
     toolBarStreakBox: {
-        marginRight: 20,
+        marginRight: Constants.BUFFER,
         width: 64,
         flexDirection: 'row',
     },
