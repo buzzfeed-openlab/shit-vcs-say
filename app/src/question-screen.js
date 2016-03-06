@@ -54,7 +54,20 @@ class QuestionScreen extends Component {
     render() {
         if (!this.state.question) {
             return (
-                <View style={CommonStyles.screenBackground}>
+                <View style={[CommonStyles.screenBackground, styles.gameScreen]}>
+                    <View style={styles.errorBox}>
+                        <View style={styles.errorTitleBox}>
+                            <Text style={[CommonStyles.largeText, CommonStyles.textLose, styles.errorTitle]}>
+                                No Questions Downloaded
+                            </Text>
+                        </View>
+
+                        <View style={styles.errorContentBox}>
+                            <Text style={[CommonStyles.baseText, styles.errorText]}>
+                                Please try closing the app and opening it again when you have internet access.
+                            </Text>
+                        </View>
+                    </View>
                 </View>
             );
         }
@@ -215,6 +228,25 @@ const styles = StyleSheet.create({
     optionHandle: {
         textAlign: 'left',
         color: '#8899a6',
+    },
+    errorBox: {
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    errorTitleBox: {
+        padding: 20,
+    },
+    errorContentBox: {
+        padding: 20,
+    },
+    errorTitle: {
+        fontWeight: 'bold',
+    },
+    errorText: {
+        fontWeight: 'bold',
+        color: '#FFFFFD',
     },
 });
 
