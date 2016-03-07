@@ -131,7 +131,7 @@ class Question extends Component {
         return (
             <View style={styles.questionBox}>
                 <TweetBox
-                    image={{ uri: Constants.IMAGE_DIR + 'egg-1.jpeg' }}
+                    image={{ uri: Constants.IMAGE_DIR + 'egg.jpeg' }}
                     name={'???'}
                     text={this.props.question.text}
                 />
