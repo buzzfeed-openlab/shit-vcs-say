@@ -16,7 +16,7 @@ const profileSize = smallPhone ? 40 : 64;
 const buffer = smallPhone ? 10 : 20;
 
 const Constants = {
-    API_PATH: 'http://ec2-52-87-152-32.compute-1.amazonaws.com',
+    API_PATH: 'http://svs-env.us-east-1.elasticbeanstalk.com',
     IMAGE_DIR: RNFS.DocumentDirectoryPath + '/images/',
     FONT_SIZE_LARGE: fontSizeLarge,
     FONT_SIZE_MEDIUM: fontSizeMedium,
