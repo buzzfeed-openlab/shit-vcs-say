@@ -383,6 +383,27 @@ var questions = [
             }
         ]
     },
+
+    // -------
+
+    {
+        id: '5ec3c38b-0f74-4905-a8ff-7c3e9f32a742',
+        text: 'I actually own three tuxedos!',
+        link: 'https://twitter.com/BigBird/status/623205331305279488',
+        twitterShare: {
+            text: '#ShitVCsSay ',
+            link: 'https://twitter.com/BigBird/status/623205331305279488'
+        },
+        options: [
+            {
+                "name": "Big Bird",
+                "handle": "BigBird",
+                "image": "bigbird.png",
+                "link": "http://twitter.com/BigBird",
+                "isAuthor": true
+            }
+        ]
+    },
 ];
 
 db.tx(function (t) {
