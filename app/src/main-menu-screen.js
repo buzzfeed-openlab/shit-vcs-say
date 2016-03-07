@@ -57,7 +57,7 @@ class MainMenuScreen extends Component {
             />
         );
 
-        if (this.state.success < 2) {
+        if (!this.state.loading && this.state.success < 2) {
             playButton = (
                 <View>
                     <Text style={[CommonStyles.baseText, styles.errorText]}>
