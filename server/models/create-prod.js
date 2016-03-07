@@ -412,19 +412,21 @@ db.tx(function (t) {
 .then(function () {
     console.log('wiped and recreated table');
 
-    for (var i = 0; i < questions.length; ++i) {
-        var q = questions[i];
-        db.none("insert into questions (id, text, link, twitterShare, options) values(${id},${text},${link},${twitterShare:json},${options:json})", q)
-        .then(function () {
-            console.log('SUCCESS: ', q);
-        })
-        .catch(function (err) {
-            console.log('ERROR: ', err);
-        });
-    }
+    db.task((t) => {
+        t.batch(questions.map((q) => {
+            t.none('insert into questions (id, text, link, twitterShare, options) values(${id},${text},${link},${twitterShare:json},${options:json})', q)
+        }));
+    })
+    .then(function () {
+        console.log('SUCCESS! Populated DB');
+    })
+    .catch(function (err) {
+        console.log('ERROR: ', err);
+    });
+
 })
 .catch(function (error) {
-    console.log(error);
+    console.log('ERROR: ', error);
 });
 
 
