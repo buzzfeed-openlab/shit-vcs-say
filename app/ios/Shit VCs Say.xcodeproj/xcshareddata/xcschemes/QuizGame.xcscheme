@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
                BuildableName = "S**t VCs Say.app"
-               BlueprintName = "S**t VCs Say"
-               ReferencedContainer = "container:S**t VCs Say.xcodeproj">
+               BlueprintName = "Shit VCs Say"
+               ReferencedContainer = "container:Shit VCs Say.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "S**t VCs Say.xctest"
-               BlueprintName = "S**t VCs SayTests"
-               ReferencedContainer = "container:S**t VCs Say.xcodeproj">
+               BuildableName = "Shit VCs Say.xctest"
+               BlueprintName = "Shit VCs SayTests"
+               ReferencedContainer = "container:Shit VCs Say.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "S**t VCs Say.xctest"
-               BlueprintName = "S**t VCs SayTests"
-               ReferencedContainer = "container:S**t VCs Say.xcodeproj">
+               BuildableName = "Shit VCs Say.xctest"
+               BlueprintName = "Shit VCs SayTests"
+               ReferencedContainer = "container:Shit VCs Say.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,8 +58,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "S**t VCs Say.app"
-            BlueprintName = "S**t VCs Say"
-            ReferencedContainer = "container:S**t VCs Say.xcodeproj">
+            BlueprintName = "Shit VCs Say"
+            ReferencedContainer = "container:Shit VCs Say.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "S**t VCs Say.app"
-            BlueprintName = "S**t VCs Say"
-            ReferencedContainer = "container:S**t VCs Say.xcodeproj">
+            BlueprintName = "Shit VCs Say"
+            ReferencedContainer = "container:Shit VCs Say.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -100,8 +100,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "S**t VCs Say.app"
-            BlueprintName = "S**t VCs Say"
-            ReferencedContainer = "container:S**t VCs Say.xcodeproj">
+            BlueprintName = "Shit VCs Say"
+            ReferencedContainer = "container:Shit VCs Say.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
