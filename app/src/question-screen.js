@@ -89,7 +89,7 @@ class QuestionScreen extends Component {
 
     onSelectedAnswer(selectedOption) {
         var questionUpdate = {};
-        questionUpdate[this.state.question.uuid] = Object.assign({}, this.state.question, { answered: true });
+        questionUpdate[this.state.question.id] = Object.assign({}, this.state.question, { answered: true });
 
         SimpleStore.update('questions', questionUpdate).then(() => {
             this.props.navigator.push({
