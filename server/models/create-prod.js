@@ -34,6 +34,20 @@ var questions = [
                 "image": "pmarca.jpg",
                 "link": "http://twitter.com/pmarca",
                 "isAuthor": true
+            },
+            {
+                "name": "Sam Altman",
+                "handle": "sama",
+                "image": "sama.jpg",
+                "link": "http://twitter.com/sama",
+                "chosenText": "Na, it wasn't Sam Altman, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Oscar the Grouch",
+                "handle": "OscarTheGrouch",
+                "image": "oscarthegrouch.png",
+                "link": "http://twitter.com/oscarthegrouch",
+                "chosenText": "I don't think Oscar would share the same sense of camaraderie..."
             }
         ]
     },
@@ -52,6 +66,20 @@ var questions = [
                 "image": "pmarca.jpg",
                 "link": "http://twitter.com/pmarca",
                 "isAuthor": true
+            },
+            {
+                "name": "Paul Graham",
+                "handle": "paulg",
+                "image": "paulg.jpg",
+                "link": "http://twitter.com/paulg",
+                "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Elmo",
+                "handle": "elmo",
+                "image": "elmo.png",
+                "link": "http://twitter.com/elmo",
+                "chosenText": "Elmo supports his friends in their endeavors too..."
             }
         ]
     },
@@ -70,6 +98,20 @@ var questions = [
                 "image": "pmarca.jpg",
                 "link": "http://twitter.com/pmarca",
                 "isAuthor": true
+            },
+            {
+                "name": "John Lilly",
+                "handle": "johnolilly",
+                "image": "johnolilly.jpeg",
+                "link": "http://twitter.com/johnolilly",
+                "chosenText": "Na, it wasn't John Lilly, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Elmo",
+                "handle": "elmo",
+                "image": "elmo.png",
+                "link": "http://twitter.com/elmo",
+                "chosenText": "Elmo would never minimize others' struggles to validate an economic system which keeps Elmo in power!"
             }
         ]
     },
@@ -88,6 +130,20 @@ var questions = [
                 "image": "pmarca.jpg",
                 "link": "http://twitter.com/pmarca",
                 "isAuthor": true
+            },
+            {
+                "name": "Michael Arrington",
+                "handle": "arrington",
+                "image": "arrington.jpg",
+                "link": "http://twitter.com/arrington",
+                "chosenText": "Na, it wasn't Michael Arrington, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Elmo",
+                "handle": "elmo",
+                "image": "elmo.png",
+                "link": "http://twitter.com/elmo",
+                "chosenText": "Elmo would never defend colonialism on economic grounds!"
             }
         ]
     },
@@ -109,10 +165,23 @@ var questions = [
                 "image": "benedictevans.jpeg",
                 "link": "http://twitter.com/BenedictEvans",
                 "isAuthor": true
+            },
+            {
+                "name": "Jason Calacanis",
+                "handle": "Jason",
+                "image": "jason.jpg",
+                "link": "http://twitter.com/jason",
+                "chosenText": "Na, it wasn't Jason Calacanis, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Oscar the Grouch",
+                "handle": "OscarTheGrouch",
+                "image": "oscarthegrouch.png",
+                "link": "http://twitter.com/oscarthegrouch",
+                "chosenText": "Oscar might also be distraught, but he could probably see the irony."
             }
         ]
     },
-    
     {
         id: '12d104bb-aca7-4680-b6a7-ae72a5ad2aff',
         text: 'no normal user ever encounters DRM anymore, since we went to streaming. It became a total non-issue',
@@ -128,6 +197,20 @@ var questions = [
                 "image": "benedictevans.jpeg",
                 "link": "http://twitter.com/BenedictEvans",
                 "isAuthor": true
+            },
+            {
+                "name": "Keith Rabois",
+                "handle": "rabois",
+                "image": "rabois.jpg",
+                "link": "http://twitter.com/rabois",
+                "chosenText": "Na, it wasn't Keith Rabois, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Oscar the Grouch",
+                "handle": "OscarTheGrouch",
+                "image": "oscarthegrouch.png",
+                "link": "http://twitter.com/oscarthegrouch",
+                "chosenText": "Oscar would probably resent the implication that he is not a \"normal user\""
             }
         ]
     },
@@ -149,6 +232,20 @@ var questions = [
                 "image": "sama.jpg",
                 "link": "http://twitter.com/sama",
                 "isAuthor": true
+            },
+            {
+                "name": "Paul Graham",
+                "handle": "paulg",
+                "image": "paulg.jpg",
+                "link": "http://twitter.com/paulg",
+                "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Big Bird",
+                "handle": "BigBird",
+                "image": "bigbird.png",
+                "link": "http://twitter.com/BigBird",
+                "chosenText": "Big Bird might suggest that we could all learn to be more compassionate..."
             }
         ]
     },
@@ -167,7 +264,22 @@ var questions = [
                 "image": "sama.jpg",
                 "link": "http://twitter.com/sama",
                 "isAuthor": true
+            },
+            {
+                "name": "Michael Arrington",
+                "handle": "arrington",
+                "image": "arrington.jpg",
+                "link": "http://twitter.com/arrington",
+                "chosenText": "Na, it wasn't Michael Arrington, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Cookie Monster",
+                "handle": "mecookiemonster",
+                "image": "mecookiemonster.png",
+                "link": "http://twitter.com/mecookiemonster",
+                "chosenText": "Let's be honest, Cookie Monster would probably agree."
             }
+
         ]
     },
     {
@@ -185,6 +297,20 @@ var questions = [
                 "image": "sama.jpg",
                 "link": "http://twitter.com/sama",
                 "isAuthor": true
+            },
+            {
+                "name": "Benedict Evans",
+                "handle": "BenedictEvans",
+                "image": "benedictevans.jpeg",
+                "link": "http://twitter.com/BenedictEvans",
+                "chosenText": "Na, it wasn't Benedict Evans, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Big Bird",
+                "handle": "BigBird",
+                "image": "bigbird.png",
+                "link": "http://twitter.com/BigBird",
+                "chosenText": "Big Bird would certainly agree that markets take frustratingly little into account..."
             }
         ]
     },
@@ -206,6 +332,20 @@ var questions = [
                 "image": "rabois.jpg",
                 "link": "http://twitter.com/rabois",
                 "isAuthor": true
+            },
+            {
+                "name": "John Lilly",
+                "handle": "johnolilly",
+                "image": "johnolilly.jpeg",
+                "link": "http://twitter.com/johnolilly",
+                "chosenText": "Na, it wasn't John Lilly, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Snuffleupagus",
+                "handle": "MrSnuffleupagus",
+                "image": "mrsnuffleupagus.jpg",
+                "link": "http://twitter.com/MrSnuffleupagus",
+                "chosenText": "It wasn't Snuffleupagus, but you're always welcome on Sesame Street!"
             }
         ]
     },
@@ -224,6 +364,20 @@ var questions = [
                 "image": "rabois.jpg",
                 "link": "http://twitter.com/rabois",
                 "isAuthor": true
+            },
+            {
+                "name": "Marc Andreessen",
+                "handle": "pmarca",
+                "image": "pmarca.jpg",
+                "link": "http://twitter.com/pmarca",
+                "chosenText": "Na, it wasn't Marc Andreessen, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Elmo",
+                "handle": "elmo",
+                "image": "elmo.png",
+                "link": "http://twitter.com/elmo",
+                "chosenText": "Elmo wouldn't exactly blend in with the PayPal Mafia"
             }
         ]
     },
@@ -245,6 +399,20 @@ var questions = [
                 "image": "johnolilly.jpeg",
                 "link": "http://twitter.com/johnolilly",
                 "isAuthor": true
+            },
+            {
+                "name": "Jason Calacanis",
+                "handle": "Jason",
+                "image": "jason.jpg",
+                "link": "http://twitter.com/jason",
+                "chosenText": "Na, it wasn't Jason Calacanis, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Oscar the Grouch",
+                "handle": "OscarTheGrouch",
+                "image": "oscarthegrouch.png",
+                "link": "http://twitter.com/oscarthegrouch",
+                "chosenText": "It wasn't Oscar, but remember, it's a garbage can, not a garbage cannot."
             }
         ]
     },
@@ -266,6 +434,20 @@ var questions = [
                 "image": "jason.jpg",
                 "link": "http://twitter.com/jason",
                 "isAuthor": true
+            },
+            {
+                "name": "Marc Andreessen",
+                "handle": "pmarca",
+                "image": "pmarca.jpg",
+                "link": "http://twitter.com/pmarca",
+                "chosenText": "Na, it wasn't Marc Andreessen, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Cookie Monster",
+                "handle": "mecookiemonster",
+                "image": "mecookiemonster.png",
+                "link": "http://twitter.com/mecookiemonster",
+                "chosenText": "It wasn't Cookie Monster, but he'd love for you to read his blog."
             }
         ]
     },
@@ -284,6 +466,20 @@ var questions = [
                 "image": "jason.jpg",
                 "link": "http://twitter.com/jason",
                 "isAuthor": true
+            },
+            {
+                "name": "Paul Graham",
+                "handle": "paulg",
+                "image": "paulg.jpg",
+                "link": "http://twitter.com/paulg",
+                "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Snuffleupagus",
+                "handle": "MrSnuffleupagus",
+                "image": "mrsnuffleupagus.jpg",
+                "link": "http://twitter.com/MrSnuffleupagus",
+                "chosenText": "Nobody can even see Snuffleupagus..."
             }
         ]
     },
@@ -302,6 +498,20 @@ var questions = [
                 "image": "jason.jpg",
                 "link": "http://twitter.com/jason",
                 "isAuthor": true
+            },
+            {
+                "name": "Keith Rabois",
+                "handle": "rabois",
+                "image": "rabois.jpg",
+                "link": "http://twitter.com/rabois",
+                "chosenText": "Na, it wasn't Keith Rabois, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Big Bird",
+                "handle": "BigBird",
+                "image": "bigbird.png",
+                "link": "http://twitter.com/BigBird",
+                "chosenText": "We both know Big Bird didn't say this."
             }
         ]
     },
@@ -323,24 +533,20 @@ var questions = [
                 "image": "arrington.jpg",
                 "link": "http://twitter.com/arrington",
                 "isAuthor": true
-            }
-        ]
-    },
-    {
-        id: '7ad15bd1-47dd-4f60-923c-36c38fff36d3',
-        text: 'Star Wars was as good as I hoped. Better.',
-        link: 'https://twitter.com/arrington/status/678446331547922432',
-        twitterShare: {
-            text: '#ShitVCsSay ',
-            link: 'https://twitter.com/arrington/status/678446331547922432'
-        },
-        options: [
+            },
             {
-                "name": "Michael Arrington",
-                "handle": "arrington",
-                "image": "arrington.jpg",
-                "link": "http://twitter.com/arrington",
-                "isAuthor": true
+                "name": "Keith Rabois",
+                "handle": "rabois",
+                "image": "rabois.jpg",
+                "link": "http://twitter.com/rabois",
+                "chosenText": "Na, it wasn't Keith Rabois, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Big Bird",
+                "handle": "BigBird",
+                "image": "bigbird.png",
+                "link": "http://twitter.com/BigBird",
+                "chosenText": "Don't attack homophobic / transphobic people in power, those issues are solved!"
             }
         ]
     },
@@ -359,6 +565,20 @@ var questions = [
                 "image": "arrington.jpg",
                 "link": "http://twitter.com/arrington",
                 "isAuthor": true
+            },
+            {
+                "name": "Sam Altman",
+                "handle": "sama",
+                "image": "sama.jpg",
+                "link": "http://twitter.com/sama",
+                "chosenText": "Na, it wasn't Sam Altman, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Oscar the Grouch",
+                "handle": "OscarTheGrouch",
+                "image": "oscarthegrouch.png",
+                "link": "http://twitter.com/oscarthegrouch",
+                "chosenText": "I'm sure we all hope he had a marvelous cup of coffee."
             }
         ]
     },
@@ -367,11 +587,11 @@ var questions = [
 
     {
         id: '4ce668b1-ea1b-4547-aa64-3adff9eae85a',
-        text: 'Mute stupidity, block malice. Works outside of Twitter too.',
-        link: 'https://twitter.com/paulg/status/664144765974278144',
+        text: 'Any industry that still has unions has potential energy that could be released by startups.',
+        link: 'https://twitter.com/paulg/status/663456748494127104',
         twitterShare: {
             text: '#ShitVCsSay ',
-            link: 'https://twitter.com/paulg/status/664144765974278144'
+            link: 'https://twitter.com/paulg/status/663456748494127104'
         },
         options: [
             {
@@ -380,6 +600,84 @@ var questions = [
                 "image": "paulg.jpg",
                 "link": "http://twitter.com/paulg",
                 "isAuthor": true
+            },
+            {
+                "name": "John Lilly",
+                "handle": "johnolilly",
+                "image": "johnolilly.jpeg",
+                "link": "http://twitter.com/johnolilly",
+                "chosenText": "Na, it wasn't John Lilly, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Big Bird",
+                "handle": "BigBird",
+                "image": "bigbird.png",
+                "link": "http://twitter.com/BigBird",
+                "chosenText": "Big Bird stands with workers! Google \"Maria wants a raise\""
+            }
+        ]
+    },
+    {
+        id: '4ce668b1-ea1b-4547-aa64-3adff9eae85a',
+        text: 'I think the reason you\'re surprised is that not being a loser yourself you underestimate the power of envy.',
+        link: 'https://twitter.com/paulg/status/672112234521231361',
+        twitterShare: {
+            text: '#ShitVCsSay ',
+            link: 'https://twitter.com/paulg/status/672112234521231361'
+        },
+        options: [
+            {
+                "name": "Paul Graham",
+                "handle": "paulg",
+                "image": "paulg.jpg",
+                "link": "http://twitter.com/paulg",
+                "isAuthor": true
+            },
+            {
+                "name": "Marc Andreessen",
+                "handle": "pmarca",
+                "image": "pmarca.jpg",
+                "link": "http://twitter.com/pmarca",
+                "chosenText": "Na, it wasn't Marc Andreessen, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Oscar the Grouch",
+                "handle": "OscarTheGrouch",
+                "image": "oscarthegrouch.png",
+                "link": "http://twitter.com/oscarthegrouch",
+                "chosenText": "Cookie Monster does not like the taste of schadenfreude."
+            }
+        ]
+    },
+    {
+        id: '4ce668b1-ea1b-4547-aa64-3adff9eae85a',
+        text: 'When you accuse Silicon Valley of x, you\'re implicitly saying x works well, which doesn\'t seem smart if you\'re against x.',
+        link: 'https://twitter.com/paulg/status/656268067316613124',
+        twitterShare: {
+            text: '#ShitVCsSay ',
+            link: 'https://twitter.com/paulg/status/656268067316613124'
+        },
+        options: [
+            {
+                "name": "Paul Graham",
+                "handle": "paulg",
+                "image": "paulg.jpg",
+                "link": "http://twitter.com/paulg",
+                "isAuthor": true
+            },
+            {
+                "name": "Sam Altman",
+                "handle": "sama",
+                "image": "sama.jpg",
+                "link": "http://twitter.com/sama",
+                "chosenText": "Na, it wasn't Sam Altman, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Elmo",
+                "handle": "elmo",
+                "image": "elmo.png",
+                "link": "http://twitter.com/elmo",
+                "chosenText": "Elmo knows hubris is at the core of many tragedies."
             }
         ]
     },
@@ -401,6 +699,20 @@ var questions = [
                 "image": "bigbird.png",
                 "link": "http://twitter.com/BigBird",
                 "isAuthor": true
+            },
+            {
+                "name": "Paul Graham",
+                "handle": "paulg",
+                "image": "paulg.jpg",
+                "link": "http://twitter.com/paulg",
+                "chosenText": "Don't be silly, venture capitalists just wear polo shirts and jeans."
+            },
+            {
+                "name": "Benedict Evans",
+                "handle": "BenedictEvans",
+                "image": "benedictevans.jpeg",
+                "link": "http://twitter.com/BenedictEvans",
+                "chosenText": "Don't be silly, venture capitalists just wear polo shirts and jeans."
             }
         ]
     },
@@ -442,32 +754,3 @@ db.tx(function (t) {
 //     options: [
 //     ]
 // },
-
-
-
-
-
-
-// {
-//     "name": "Elmo",
-//     "handle": "Elmo",
-//     "image": "elmo.png",
-//     "link": "http://twitter.com/elmo",
-//     "chosenText": "Elmo would never minimize other''s struggles in order to validate an economic system which keeps Elmo in power!"
-// }
-
-// {
-//     "name": "Jason Calacanis",
-//     "handle": "Jason",
-//     "image": "jason.jpg",
-//     "link": "http://twitter.com/jason",
-//     "chosenText": "Na, it was not Jason Calacanis, but who can keep track of all these white guys anyway..."
-// }
-
-// {
-//     "name": "Marc Andreessen",
-//     "handle": "pmarca",
-//     "image": "pmarca.jpg",
-//     "link": "http://twitter.com/pmarca",
-//     "isAuthor": true
-// }
