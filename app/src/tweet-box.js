@@ -11,6 +11,7 @@ import React, {
     TouchableNativeFeedback,
     Platform,
     Linking,
+    Alert,
 } from 'react-native';
 
 import Constants from './constants.js';
@@ -130,6 +131,7 @@ class TweetBox extends Component {
     onLink() {
         console.log(this.props.tweetUrl);
         Clipboard.set(this.props.tweetUrl);
+        Alert.alert('Link copied to clipboard');
     }
 }
 
