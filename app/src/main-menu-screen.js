@@ -29,6 +29,7 @@ if (Platform.OS === 'android') {
 }
 
 const titleImage = require('../assets/title-image.png');
+const preserveAnswers = true;
 
 class MainMenuScreen extends Component {
     constructor(props) {
@@ -119,7 +120,7 @@ class MainMenuScreen extends Component {
                     var q = newQuestions[i];
 
                     questions[q.id] = q;
-                    if (oldQuestions[q.id] && oldQuestions[q.id].answered) {
+                    if (preserveAnswers && oldQuestions[q.id] && oldQuestions[q.id].answered) {
                         questions[q.id].answered = true;
                     }
                 }
