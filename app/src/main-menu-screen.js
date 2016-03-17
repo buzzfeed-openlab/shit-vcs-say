@@ -29,7 +29,7 @@ if (Platform.OS === 'android') {
 }
 
 const titleImage = require('../assets/title-image.png');
-const preserveAnswers = true;
+const preserveAnswers = false;
 
 class MainMenuScreen extends Component {
     constructor(props) {
@@ -92,16 +92,16 @@ class MainMenuScreen extends Component {
     }
 
     pullDownGameData() {
-        NetInfo.isConnected.fetch().done((isConnected) => {
-            if (isConnected) {
+        // NetInfo.isConnected.fetch().done((isConnected) => {
+        //     if (isConnected) {
                 // `loading` used as a semaphore, we'll load questions
                 // and assets in parallel
                 this.setState({ loading: 2, success: 0 }, () => {
                     this.loadQuestions();
                     this.loadImages();
                 });
-            }
-        });
+        //     }
+        // });
     }
 
     loadQuestions() {
@@ -127,11 +127,16 @@ class MainMenuScreen extends Component {
 
                 SimpleStore.save('questions', questions)
                 .then((err) => {
+                    var loadingValue = this.state.loading - 1;
+                    var successValue = this.state.success;
+
                     if (err) {
                         console.log('ERROR: could not download / unpack image bundle. ', err);
+                    } else {
+                        successValue += 1;
                     }
 
-                    this.setState({ loading: this.state.loading - 1, success: this.state.success + 1 });
+                    this.setState({ loading: loadingValue, success: successValue });
                 });
             });
         });
@@ -139,7 +144,9 @@ class MainMenuScreen extends Component {
 
     loadImages() {
         API.downloadImageBundle((err, path) => {
-            this.setState({ loading: this.state.loading - 1, success: this.state.success + 1 });
+            var successValue = this.state.success + (err ? 0 : 1);
+
+            this.setState({ loading: this.state.loading - 1, success: successValue });
 
             // RNFS.readDir(Constants.IMAGE_DIR)
             //   .then((result) => {
