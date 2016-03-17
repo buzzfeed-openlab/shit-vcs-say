@@ -29,7 +29,7 @@ if (Platform.OS === 'android') {
 }
 
 const titleImage = require('../assets/title-image.png');
-const preserveAnswers = false;
+const preserveAnswers = true;
 
 class MainMenuScreen extends Component {
     constructor(props) {
