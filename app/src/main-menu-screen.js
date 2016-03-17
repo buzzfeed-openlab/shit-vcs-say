@@ -92,16 +92,25 @@ class MainMenuScreen extends Component {
     }
 
     pullDownGameData() {
-        // NetInfo.isConnected.fetch().done((isConnected) => {
-        //     if (isConnected) {
+        NetInfo.isConnected.fetch().done((isConnected) => {
+            if (isConnected) {
                 // `loading` used as a semaphore, we'll load questions
                 // and assets in parallel
                 this.setState({ loading: 2, success: 0 }, () => {
                     this.loadQuestions();
                     this.loadImages();
                 });
-        //     }
-        // });
+
+            } else {
+                SimpleStore.get('questions').then((questions) => {
+                    // if there are no questions pulled down, we need to
+                    // connect to the internet and retry before playing
+                    if (!questions || !Object.keys(questions).length) {
+                        this.setState({ loading: 0, success: 0 });
+                    }
+                });
+            }
+        });
     }
 
     loadQuestions() {
