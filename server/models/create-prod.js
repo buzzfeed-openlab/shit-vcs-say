@@ -584,7 +584,7 @@ var questions = [
     },
     {
         id: 'cb1d8aff-947a-4d44-a20f-0b7d40f05ad1',
-        text: 'ok "you guys" is out... "you people" is racist. How about "Hey, Fucktards?" Is that ok?',
+        text: 'ok "you guys" is out. [url] … "you people" is racist. How about "Hey, Fucktards?" Is that ok?',
         link: 'https://twitter.com/arrington/status/609103172632608768',
         twitterShare: {
             text: '#ShitVCsSay ',
@@ -604,7 +604,7 @@ var questions = [
                 "image": "paulg.jpg",
                 "link": "http://twitter.com/paulg",
                 "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these white guys anyway..."
-            }
+            },
             {
                 "name": "Big Bird",
                 "handle": "BigBird",
@@ -612,6 +612,39 @@ var questions = [
                 "link": "http://twitter.com/BigBird",
                 "chosenText": "Big Bird prefers \"y'all\"."
             }
+        ]
+    },
+    {
+        id: 'cb1d8aff-947a-4d44-a20f-0b7d40f05ad1',
+        text: 'Iceland considering removing banks from money creation. [url] Hitler also did this very successfully [url]',
+        link: 'https://twitter.com/arrington/status/583400849021337600',
+        twitterShare: {
+            text: '#ShitVCsSay ',
+            link: 'https://twitter.com/arrington/status/583400849021337600'
+        },
+        options: [
+            {
+                "name": "Michael Arrington",
+                "handle": "arrington",
+                "image": "arrington.jpg",
+                "link": "http://twitter.com/arrington",
+                "isAuthor": true
+            },
+            {
+                "name": "John Lilly",
+                "handle": "johnolilly",
+                "image": "johnolilly.jpeg",
+                "link": "http://twitter.com/johnolilly",
+                "chosenText": "Na, it wasn't John Lilly, but who can keep track of all these white guys anyway..."
+            },
+            {
+                "name": "Elmo",
+                "handle": "elmo",
+                "image": "elmo.png",
+                "link": "http://twitter.com/elmo",
+                "chosenText": "I'm starting to think you don't watch Sesame Street. Elmo isn't big on casual Hitler comparisons."
+            }
+
         ]
     },
 
