@@ -582,6 +582,38 @@ var questions = [
             }
         ]
     },
+    {
+        id: 'cb1d8aff-947a-4d44-a20f-0b7d40f05ad1',
+        text: 'ok "you guys" is out... "you people" is racist. How about "Hey, Fucktards?" Is that ok?',
+        link: 'https://twitter.com/arrington/status/609103172632608768',
+        twitterShare: {
+            text: '#ShitVCsSay ',
+            link: 'https://twitter.com/arrington/status/609103172632608768'
+        },
+        options: [
+            {
+                "name": "Michael Arrington",
+                "handle": "arrington",
+                "image": "arrington.jpg",
+                "link": "http://twitter.com/arrington",
+                "isAuthor": true
+            },
+            {
+                "name": "Paul Graham",
+                "handle": "paulg",
+                "image": "paulg.jpg",
+                "link": "http://twitter.com/paulg",
+                "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these white guys anyway..."
+            }
+            {
+                "name": "Big Bird",
+                "handle": "BigBird",
+                "image": "bigbird.png",
+                "link": "http://twitter.com/BigBird",
+                "chosenText": "Big Bird prefers \"y'all\"."
+            }
+        ]
+    },
 
     // -------
 
