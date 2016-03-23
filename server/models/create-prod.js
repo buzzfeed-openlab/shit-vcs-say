@@ -40,7 +40,7 @@ var questions = [
                 "handle": "sama",
                 "image": "sama.jpg",
                 "link": "http://twitter.com/sama",
-                "chosenText": "Na, it wasn't Sam Altman, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Sam Altman, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Oscar the Grouch",
@@ -72,7 +72,7 @@ var questions = [
                 "handle": "paulg",
                 "image": "paulg.jpg",
                 "link": "http://twitter.com/paulg",
-                "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Elmo",
@@ -104,7 +104,7 @@ var questions = [
                 "handle": "johnolilly",
                 "image": "johnolilly.jpeg",
                 "link": "http://twitter.com/johnolilly",
-                "chosenText": "Na, it wasn't John Lilly, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't John Lilly, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Elmo",
@@ -136,7 +136,7 @@ var questions = [
                 "handle": "arrington",
                 "image": "arrington.jpg",
                 "link": "http://twitter.com/arrington",
-                "chosenText": "Na, it wasn't Michael Arrington, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Michael Arrington, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Elmo",
@@ -171,7 +171,7 @@ var questions = [
                 "handle": "Jason",
                 "image": "jason.jpg",
                 "link": "http://twitter.com/jason",
-                "chosenText": "Na, it wasn't Jason Calacanis, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Jason Calacanis, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Oscar the Grouch",
@@ -203,7 +203,7 @@ var questions = [
                 "handle": "rabois",
                 "image": "rabois.jpg",
                 "link": "http://twitter.com/rabois",
-                "chosenText": "Na, it wasn't Keith Rabois, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Keith Rabois, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Oscar the Grouch",
@@ -238,7 +238,7 @@ var questions = [
                 "handle": "paulg",
                 "image": "paulg.jpg",
                 "link": "http://twitter.com/paulg",
-                "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Big Bird",
@@ -270,7 +270,7 @@ var questions = [
                 "handle": "arrington",
                 "image": "arrington.jpg",
                 "link": "http://twitter.com/arrington",
-                "chosenText": "Na, it wasn't Michael Arrington, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Michael Arrington, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Cookie Monster",
@@ -303,7 +303,7 @@ var questions = [
                 "handle": "BenedictEvans",
                 "image": "benedictevans.jpeg",
                 "link": "http://twitter.com/BenedictEvans",
-                "chosenText": "Na, it wasn't Benedict Evans, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Benedict Evans, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Big Bird",
@@ -338,7 +338,7 @@ var questions = [
                 "handle": "johnolilly",
                 "image": "johnolilly.jpeg",
                 "link": "http://twitter.com/johnolilly",
-                "chosenText": "Na, it wasn't John Lilly, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't John Lilly, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Snuffleupagus",
@@ -370,7 +370,7 @@ var questions = [
                 "handle": "pmarca",
                 "image": "pmarca.jpg",
                 "link": "http://twitter.com/pmarca",
-                "chosenText": "Na, it wasn't Marc Andreessen, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Marc Andreessen, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Elmo",
@@ -405,7 +405,7 @@ var questions = [
                 "handle": "Jason",
                 "image": "jason.jpg",
                 "link": "http://twitter.com/jason",
-                "chosenText": "Na, it wasn't Jason Calacanis, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Jason Calacanis, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Oscar the Grouch",
@@ -440,7 +440,7 @@ var questions = [
                 "handle": "pmarca",
                 "image": "pmarca.jpg",
                 "link": "http://twitter.com/pmarca",
-                "chosenText": "Na, it wasn't Marc Andreessen, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Marc Andreessen, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Cookie Monster",
@@ -472,7 +472,7 @@ var questions = [
                 "handle": "paulg",
                 "image": "paulg.jpg",
                 "link": "http://twitter.com/paulg",
-                "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Snuffleupagus",
@@ -504,7 +504,7 @@ var questions = [
                 "handle": "rabois",
                 "image": "rabois.jpg",
                 "link": "http://twitter.com/rabois",
-                "chosenText": "Na, it wasn't Keith Rabois, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Keith Rabois, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Big Bird",
@@ -539,7 +539,7 @@ var questions = [
                 "handle": "rabois",
                 "image": "rabois.jpg",
                 "link": "http://twitter.com/rabois",
-                "chosenText": "Na, it wasn't Keith Rabois, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Keith Rabois, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Big Bird",
@@ -571,7 +571,7 @@ var questions = [
                 "handle": "sama",
                 "image": "sama.jpg",
                 "link": "http://twitter.com/sama",
-                "chosenText": "Na, it wasn't Sam Altman, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Sam Altman, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Oscar the Grouch",
@@ -603,7 +603,7 @@ var questions = [
                 "handle": "paulg",
                 "image": "paulg.jpg",
                 "link": "http://twitter.com/paulg",
-                "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Paul Graham, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Big Bird",
@@ -635,7 +635,7 @@ var questions = [
                 "handle": "johnolilly",
                 "image": "johnolilly.jpeg",
                 "link": "http://twitter.com/johnolilly",
-                "chosenText": "Na, it wasn't John Lilly, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't John Lilly, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Elmo",
@@ -671,7 +671,7 @@ var questions = [
                 "handle": "johnolilly",
                 "image": "johnolilly.jpeg",
                 "link": "http://twitter.com/johnolilly",
-                "chosenText": "Na, it wasn't John Lilly, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't John Lilly, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Big Bird",
@@ -703,7 +703,7 @@ var questions = [
                 "handle": "pmarca",
                 "image": "pmarca.jpg",
                 "link": "http://twitter.com/pmarca",
-                "chosenText": "Na, it wasn't Marc Andreessen, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Marc Andreessen, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Oscar the Grouch",
@@ -735,7 +735,7 @@ var questions = [
                 "handle": "sama",
                 "image": "sama.jpg",
                 "link": "http://twitter.com/sama",
-                "chosenText": "Na, it wasn't Sam Altman, but who can keep track of all these white guys anyway..."
+                "chosenText": "Na, it wasn't Sam Altman, but who can keep track of all these thought leaders anyway..."
             },
             {
                 "name": "Elmo",
@@ -784,6 +784,8 @@ var questions = [
 ];
 
 db.tx(function (t) {
+    console.log('connected to db...');
+
     return this.sequence(fixtureQueries);
 })
 .then(function () {
