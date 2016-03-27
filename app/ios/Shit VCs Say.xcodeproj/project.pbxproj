@@ -250,13 +250,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		00E356EF1AD99517003FC87E /* S**t VCs Say Tests */ = {
+		00E356EF1AD99517003FC87E /* Shit VCs Say Tests */ = {
 			isa = PBXGroup;
 			children = (
 				00E356F21AD99517003FC87E /* QuizGameTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = "S**t VCs Say Tests";
+			path = "Shit VCs Say Tests";
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -283,7 +283,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* S**t VCs Say */ = {
+		13B07FAE1A68108700A75B9A /* Shit VCs Say */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -294,7 +294,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			path = "S**t VCs Say";
+			path = "Shit VCs Say";
 			sourceTree = "<group>";
 		};
 		146834001AC3E56700842450 /* Products */ = {
@@ -382,9 +382,9 @@
 			children = (
 				2A65673B1C84B5B000DB4A6D /* libz.1.2.5.tbd */,
 				2A2724861C7ACF4200A80071 /* Social.framework */,
-				13B07FAE1A68108700A75B9A /* S**t VCs Say */,
+				13B07FAE1A68108700A75B9A /* Shit VCs Say */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* S**t VCs Say Tests */,
+				00E356EF1AD99517003FC87E /* Shit VCs Say Tests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 			);
 			indentWidth = 2;
@@ -731,7 +731,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "S**t VCs Say/Info.plist";
+				INFOPLIST_FILE = "Shit VCs Say/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -752,7 +752,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "S**t VCs Say/Info.plist";
+				INFOPLIST_FILE = "Shit VCs Say/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -777,7 +777,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-social-share/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/S**t VCs Say/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Shit VCs Say/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
@@ -800,7 +800,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-social-share/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/S**t VCs Say/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Shit VCs Say/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
@@ -865,7 +865,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-social-share/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/S**t VCs Say/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Shit VCs Say/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
@@ -885,7 +885,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "S**t VCs Say/Info.plist";
+				INFOPLIST_FILE = "Shit VCs Say/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
